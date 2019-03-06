@@ -177,7 +177,7 @@ if (isset($extIncorrectSkill) && $extIncorrectSkill == true){
                                                 include "modele/modele.php";
                                                 include "modele/fonctions.php";
                                                 //echo '<i class="plus icon" id="btnAddSkill" onclick="addAnAttributeSkill('.nbSkill($bdd,$_SESSION['user']).')"></i>'; ?>
-                                                echo '<i class="plus icon" id="btnAddSkill" onclick="addAnAttributeSkill(0)"></i>'; ?>
+                                                <i class="plus icon" id="btnAddSkill" onclick="addAnAttributeSkill(0)"></i>
                                             </div>
                                         </td>
                                     </tr>
