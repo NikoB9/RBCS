@@ -155,32 +155,16 @@ function readURL(input) {
         //if (msie > -1 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
 
 
-            var reader = new FileReader();
+        var reader = new FileReader();
 
-            reader.onload = function (e) {
-                $('#blah')
-                    .attr('src', e.target.result)
-                    .attr('alt', 'aperçu de ce fichier non disponible');
-            };
+        reader.onload = function (e) {
+            $('#blah')
+                .attr('src', e.target.result)
+                .attr('alt', 'aperçu de ce fichier non disponible');
+        };
 
-            reader.readAsDataURL(input.files[0]);
+        reader.readAsDataURL(input.files[0]);
 
-        /*}
-        else{
-            //alert("C'est un autre navigateur");
-
-            pdffile=input.files[0];
-
-            pdffile_url=URL.createObjectURL(pdffile);
-            $('#viewer').attr('src',pdffile_url);
-            $('#blah').attr('style','visibility:hidden;');
-
-        }*/
-        /*
-
-        if(!document.getElementById('blah').complete){*/
-
-        //}
 
     }
 }
@@ -196,6 +180,10 @@ function  frenchLanguage(){
     btnEnglish.color = "Black";
     btnFrench.background = "#04282c";
     btnFrench.color = "white";
+    btnEnglish.boxShadow = "transparent 0.01em 0.0em 0em";
+    btnFrench.boxShadow = "rgb(255, 255, 255) 0.01em 0.0em .6em";
+    btnEnglish.textShadow = "rgb(255, 255, 255) 0.01em 0.0em .6em";
+    btnFrench.textShadow = "black 0.1em 0.1em 0.2em";
 
     corpsEnglish.display = "none";
     corpsFrench.display = "block";
@@ -212,8 +200,227 @@ function englishLanguage() {
     btnFrench.color = "Black";
     btnEnglish.background = "#04282c";
     btnEnglish.color = "white";
+    btnFrench.boxShadow = "transparent 0.01em 0.0em 0em";
+    btnEnglish.boxShadow = "rgb(255, 255, 255) 0.01em 0.0em .6em";
+    btnFrench.textShadow = "rgb(255, 255, 255) 0.01em 0.0em .6em";
+    btnEnglish.textShadow = "black 0.1em 0.1em 0.2em";
 
     corpsEnglish.display = "block";
     corpsFrench.display = "none";
+
+}
+
+function signup() {
+
+    //alert("test");
+    var signup = document.getElementById("signUp").style;
+    signup.borderTopColor = "#04282c";
+
+}
+
+function signupDown() {
+
+    //alert("test");
+    var signup = document.getElementById("signUp").style;
+    signup.borderTopColor = "#0c5460";
+    signup.textShadow = "rgb(255, 255, 255) 0.01em 0.0em .6em";
+
+}
+
+function signin() {
+
+    //alert("test");
+    var signin = document.getElementById("signIn").style;
+    signin.borderTopColor = "#04282c";
+
+}
+
+function signinDown() {
+
+    //alert("test");
+    var signin = document.getElementById("signIn").style;
+    signin.borderTopColor = "#0c5460";
+    signin.textShadow = "rgb(255, 255, 255) 0.01em 0.0em .6em";
+}
+
+function clickSignUp(){
+    var signup = document.getElementById("divSignUp");
+    var signin = document.getElementById("divSignIn");
+    var formSignUp = document.getElementById("formSignUp");
+    var formSignIn = document.getElementById("formSignIn");
+    signup.style.display = "none";
+    formSignUp.style.display = "block";
+    signin.style.display = "block";
+    formSignIn.style.display = "none";
+}
+
+function clickSignIn(){
+    var signup = document.getElementById("divSignUp");
+    var signin = document.getElementById("divSignIn");
+    var formSignUp = document.getElementById("formSignUp");
+    var formSignIn = document.getElementById("formSignIn");
+    signup.style.display = "block";
+    formSignUp.style.display = "none";
+    signin.style.display = "none";
+    formSignIn.style.display = "block";
+}
+
+function resetForm(form) {
+    //alert("ok1");
+    document.getElementById(form).reset();
+    //alert("ok2");
+}
+
+function submitForm(form) {
+    //alert("ok1");
+    document.getElementById(form).submit();
+    //alert("ok2");
+}
+
+function displayOrganisation(){
+
+    var input = document.getElementById("org");
+    var label = document.getElementById("labelOrg");
+
+    if (input.style.display == 'none'){
+        input.style.display = "block";
+        label.style.display = "block";
+    }
+    else{
+        input.style.display = "none";
+        label.style.display = "none";
+    }
+
+}
+
+
+
+$(document).ready(function() {
+    $("#datepicker1").datepicker({
+        dateFormat: 'dd/mm/yy',
+        changeMonth: true
+        , changeYear: true
+        , yearRange: '-1:+1'
+    });
+});
+
+$(document).ready(function() {
+    $( "#datepickerAnniv" ).datepicker({
+        dateFormat: 'dd/mm/yy',
+        defaultDate: "+1w",
+        numberOfMonths: 2,
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '-100:+0',
+        maxDate: '+0Y',
+        onClose: function( selectedDate ) {
+            $( "#datepickerInutile" ).datepicker( "option", "minDate", selectedDate );
+        }
+    });
+    $( "#datepickerInutile" ).datepicker({
+        dateFormat: 'dd/mm/yy',
+        defaultDate: "+1w",
+        numberOfMonths: 2,
+        changeMonth: true,
+        changeYear: true,
+        maxDate: '+0Y',
+        onClose: function( selectedDate ) {
+            $( "#datepickerAnniv" ).datepicker( "option", "maxDate", selectedDate );
+        }
+    });
+});
+
+
+//AjaxAddSkil
+function addSkillAjax(libelleSkill){
+    alert(libelleSkill);
+    /*$.post(
+        'modele/addSkillMinim.php', // script php
+        {
+            //libelleSkill : $("#delete").val(),  // Nous récupérons la valeur de nos input que l'on fait passer à connexion.php
+            libelleSkill : libelleSkill,
+
+        },
+        function(data){
+            if(data == 'Success'){
+                // Le membre est connecté. Ajoutons lui un message dans la page HTML.
+                alert("bingo");
+            }
+            else{
+                // Le membre n'a pas été connecté. (data vaut ici "failed")
+                alert("raté : " + data );
+            }
+        },
+        'text' // Nous souhaitons recevoir "Success" ou "Failed", donc on indique text !
+    );*/
+    $.ajax({
+        url : 'modele/addSkillMinim.php',
+        type : 'POST',
+        data : 'libelleSkill=' + libelleSkill,
+        //data : 'email=' + email + '&contenu=' + contenu_mail, // On fait passer nos variables, exactement comme en GET, au script more_com.php
+        dataType : 'html',
+        success : function(code_html, statut){ // success est toujours en place, bien sûr !
+            alert(statut);
+        },
+
+        error : function(resultat, statut, erreur){
+            alert(erreur);
+        }
+
+    });
+}
+
+
+//Ajout de compétences
+function addAnAttributeSkill(lastSkill){
+
+    alert('passe');
+    alert(lastSkill);
+
+    var libelleSkill = document.getElementById("libelleSkill" + lastSkill).value;
+    /*var noteSkill = document.getElementById("noteSkill" + lastSkill); //TEST
+    var certifSkill = document.getElementById("certifSkill" + lastSkill);*/
+    var rowSkill = document.getElementById("rowSkill" + lastSkill);
+
+    alert(libelleSkill);
+
+    var lastSkillInc = lastSkill + 1;
+
+    var rowSkillInc = document.getElementById("rowSkill" + lastSkillInc).style.display;
+
+    alert(rowSkillInc);
+
+
+
+    if (lastSkill == 0){
+        if (libelleSkill != 0){
+            //alert('passeIF');
+            //Enregistrement en BDD de la compétences
+            addSkillAjax(libelleSkill);
+
+            //Nouvelle ligne
+            document.getElementById("rowSkill" + lastSkillInc).style.display = "table-row";
+            //alert('newLine');
+            //alert(document.getElementById("rowSkill" + lastSkillInc).style.display);
+        }
+        else {
+            //alert('passeElse');
+            rowSkill.style.display = "table-row";
+        }
+    }
+    else {
+
+        alert('passeElse');
+
+        if(libelleSkill != 0){
+            //Enregistrement en BDD de la compétence
+            //alert('passeElsePiF');
+
+            addSkillAjax(libelleSkill);
+
+            //New Line
+            document.getElementById("rowSkill" + lastSkillInc).style.display = "table-row";
+        }
+    }
 
 }

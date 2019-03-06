@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+//Activation affichage des erreurs
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__. '/.log_error');
+error_reporting(E_ALL & ~E_NOTICE);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +27,8 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/bootstrap-grid.css">
     <link rel="stylesheet" href="assets/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="assets/jquery-ui/css/smoothness/jquery-ui-1.10.3.custom.css">
+
 </head>
 <body>
     <div class="ui pageloader">
@@ -30,14 +41,12 @@
 
 
 
-    <!--<div class="ui basic modal notSend">
+    <div class="ui basic modal failAddUser">
         <div class="ui icon header">
             <i class="refresh icon"></i>
             Toutes nos excuses,
             <br>
-            Un problème est survenu lors de l'envoie.
-            <br>
-            Veuillez vérifier les champs du formulaire.
+            Un problème est survenu lors de l'enregistrement de votre compte.
         </div>
         <div class="actions">
             <div class="ui green ok button">
@@ -45,7 +54,84 @@
                 Ok
             </div>
         </div>
-    </div>-->
+    </div>
+
+    <div class="ui basic modal 2differentPasswords">
+        <div class="ui icon header">
+            <i class="refresh icon"></i>
+            Les deux mots de passe sont différents.
+            <br>
+            Pour rappel, un mod de passe sûr comprend des symnoles (courants) et des caractères alpha-numériques.
+        </div>
+        <div class="actions">
+            <div class="ui green ok button">
+                <i class="checkmark icon"></i>
+                Ok
+            </div>
+        </div>
+    </div>
+
+    <div class="ui basic modal userExist">
+        <div class="ui icon header">
+            <i class="refresh icon"></i>
+            Toutes nos excuses,
+            <br>
+            Un utilisateur du même pseudo existe déjà.
+        </div>
+        <div class="actions">
+            <div class="ui green ok button">
+                <i class="checkmark icon"></i>
+                Ok
+            </div>
+        </div>
+    </div>
+
+    <div class="ui basic modal unknownAccount">
+        <div class="ui icon header">
+            <i class="refresh icon"></i>
+            <br>
+            Ce compte est inconnu.
+            <br>
+        </div>
+        <div class="actions">
+            <div class="ui green ok button">
+                <i class="checkmark icon"></i>
+                Ok
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ui basic modal badUSername">
+        <div class="ui icon header">
+            <i class="refresh icon"></i>
+            <br>
+            L'indentifiant incorrect (mail ou username).
+            <br>
+        </div>
+        <div class="actions">
+            <div class="ui green ok button">
+                <i class="checkmark icon"></i>
+                Ok
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ui basic modal badMdp">
+        <div class="ui icon header">
+            <i class="refresh icon"></i>
+            <br>
+            Mot de passe incorrect.
+            <br>
+        </div>
+        <div class="actions">
+            <div class="ui green ok button">
+                <i class="checkmark icon"></i>
+                Ok
+            </div>
+        </div>
+    </div>
 
 
 
@@ -76,40 +162,25 @@
 
 
     <?php
-    /*if(isset($_POST['logoutid']))
+
+
+    if(isset($_POST['logoutid']) || $_GET['deconnexion'])
     {
         session_destroy();
-        echo "<script>msieversion()</script>";
-    }*/
-
-    if(isset($_SESSION['postulant']))
-    {
-        $session_login = $_SESSION['postulant'];
-
-        if(isset($_POST['p']))
-        {
-            if(file_exists("controleurs/".$_POST['p'].".php"))
-            {
-                include("controleurs/".$_POST['p'].".php");
-            }
-            else
-            {
-                include('controleurs/ctrlAccueil.php');
-            }
-        }
-        else
-        {
-            include('controleurs/ctrlAccueil.php');
-        }
+        unset($_SESSION);
+        //echo "<script>msieversion()</script>";
     }
-    elseif (isset($_SESSION['recruteur'])){
-        $session_login = $_SESSION['recruteur'];
+
+    if (isset($_SESSION['user'])){
+        $session_login = $_SESSION['user'];
 
         //Récupération de l'id de l'utilisateur connecté
         //$session_id = GetIdFromLabel($session_login, $bdd);
-        if(isset($_POST['p']))
+        //print_r($_GET);
+
+        if(isset($_GET['p']))
         {
-            if(file_exists("controleurs/".$_POST['p'].".php"))
+            if(file_exists("controleurs/".$_GET['p'].".php"))
             {
                 include("controleurs/".$_GET['p'].".php");
             }
@@ -124,6 +195,7 @@
         }
     }
     else {
+
         //include($pages['login']);
         ///echo "<script>msieversion()</script>";
         include 'controleurs/ctrlAccueil.php';
@@ -132,6 +204,9 @@
     ?>
 
 
+    <script type="text/javascript" src="assets/jquery-ui/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="assets/jquery-ui/js/jquery.ui.datepicker-fr.js"></script>
+    <script type="text/javascript" src="assets/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
 
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/semantic.min.js"></script>
@@ -146,12 +221,19 @@
     <script type="text/javascript" src="assets/js/amcharts/plugins/export/export.min.js"></script>
 
     <script type="text/javascript" src="assets/js/graph.js"></script>
+
     <script type="text/javascript" src="assets/js/main.js"></script>
 
 <!--
-    <?php/* if (@$send == true) echo "<script type=\"text/javascript\">ShowModalRequest('.send')</script>";
-    if (@$notSend == true) echo "<script type=\"text/javascript\">ShowModalRequest('.notSend')</script>";
-*/
+    <?php if (@$failAddUser == true) echo "<script type=\"text/javascript\">ShowModalRequest('.failAddUser')</script>";
+    if (@$twoDifferentsPasswords == true) echo "<script type=\"text/javascript\">ShowModalRequest('.2differentPasswords')</script>";
+    if (@$userExistAlready == true) echo "<script type=\"text/javascript\">ShowModalRequest('.userExist')</script>";
+    if (@$unknownAccount == true) echo "<script type=\"text/javascript\">ShowModalRequest('.unknownAccount')</script>";
+    if (@$badUSername == true) echo "<script type=\"text/javascript\">ShowModalRequest('.badUSername')</script>";
+    if (@$badMdp == true) echo "<script type=\"text/javascript\">ShowModalRequest('.badMdp')</script>";
     ?>-->
+
+
+
 </body>
 </html> 

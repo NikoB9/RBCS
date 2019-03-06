@@ -1,9 +1,464 @@
 body {
   padding-top: 115px;
-  background-color: #FFFFFF;
+  background-color: rgba(85, 146, 145, 0.55);
   color:rgba(0, 0, 0, 0.77);
   overflow-y: scroll;
 }
+
+label{
+    padding-top: 10px;
+    font-weight: bolder;
+}
+
+/*STYLE CSS pour le bouton radio*/
+
+/* SLIDE THREE */
+.checkVisible {
+    width: 250px;height: 90px;background: #333;margin: 20px auto;-webkit-border-radius: 50px;-moz-border-radius: 50px;border-radius: 50px;position: relative;-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+}
+
+.checkVisible:after {
+    content: url("../img/recruteurPickIco.png") 'Recruteu[r|se]';
+    width: 115px;
+    color: #3c6177;
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    z-index: 0;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.checkVisible:before {
+    content: url("../img/postulantIco.png") "Postulant[e]";
+    width: 97px;
+    color: #779bb1;
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    z-index: 0;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.checkVisible label {
+    display: block;width: 135px;height: 84px;-webkit-border-radius: 50px;-moz-border-radius: 50px;border-radius: 50px;-webkit-transition: all .4s ease;-moz-transition: all .4s ease;-o-transition: all .4s ease;-ms-transition: all .4s ease;transition: all .4s ease;
+    cursor: pointer;position: absolute;top: 3px;left: 3px;z-index: 1;-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);background: #fcfff4;
+    background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+}
+
+.checkVisible input[type=checkbox]:checked + label {
+    left: 112px;
+}
+
+input#checkVisible{
+    display: none;
+}
+
+
+
+/*******INPUT FILE************/
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    border-radius: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: #1E4C67;
+    background-color: #6895AF;
+    display: inline-block;
+    cursor: pointer;
+    transition: ease-in .3s !important;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #1E4C67;
+    color: #6895AF;
+    transition: ease-in .3s !important;
+    box-shadow: 4px 4px 4px #606060 !important;
+}
+
+/*******TOP MENU*********************/
+#topMenuDiv{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 100% ), url("assets/img/fond1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#topMenuDiv2{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 100% ), url("../img/fond1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 6;
+}
+
+#deconnexion{
+    width: 10vh;
+    height: 10vh;
+    float: right;
+    padding-top: 1vh;
+    margin-right: 20px;
+}
+#deconnexion:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 20px black;
+}
+
+/****FORM SIGNUP COMPLET********/
+#cardForm{
+    width: calc(90vw - 7px);
+}
+.title{
+    text-align: center;
+    color: #3c6177;
+}
+
+
+/****ACCUEIL****/
+body{
+    overflow: auto;
+    opacity: 0.8;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 100% ),
+    linear-gradient(to top, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 100% ),
+    url("../img/ruche1.png");
+    background-color: #707077 !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+}
+img.imgFond {
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+
+    /*-webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);*/
+}
+#triangle-bottomright {
+    width: 1500px;
+    height: 0;
+    /*border-bottom: 350px solid #384c7e;*/
+    border-bottom: 350px solid #384c7e;
+    border-left: 1300px solid transparent;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    opacity: 0.2;
+}
+#signUp {
+    width: 0;
+    height: 0;
+    border-top: 100px solid #0b4f5a;
+    border-left: 300px solid transparent;
+    top: 0;
+    position: absolute;
+    right: 0;
+    color: black;
+    text-shadow: rgb(255, 255, 255) 0.01em 0.0em .6em;
+    transition: linear all .3s;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#signUpBtn, #signUpBtnBis {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 80px;
+    z-index: 1;
+    text-align: center;
+    font-weight: bold;
+    color: black !important;
+    text-shadow: rgb(255, 255, 255) 0.01em 0.0em .6em;
+    padding-left: 70px;
+    padding-bottom: 10px;
+    transition: linear all .3s;
+}
+
+#signUpBtn:hover, #signUpBtnBis:hover  {
+
+    cursor:pointer;
+    color: white !important;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    transition: linear all .3s;
+
+}
+
+
+#signIn {
+    width: 0;
+    height: 0;
+    border-top: 100px solid #0b4f5a;
+    border-left: 300px solid transparent;
+    top: 0;
+    position: absolute;
+    right: 0;
+    font-size: 18px;
+    color: black;
+    transition: linear all .3s;
+    text-shadow: rgb(255, 255, 255) 0.01em 0.0em .6em;
+    font-weight: bolder;
+}
+
+#signInBtn, #signInBtnBis {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 80px;
+    z-index: 1;
+    text-align: center;
+    font-weight: bold;
+    color: black !important;
+    text-shadow: rgb(255, 255, 255) 0.01em 0.0em .6em;
+    padding-left: 70px;
+    transition: linear all .3s;
+    padding-bottom: 10px;
+
+}
+
+#signInBtn:hover, #signInBtnBis:hover  {
+
+    cursor:pointer;
+    color: white !important;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    transition: linear all .3s;
+
+}
+
+#triangle-topright {
+    width: 1500px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 0;
+    /*border-top: 420px solid #384c7e;*/
+    border-top: 420px solid #384c7e;
+    border-left: 1300px solid transparent;
+    opacity: 0.2;
+}
+#contentDeveloppeuse{
+    right: 10px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    top: 0;
+    width: 140px;
+}
+#developpeuse{
+    width: 150px;
+    height: 125px;
+    margin-top: 70px;
+}
+#infos{
+    position: absolute;
+    width: 300px;
+    left: 5vw;
+    background: rgba(12, 84, 96, 0.47);
+    color: White;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    top: 5vw;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+.rowPerso{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.colPerso{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.validate{
+    width: 45px;
+    height: 45px;
+    background: url(../img/check.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    position: absolute;
+    top: 11vw;
+    right: 8vw;
+    border: solid 2px #66cd42;
+    border-radius: 15px;
+    background-color: rgba(174, 229, 230, 0.3);
+    transition: linear all .3s;
+
+}
+.cancel{
+    width: 45px;
+    height: 45px;
+    background: url("../img/cancel.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: solid 2px #fb1f1f;
+    border-radius: 15px;
+    background-color: rgba(174, 229, 230, 0.3);
+    position: absolute;
+    top: 11vw;
+    transition: linear all .3s;
+    right: 3.9vw;
+}
+.validate:hover{
+    cursor: pointer;
+    background-image: url("../img/checkReverse.png");
+    background-color: #66cd42;
+    border: solid 2px rgb(61, 79, 97);
+    transition: linear all .3s;
+
+}
+.cancel:hover{
+    cursor: pointer;
+    background-image: url("../img/cancelReverse.png");
+    background-color: #fb1f1f;
+    border: solid 2px rgb(61, 79, 97);
+    transition: linear all .3s;
+}
+.reset, .reset:before, reset:after{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    z-index: 2;
+    color: transparent;
+    border: none;
+    transition: linear all .3s;
+}
+#divSignIn{
+    display: none;
+    transition: linear all .3s;
+}
+#divSignUp, #divSignUp:hover, #divSignIn:hover,
+#frenshBtn, #frenshBtn:hover,
+#englishBtn, #englishBtn:hover, #englishNews:hover, #frenchNews, #frenchNews:hover{
+    transition: linear all .3s;
+}
+
+#englishNews{
+    display: none;
+    transition: linear all .3s;
+}
+.icon{
+    color: #8fc7ff;
+    margin-bottom: 8px !important;
+}
+#rowInput1{
+    padding-left: 30px !important;
+    margin-bottom: 50px;
+    position: absolute;
+    top: 1vw;
+    right: 20vw;
+    width: 280px;
+    background: rgba(12, 84, 96, 0.47);
+    padding: 8px;
+    padding-right: 40px !important;
+    border-radius: 15px;
+}
+#rowInput2{
+    padding-left: 30px !important;
+    margin-bottom: 50px;
+    position: absolute;
+    right: 9vw;
+    top: 6.5vw;
+    width: 280px;
+    background: rgba(12, 84, 96, 0.47);padding: 8px;
+    padding: 8px;
+    padding-right: 40px !important;
+    border-radius: 15px;
+}
+#rowInput3{
+    padding-left: 30px !important;
+    margin-bottom: 50px;
+    position: absolute;
+    top: 0.5vw;
+    right: 20vw;
+    width: 280px;
+    background: rgba(12, 84, 96, 0.47);
+    padding: 8px;
+    padding-right: 40px !important;
+    border-radius: 15px;
+}#rowInput4{
+     padding-left: 30px !important;
+     margin-bottom: 50px;
+     position: absolute;
+     right: 13vw;
+     top: 5vw;
+     width: 280px;
+     background: rgba(12, 84, 96, 0.47);
+     padding: 8px;
+     padding-right: 40px !important;
+     border-radius: 15px;
+ }#rowInput5{
+      padding-left: 30px !important;
+      margin-bottom: 50px;
+      position: absolute;
+      right: 6vw;
+      top: 9.45vw;
+      width: 280px;
+      background: rgba(12, 84, 96, 0.47);
+      padding: 8px;
+      padding-right: 40px !important;
+      border-radius: 15px;
+  }
+#rowInput6{
+    padding-left: 30px !important;
+    margin-bottom: 50px;
+    position: absolute;
+    right: 0.2vw;
+    top: 13.9vw;
+    width: 280px;
+    background: rgba(12, 84, 96, 0.47);
+    padding: 8px;
+    padding-right: 40px !important;
+    border-radius: 15px;
+}
+input[type="text"], input[type="password"], input[type="mail"]{
+    padding: 8px;
+}
+#formSignUp{
+    display: none;
+}
+
+
+
+/******************EL CUERPO*********************/
 .pointer {
   cursor: pointer;
 }
@@ -116,7 +571,7 @@ body {
   font-size: 11px;
 }
 #content #background-profile {
-  background-image: url(../img/blur.jpg);
+  /*background-image: url('../img/blur.jpg');*/
   border: none;
   height: 400px;
   display: flex;
@@ -179,7 +634,7 @@ body {
 .ui.items > .item img.avatar, .ui.items > .item .avatar img {
     width: auto;
     height: auto;
-    border-radius: none;
+    border-radius: 0px;
     transform: translate3d(0%,-12%,0);
 }
 
@@ -742,7 +1197,7 @@ table.dataTable.table{
   box-shadow: none;
 }
 [data-tooltip][data-inverted]:after .header {
-  background-color: none;
+  background-color: transparent;
   color: #FFFFFF;
 }
 
