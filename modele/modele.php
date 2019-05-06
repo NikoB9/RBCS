@@ -9,7 +9,7 @@
 
 $host   = "localhost";
 $user   = "root";
-$pass   = "azerty";
+$pass   = "";
 $db     = "RBCS";
 $today  = date("Y-m-d");
 try // Connexion à la base de données avec PDO
