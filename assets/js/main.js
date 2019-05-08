@@ -370,25 +370,27 @@ function addSkillAjax(libelleSkill){
     });
 }
 
+/*
 
 //Ajout de compétences
-function addAnAttributeSkill(lastSkill){
+function addAnAttributeSkill(){
 
-    alert('passe');
+    //alert('passe');
+    var lastSkill = document.getElementById('idAttr').innerHTML;
     alert(lastSkill);
 
     var libelleSkill = document.getElementById("libelleSkill" + lastSkill).value;
-    /*var noteSkill = document.getElementById("noteSkill" + lastSkill); //TEST
-    var certifSkill = document.getElementById("certifSkill" + lastSkill);*/
+    /!*var noteSkill = document.getElementById("noteSkill" + lastSkill); //TEST
+    var certifSkill = document.getElementById("certifSkill" + lastSkill);*!/
     var rowSkill = document.getElementById("rowSkill" + lastSkill);
 
-    alert(libelleSkill);
+    //alert(libelleSkill);
 
-    var lastSkillInc = lastSkill + 1;
+    var lastSkillInc = parseInt(lastSkill) + 1;
 
-    var rowSkillInc = document.getElementById("rowSkill" + lastSkillInc).style.display;
+    //var rowSkillInc = document.getElementById("rowSkill" + lastSkillInc).style.display;
 
-    alert(rowSkillInc);
+    //alert(rowSkillInc);
 
 
 
@@ -399,7 +401,9 @@ function addAnAttributeSkill(lastSkill){
             addSkillAjax(libelleSkill);
 
             //Nouvelle ligne
+
             document.getElementById("rowSkill" + lastSkillInc).style.display = "table-row";
+
             //alert('newLine');
             //alert(document.getElementById("rowSkill" + lastSkillInc).style.display);
         }
@@ -407,6 +411,8 @@ function addAnAttributeSkill(lastSkill){
             //alert('passeElse');
             rowSkill.style.display = "table-row";
         }
+        document.getElementById('idAttr').innerText = parseInt(lastSkill) + 1;
+
     }
     else {
 
@@ -420,7 +426,12 @@ function addAnAttributeSkill(lastSkill){
 
             //New Line
             document.getElementById("rowSkill" + lastSkillInc).style.display = "table-row";
+
+            document.getElementById('idAttr').innerText = parseInt(lastSkill) + 1;
+
         }
     }
 
-}
+
+
+}*/

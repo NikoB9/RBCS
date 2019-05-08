@@ -135,52 +135,42 @@ if (isset($extIncorrectSkill) && $extIncorrectSkill == true){
                                 <table class="ui celled table">
                                     <thead>
                                     <tr>
-                                        <th>Compétence</th>
-                                        <th>Niveau</th>
-                                        <th>Certification</th>
+                                        <th>Nom du Curriculum Vitae</th>
+                                        <th>Pièce</th>
                                     </tr>
                                     </thead>
                                     <tbody id="bodyComp">
 
-                                    <?php
 
-                                    for($i = 0; $i < 50; $i++){
-                                        echo "
-                                    <tr id=\"rowSkill".$i."\" style='display:none;'>
+                                    <tr id="">
                                         <td colspan='1'>
-                                            <input id=\"libelleSkill".$i."\" type=\"text\" class=\"form-control\">
+                                            <input id="cv" name="cv" type="text" class="form-control">
                                         </td>
-                                        <td colspan='1'>
-                                            <input id=\"noteSkill".$i."\" type=\"submit\">
-                                        </td>
-                                        <td colspan='1'>
-                                            <input id=\"certifSkill".$i."\" class=\"inputfile\" data-tooltip=\"(pdf)\" style=\"padding-left: 10px;border: inherit;\" type=\"file\" name=\"pjSkill".$i."\">
-                                            <label for=\"certifSkill".$i."\" data-tooltip=\"(pdf)\">
+                                        <td colspan='1' style="text-align: center;">
+                                            <input id="pjCv" class="inputfile" style="padding-left: 10px;border: inherit;" type="file" name="pjCv">
+                                            <label for="pjCv" data-tooltip="(pdf)">
                                                 <strong>
-                                                    <i style=\"border: none;
+                                                    <i style="border: none;
                                                     padding: 2px;
                                                     margin-right: 10px;
-                                                    margin-left: 5px;color: beige;\" class=\"download icon\"></i>
+                                                    margin-left: 5px;color: beige;" class="download icon"></i>
                                                     Pièce officielle (PDF)
                                                 </strong>
                                             </label>
                                         </td>
                                     </tr>
-                                    ";
-                                    }
 
-                                    ?>
-                                    <tr>
+                                    <!--<tr>
                                         <td colspan="3" style=";">
                                             <div class="rowPerso">
                                                 <?php
-                                                include "modele/modele.php";
-                                                include "modele/fonctions.php";
-                                                //echo '<i class="plus icon" id="btnAddSkill" onclick="addAnAttributeSkill('.nbSkill($bdd,$_SESSION['user']).')"></i>'; ?>
-                                                <i class="plus icon" id="btnAddSkill" onclick="addAnAttributeSkill(0)"></i>
+/*                                             //   include "modele/modele.php";
+                                                //include "modele/fonctions.php";
+                                                //echo '<i class="plus icon" id="btnAddSkill" onclick="addAnAttributeSkill('.nbSkill($bdd,$_SESSION['user']).')"></i>'; */?>
+                                                <i class="plus icon" id="btnAddSkill" onclick="addAnAttributeSkill()"></i>
                                             </div>
                                         </td>
-                                    </tr>
+                                    </tr>-->
 
                                     </tbody>
                                 </table>
@@ -301,7 +291,10 @@ if (isset($extIncorrectSkill) && $extIncorrectSkill == true){
 
             </div>
             <div class="card-footer">
-
+                <div class="colPerso">
+                    <button type="button" class="btn btn-success">Enregister</button>
+                    <button type="reset" class="btn btn-danger">Annuler</button>
+                </div>
             </div>
         </div>
     </div>

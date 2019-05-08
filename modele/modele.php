@@ -7,10 +7,10 @@
  */
 
 
-$host   = "localhost";
-$user   = "root";
-$pass   = "";
-$db     = "RBCS";
+$host   = "remotemysql.com";
+$user   = "kQnEQkDgQK";
+$pass   = "xfojh8wGkd";
+$db     = "kQnEQkDgQK";
 $today  = date("Y-m-d");
 try // Connexion à la base de données avec PDO
 {
