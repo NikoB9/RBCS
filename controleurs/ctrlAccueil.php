@@ -23,9 +23,13 @@ if (isset($_POST['signin']) && $_POST['signin'] = 'signin'){
      *
      */
 
-    if (compteExist($username, $mdp, $bdd)){
+    $id = compteExist($username, $mdp, $bdd);
+    //
+    //echo $id;
+    if ($id !== -1){
 
         $_SESSION['user'] = $username;
+        $_SESSION['id'] = $id;
 
         //PAGE DES OFFRES D EMBAUCHES
         //$page = "ctrlOffreEmbauches";
@@ -42,6 +46,8 @@ if (isset($_POST['signin']) && $_POST['signin'] = 'signin'){
 
         $userExist = userExist($username, $bdd);
         $pwdExist = pwdExist($mdp, $bdd);
+        //echo "userExist".$userExist;
+        //echo "pwdExist".$pwdExist;
 
         if(!$userExist && !$pwdExist){
             //APPEL DU MESSAGE DANS LA PAGE D'INDEX
@@ -73,14 +79,16 @@ elseif (isset($_POST['signup']) && $_POST['signup'] = 'signup'){
 
     if(!$userExist && $mdp == $mdpVerif){
 
-        $_SESSION['user'] = $user;
-        if (ajouterUtilisateur($user,$ad,$mdp, $bdd)){
+        $id = ajouterUtilisateur($user,$ad,$mdp, $bdd);
+        if ($id !== -1){
             //APPEL INDEX AVEC APPEL CTRL FORMULAIRE INSCRIPTION EN PARAMETRE POST
 
 
             $page = 'ctrlSignUpForm';
 
             $_SESSION['user'] = $user;
+            $_SESSION['id'] = $id;
+
 
 
 

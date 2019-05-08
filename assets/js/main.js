@@ -6,15 +6,6 @@ $(document).ready(function() {
           on: 'click'
       })
   });
-    $(function() {
-    $("table #sortable-code").sortable({ opacity: 0.8, cursor: 'move', update: function() {
-        var order = $(this).sortable("serialize");
-        $.post("pages/edit_codes.php", order, function(theResponse){
-          console.log("Le code a été édité avec succès");
-        });
-      }
-      });
-    });
 
 
 
@@ -87,36 +78,6 @@ function ShowModalRequest(modal)
 }
 
 
-//Affichage du formaulaire ajout/depot vente
-//prend en paramètres le nom de l'utilisateur
-/*function add_formVente(nomUser)
-{
-  $("#addFormVente_content").load("pages/addFormVente.php?nomUser=" + nomUser);
-  $('.ui.long.addFormVente.modal').modal({
-    onVisible: function(){
-        $('.ui.long.addFormVente.modal').modal('refresh');
-        $('body').addClass('scrolling');
-    },
-    observeChanges: true,
-    transition: 'fade up'}).modal('show').addClass('scrolling active');
-}*/
-
-//Affiche du formulaire de dépot
-//prend en paramètres le nom de l'utilisateur
-/*function add_formDepot(nomUser)
-{
-  $("#addFormDepot_content").load("pages/addFormDepot.php?nomUser=" + nomUser);
-  $('.ui.long.addFormDepot.modal').modal({
-    onVisible: function(){
-        $('.ui.long.addFormDepot.modal').modal('refresh');
-        $('body').addClass('scrolling');
-    },
-    observeChanges: true,
-    transition: 'fade up'}).modal('show')//.addClass('scrolling active');
-}*/
-
-
-
 //Affichage des paramètres du compte
 function param_compte()
 {
@@ -130,19 +91,6 @@ function param_compte()
     transition: 'fade up'}).modal('show')//.addClass('scrolling active');
 }
 
-
-//Affiche du formulaire d'edition de permis
-function edit_permis(idPermis, idService)
-{
-    $("#editPermis_content").load("pages/edit_permis.php?idPermis=" + idPermis + "&idService=" + idService);
-    $('.ui.long.editPermis.modal').modal({
-        onVisible: function(){
-            $('.ui.long.editPermis.modal').modal('refresh');
-            $('body').addClass('scrolling');
-        },
-        observeChanges: true,
-        transition: 'fade up'}).modal('show')//.addClass('scrolling active');
-}
 
 //APERCU FICHIER
 function readURL(input) {
@@ -369,6 +317,15 @@ function addSkillAjax(libelleSkill){
 
     });
 }
+
+
+var inputPjCv = document.getElementById("pjCv");
+inputPjCv.addEventListener("change", handleFiles, false);
+function handleFiles() {
+    var file = this.files;
+    document.getElementById('cv').value = file[0].name
+}
+
 
 /*
 

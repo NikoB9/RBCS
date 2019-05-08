@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: nico
@@ -8,28 +9,34 @@
 
 
 function userExist($user,$bdd){
-
     $bool = false;
-
-    $sql = "SELECT  count(*) as bool FROM User WHERE  pseudo like :login or mail like :login";
+    $sql = "SELECT count(*) as bool FROM User WHERE  pseudo like :login or mail like :login";
     $query = $bdd->prepare($sql);
     $query->bindParam(':login', $user);
 
     //echo $query;
 
-    if ($query->execute()){
+    try{
 
-        $fetch = $query->fetch(PDO::FETCH_OBJ);
+        if ($query->execute()){
 
-        //echo "login : ".$user."bool : ".$fetch->bool;
+            $fetch = $query->fetch(PDO::FETCH_OBJ);
 
-        if($fetch->bool == 1){
-            $bool = true;
+            //echo "login : ".$user."bool : ".$query->rowCount();
+
+
+            if($fetch->bool == 1){
+                $bool = true;
+            }
+
         }
-
+        else{
+            echo "rate";
+        }
     }
-    else{
-        echo "rate";
+    catch (Exception $e){
+        //$query->rollback();
+         //echo $e->getMessage();
     }
     $query->closeCursor();
 
@@ -41,7 +48,8 @@ function pwdExist($pwd,$bdd){
 
     $bool = false;
 
-    $sql = "SELECT  count(*) as bool FROM User WHERE  mdp like :mdp";
+    $sql = "SELECT  count(*) as bool FROM User WHERE mdp like :mdp";
+    //echo $sql;
     $query = $bdd->prepare($sql);
     $query->bindParam(':mdp', $pwd);
 
@@ -62,7 +70,7 @@ function pwdExist($pwd,$bdd){
 
 function ajouterUtilisateur($user,$ad,$pwd,$bdd){
 
-    $bool = false;
+    $bool = -1;
 
     $sql = "INSERT into User (pseudo, mail, mdp) VALUES (:pseudo, :mail, :mdp)";
     $query = $bdd->prepare($sql);
@@ -72,9 +80,11 @@ function ajouterUtilisateur($user,$ad,$pwd,$bdd){
 
     if ($query->execute()){
 
-        $bool = true;
+        $bool = $bdd->lastInsertID();
+
 
     }
+
     $query->closeCursor();
 
     return $bool;
@@ -84,24 +94,35 @@ function ajouterUtilisateur($user,$ad,$pwd,$bdd){
 
 function compteExist($user, $pwd,$bdd){
 
-    $bool = false;
+    $id = -1;
 
-    $sql = "SELECT  count(*) as bool FROM User WHERE  mdp like :mdp AND (pseudo like :login or mail like :login)";
+    $sql = "SELECT id FROM User WHERE  mdp like :mdp AND (pseudo like :login or mail like :login)";
     $query = $bdd->prepare($sql);
     $query->bindParam(':mdp', $pwd);
     $query->bindParam(':login', $user);
     if ($query->execute()){
 
         $fetch = $query->fetch(PDO::FETCH_OBJ);
-        if($fetch->bool == 1){
-            $bool = true;
+        if ($query->execute()){
+
+            $fetch = $query->fetch(PDO::FETCH_OBJ);
+
+            //echo "login : ".$user."bool : ".$query->rowCount();
+
+            if($query->rowCount() == 1){
+                $id = $fetch->id;
+            }
+
+        }
+        else{
+            echo "rate";
         }
 
     }
 
     $query->closeCursor();
 
-    return $bool;
+    return $id;
 
 }
 
@@ -147,7 +168,7 @@ function listeDesOffresDembauches($bdd){
 
     //echo "passe1";
 
-    $sql = "SELECT * FROM JobOffer INNER JOIN User ON JobOffer.idUser = User.id WHERE closingDate >= '".date("Y-m-d")."'";
+    $sql = "SELECT *, DATE_FORMAT(beginningDate, '%d/%m/%Y') as dateD, DATE_FORMAT(closingDate, '%d/%m/%Y') as dateF FROM JobOffer INNER JOIN User ON JobOffer.idUser = User.id WHERE closingDate >= '".date("Y-m-d")."'";
 
     //echo $sql;
 
@@ -163,11 +184,11 @@ function listeDesOffresDembauches($bdd){
 
         while ($fetch = $query->fetch(PDO::FETCH_OBJ)){
 
-            $dateD = date("d-m-Y",strtotime(str_replace('-','/',$fetch->beginningDate)));
-            $dateF = date("d-m-Y",strtotime(str_replace('-','/',$fetch->closingDate)));
+            //$dateD = date("d-m-Y",strtotime(str_replace('-','/',$fetch->beginningDate)));
+            //$dateF = date("d-m-Y",strtotime(str_replace('-','/',$fetch->closingDate)));
 
-            $lesOffres[$i]['dateD'] = $dateD;
-            $lesOffres[$i]['dateF'] = $dateF;
+            $lesOffres[$i]['dateD'] = $fetch->dateD;
+            $lesOffres[$i]['dateF'] = $fetch->dateF;
             $lesOffres[$i]['titre'] = $fetch->title;
             $lesOffres[$i]['resume'] = $fetch->resume;
             $lesOffres[$i]['description'] = $fetch->resumeLong;
@@ -191,6 +212,69 @@ function listeDesOffresDembauches($bdd){
     $query->closeCursor();
 
     return $lesOffres;
+
+
+}
+
+function infosUser($bdd, $idUser){
+
+    /*ON PEUT VOIR LES OFFRES QUI ONT COMMENCEES MAIS PAS CELLES QUI SONT TERMINEES A MOINS D'ETRE SELECTIONNER*/
+    /*PREVOIR UN TRIGGER POUR SURPPRIMER AU BOUT DE 1 ANS.*/
+
+    //echo "passe1";
+
+    $sql = "SELECT *, DATE_FORMAT(naissance,'%d/%m/%Y') as dateNaissance FROM User u WHERE u.id = '".$idUser."'";
+
+    //echo $sql;
+
+    $query = $bdd->prepare($sql);
+
+    $infos = array();
+    try {
+
+        $query->execute();
+
+
+        $user = $query->fetch(PDO::FETCH_OBJ);
+
+        //print_r($infos);
+
+        $infos = array(
+
+            "prenom" => $user->prenom,
+            "nom" => $user->nom,
+            "pseudo" => $user->pseudo,
+            "description" => $user->description,
+            "mail" => $user->mail,
+            "tel" => $user->tel,
+            "mdp" => $user->mdp,
+            "profilePic" => $user->profilePic,
+            "recruteur" => $user->recruteur,
+            "telFix" => $user->telFix,
+            "naissance" => $user->dateNaissance,
+            "cv" => $user->cv,
+            "entreprise" => $user->entreprise,
+            "adresse" => $user->adresse,
+            "code_postal" => $user->code_postale,
+            "ville" => $user->libelle,
+        );
+
+        //print_r($infos);
+
+
+
+        //print_r($lesOffres);
+
+    }
+    catch (Exception $e){
+        //$bdd->rollback();
+        //echo $e->getMessage();
+    }
+
+
+    $query->closeCursor();
+
+    return $infos;
 
 
 }
