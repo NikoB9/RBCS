@@ -177,7 +177,6 @@
         border-radius: 15px;
         background-color: rgba(174, 229, 230, 0.3);
         transition: linear all .3s;
-
     }
     .cancel{
         width: 45px;

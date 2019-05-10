@@ -40,44 +40,48 @@
         color: rgba(255, 254, 255, 1) !important;
         background: #1E4C67;
     }
+    .colPersoInput{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    @media (min-width: 1176px) {
+
+        .divColAdaptative{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        #conteneurImg{
+            max-width:230px;
+            width:100%;
+            height:calc(100% - 50px);
+            border-radius: 20px;
+            border: solid 2px #1E4C67;
+            min-height: 160px;
+            margin-bottom: 12px;
+        }
+
+    }
+    @media (max-width: 1175px) {
+
+        .divColAdaptative{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #conteneurImg{
+            width:100%;
+            height:calc(100% - 50px);
+            border-radius: 20px;
+            border: solid 2px #1E4C67;
+            min-height: 160px;
+            margin-bottom: 12px;
+        }
+    }
 </style>
-
-<?php
-if (isset($extIncorrect) && $extIncorrect == true){
-    echo '
-    <div class="row" style="display: flex;flex-direction: row;justify-content: center;">
-        <div class="row" style="width: 50%; background: red !important;color: white; font-size: xx-large;border-radius: 20px;text-align: center;padding: 20px">
-            <p style="text-align: center">
-                L\'extension de la photo de profil est incorrecte.
-            </p>
-            <p style="text-align: center">
-                Les extensions acceptées sont les fichiers jpg/jpeg, png, gif et svg.
-            </p>
-        </div>
-    </div>
-    ';
-
-    $extIncorrect = false;
-}
-
-if (isset($extIncorrectSkill) && $extIncorrectSkill == true){
-    echo '
-    <div class="row" style="display: flex;flex-direction: row;justify-content: center;">
-        <div class="row" style="width: 50%; background: red !important;color: white; font-size: xx-large;border-radius: 20px;text-align: center;padding: 20px">
-            <p style="text-align: center">
-                L\'extension de la certification est incorrecte.
-            </p>
-            <p style="text-align: center">
-                La seule extension acceptée est le type PDF.
-            </p>
-        </div>
-    </div>
-    ';
-
-    $extIncorrectSkill = false;
-}
-
-?>
 
 
 <form action="" method="post" id="formSignUpComplete" enctype="multipart/form-data" >
@@ -98,55 +102,67 @@ if (isset($extIncorrectSkill) && $extIncorrectSkill == true){
 
                 <div id="alertPj">
                 </div>
+                <div id="alertPjPp">
+                </div>
 
 
                 <input type="hidden" name="userInfos">
 
                 <div class="rowPerso">
 
-
                     <div class="colPerso" style="width: 50%;">
 
-                        <fieldset style="border: solid 2px #43687e;display: grid;padding: 10px;">
+                        <fieldset style="border: solid 2px #43687e;padding: 10px;">
                             <legend style="text-align: center"><i class="user icon" style="border: none;color: #43687e"></i>Informations personnelles</legend>
 
-                            <label>Prénom : </label>
-                            <div class="ui left icon input" style="border-radius: 10px;">
-                                <i class="user icon"></i>
-                                <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="prenom" class="form-control" value="<?php echo $user["prenom"] ?>">
-                            </div>
-                            <label>Nom : </label>
-                            <div class="ui left icon input" style="border-radius: 10px;">
+                            <div class="colPersoInput">
+                                <label for="prenom">Prénom : </label>
+                                <div class="ui left icon input" style="border-radius: 10px;">
                                     <i class="user icon"></i>
-                                <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="nom" class="form-control" value="<?php echo $user["nom"] ?>">
-                            </div>
-                            <label>Pseudo : </label>
-                            <div class="ui left icon input" style="border-radius: 10px;">
-                                        <i class="user icon"></i>
-                                <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="pseudo" class="form-control" value="<?php echo $user["pseudo"] ?>">
+                                    <input id="prenom" style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="prenom" class="form-control" value="<?php echo $user["prenom"] ?>">
+                                </div>
                             </div>
 
-
-                            <label>Date de naissance : </label>
-
-                            <div class="ui left icon input" style="border-radius: 10px;">
-                                <i class="calendar icon"></i>
-                                <input style="background-color:rgba(12, 84, 96, 0.47);text-align: center;z-index: 10" type="text" id="datepickerAnniv" name="naissance"
-                                       value="<?php $date = ($user["naissance"] == '') ? date("d/m/Y") : $user["naissance"]; echo $date?>"
-                                       class="form-control">
-                                <input style="display: none" type="text" id="datepickerInutile" >
+                            <div class="colPersoInput">
+                                <label for="nom">Nom : </label>
+                                <div class="ui left icon input" style="border-radius: 10px;">
+                                    <i class="user icon"></i>
+                                    <input id="nom" style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="nom" class="form-control" value="<?php echo $user["nom"] ?>">
+                                </div>
                             </div>
 
-                            <label>Description : </label>
+                            <div class="colPersoInput">
+                                <label for="pseudo">Pseudo : </label>
+                                <div class="ui left icon input" style="border-radius: 10px;">
+                                    <i class="user icon"></i>
+                                    <input id="pseudo" style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="pseudo" class="form-control" value="<?php echo $user["pseudo"] ?>">
+                                </div>
+                            </div>
 
-                            <div class="ui left icon input" style="border-radius: 10px;">
-                                <i class="address book icon"></i>
-                                <textarea style="background-color:rgba(12, 84, 96, 0.47);padding-left: 43px" rows="5" name="description" class="form-control" value="<?php echo $user["description"] ?>"></textarea>
+                            <div class="colPersoInput">
+                                <label>Date de naissance : </label>
+
+                                <div class="ui left icon input" style="border-radius: 10px;">
+                                    <i class="calendar icon"></i>
+                                    <input style="background-color:rgba(12, 84, 96, 0.47);text-align: center;z-index: 10" type="text" id="datepickerAnniv" name="naissance"
+                                           value="<?php $date = ($user["naissance"] == '') ? date("d/m/Y") : $user["naissance"]; echo $date?>"
+                                           class="form-control">
+                                    <input style="display: none" type="text" id="datepickerInutile" >
+                                </div>
+                            </div>
+
+                            <div class="colPersoInput">
+                                <label>Description : </label>
+
+                                <div class="ui left icon input" style="border-radius: 10px;">
+                                    <i class="address book icon"></i>
+                                    <textarea style="background-color:rgba(12, 84, 96, 0.47);padding-left: 43px" rows="5" name="description" class="form-control"><?php echo $user["description"] ?></textarea>
+                                </div>
                             </div>
 
                         </fieldset>
 
-                        <fieldset style="border: solid 2px #43687e;display: grid;padding: 10px;">
+                        <fieldset style="border: solid 2px #43687e;padding: 10px;">
                             <legend style="text-align: center"><i class="archive icon" style="border: none;color: #43687e"></i>Compétences</legend>
 
                             <div class="colPerso">
@@ -196,11 +212,44 @@ if (isset($extIncorrectSkill) && $extIncorrectSkill == true){
                                     </table>
                             <?php }else{
                                 //$nomCv = explode ( "/" , $user["cv"] );
-                                echo "<a href='".$user["cv"]."' <button type=\"button\" class=\"btn btn-info\"><i style=\"border: none;
+                                echo "<a href='".$user["cv"]."' target='_blank' <button type=\"button\" class=\"btn btn-info\"><i style=\"border: none;
                                                         padding: 2px;
                                                         margin-right: 10px;
-                                                        margin-left: 5px;color: green;\" class=\"download icon\"></i>".substr(strrchr($user["cv"], '/'),1)."</button></a>";
-                            }?>
+                                                        margin-left: 5px;color: cornflowerblue;\" class=\"download icon\"></i>".substr(strrchr($user["cv"], '/'),1)."</button></a>"; ?>
+
+                                <table class="ui celled table">
+                                    <thead>
+                                    <tr>
+                                        <th>Nom du Curriculum Vitae</th>
+                                        <th>Nouvelle Pièce</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="bodyComp">
+
+
+                                    <tr id="">
+                                        <td colspan='1'>
+                                            <input id="cvNew" name="cvNew" type="text" class="form-control">
+                                        </td>
+                                        <td colspan='1' style="text-align: center;">
+                                            <!--Voir inputPjCv.addEventListener("change", handleFiles, false); Dans main.js-->
+                                            <input id="pjCvNew" class="inputfile" style="padding-left: 10px;border: inherit;" type="file" name="pjCvNew" onchange="autoNameCv(this)">
+                                            <label for="pjCvNew" data-tooltip="(pdf)">
+                                                <strong>
+                                                    <i style="border: none;
+                                                        padding: 2px;
+                                                        margin-right: 10px;
+                                                        margin-left: 5px;color: beige;" class="download icon"></i>
+                                                    Pièce officielle (PDF)
+                                                </strong>
+                                            </label>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+
+                            <?php } ?>
                             </div>
 
 
@@ -210,7 +259,12 @@ if (isset($extIncorrectSkill) && $extIncorrectSkill == true){
                     </div>
                     <div class="colPerso" style="width: 50%">
                         <div class="" style="text-align: center">
-                            <input id="file" class="inputfile" data-tooltip="(jpg/jpeg, png, gif, svg)" style="padding-left: 10px;border: inherit;" type="file" name="profilePic" onchange="readURL(this)">
+                            <?php if (file_exists($user['profilePic'])){
+                                echo '<input id="file" class="inputfile" data-tooltip="(jpg/jpeg, png, gif, svg)" style="padding-left: 10px;border: inherit;" type="file" name="profilePicNew" onchange="readURL(this)">';
+                            }
+                            else{ ?>
+                                <input id="file" class="inputfile" data-tooltip="(jpg/jpeg, png, gif, svg)" style="padding-left: 10px;border: inherit;" type="file" name="profilePic" onchange="readURL(this)">
+                            <?php } ?>
                             <label for="file" data-tooltip="(jpg/jpeg, png, gif, svg)">
                                 <strong>
                                     <i style="border: none;
@@ -221,8 +275,8 @@ if (isset($extIncorrectSkill) && $extIncorrectSkill == true){
                                 </strong>
                             </label>
 
-                            <div class="rowPerso">
-                                <div style="max-width:230px;width:100%;height:calc(100% - 50px);border-radius: 20px;border: solid 2px #1E4C67;min-height: 160px;margin-bottom: 12px;">
+                            <div class="divColAdaptative">
+                                <div id="conteneurImg">
                                     <div class="rowPerso">
                                         <div class="colPerso">
                                             <?php if (file_exists($user['profilePic'])){
@@ -237,11 +291,11 @@ if (isset($extIncorrectSkill) && $extIncorrectSkill == true){
                                 <div class="checkVisible">
 
                                     <?php if ($user['recruteur']){
-                                        echo '<input type="checkbox" value="F" id="checkVisible" name="checkVisible" onclick="displayOrganisation()">
+                                        echo '<input type="checkbox" value="1" id="checkVisible" name="recruteur" onclick="displayOrganisation()">
                                     <label for="checkVisible"></label>';
                                     }
                                     else{
-                                        echo '<input type="checkbox" value="F" id="checkVisible" name="checkVisible" onclick="displayOrganisation()" checked>
+                                        echo '<input type="checkbox" value="1" id="checkVisible" name="recruteur" onclick="displayOrganisation()" checked>
                                     <label for="checkVisible"></label>';
                                     }?>
 
@@ -250,37 +304,55 @@ if (isset($extIncorrectSkill) && $extIncorrectSkill == true){
 
                         </div>
 
-                        <fieldset style="border: solid 2px #43687e;display: grid;padding: 10px;">
+                        <fieldset style="border: solid 2px #43687e;padding: 10px;">
                             <legend style="text-align: center"><i class="bullhorn icon" style="border: none;color: #43687e"></i>Communication</legend>
 
 
+                            <?php if ($user['recruteur']){
+                                echo '
+                            <div class="colPersoInput">
                             <label id="labelOrg">Entreprise : </label>
                             <div id="org" class="ui left icon input" style="border-radius: 10px;">
                                 <i class="building icon"></i>
-                                <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="entreprise" class="form-control" value="<?php echo $user['entreprise'] ?>">
+                                <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="entreprise" class="form-control" value="'.$user['entreprise'].'">
+                            </div>
+                            </div>';
+                            }
+                            else{
+                                echo '<label id="labelOrg" style="display: none">Entreprise : </label>
+                            <div id="org" class="ui left icon input" style="border-radius: 10px;display: none">
+                                <i class="building icon"></i>
+                                <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="entreprise" class="form-control" value="'.$user['entreprise'].'">
+                            </div>';
+                            }?>
+
+                            <div class="colPersoInput">
+                                <label>Adresse e-mail : </label>
+                                <div class="ui left icon input" style="border-radius: 10px;">
+                                    <i class="mail icon"></i>
+                                    <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="mail" class="form-control" value="<?php echo $user['mail'] ?>">
+                                </div>
                             </div>
 
-                            <label>Adresse e-mail : </label>
-                            <div class="ui left icon input" style="border-radius: 10px;">
-                                <i class="mail icon"></i>
-                                <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="mail" class="form-control" value="<?php echo $user['mail'] ?>">
+                            <div class="colPersoInput">
+                                <label>Téléphone (fixe) : </label>
+                                <div class="ui left icon input" style="border-radius: 10px;">
+                                    <i class="tty icon"></i>
+                                    <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="telFix" class="form-control" value="<?php echo $user['telFix'] ?>">
+                                </div>
                             </div>
 
-                            <label>Téléphone (fixe) : </label>
-                            <div class="ui left icon input" style="border-radius: 10px;">
-                                <i class="tty icon"></i>
-                                <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="telFix" class="form-control" value="<?php echo $user['telFix'] ?>">
-                            </div>
-
-                            <label>Téléphone (mobile) : </label>
-                            <div class="ui left icon input" style="border-radius: 10px;">
-                                <i class="mobile icon"></i>
-                                <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="tel" class="form-control" value="<?php echo $user['tel'] ?>">
+                            <div class="colPersoInput">
+                                <label>Téléphone (mobile) : </label>
+                                <div class="ui left icon input" style="border-radius: 10px;">
+                                    <i class="mobile icon"></i>
+                                    <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="tel" class="form-control" value="<?php echo $user['tel'] ?>">
+                                </div>
                             </div>
 
                         </fieldset>
 
-                        <fieldset style="border: solid 2px #43687e;display: grid;padding: 10px;">
+                        <fieldset style="border: solid 2px #43687e;padding: 10px;">
                             <legend style="text-align: center"><i class="home icon" style="border: none;color: #43687e"></i>Localisation</legend>
 
 
@@ -288,11 +360,13 @@ if (isset($extIncorrectSkill) && $extIncorrectSkill == true){
 
                                 <div class="colPerso" style="width: 100%;">
 
-                                    <label>Adresse : </label>
+                                    <div class="colPersoInput">
+                                        <label>Adresse : </label>
 
-                                    <div class="ui left icon input" style="border-radius: 10px;">
-                                        <i class="street view icon"></i>
-                                        <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="adresse" class="form-control" value="<?php echo $user['adresse'] ?>">
+                                        <div class="ui left icon input" style="border-radius: 10px;">
+                                            <i class="street view icon"></i>
+                                            <input style="background-color:rgba(12, 84, 96, 0.47);" type="text" name="adresse" class="form-control" value="<?php echo $user['adresse'] ?>">
+                                        </div>
                                     </div>
 
                                 </div>

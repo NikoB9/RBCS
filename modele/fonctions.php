@@ -1,5 +1,4 @@
 <?php
-session_start();
 /**
  * Created by PhpStorm.
  * User: nico
@@ -256,7 +255,7 @@ function infosUser($bdd, $idUser){
             "entreprise" => $user->entreprise,
             "adresse" => $user->adresse,
             "code_postal" => $user->code_postale,
-            "ville" => $user->libelle,
+            "ville" => $user->ville,
         );
 
         //print_r($infos);
@@ -276,6 +275,52 @@ function infosUser($bdd, $idUser){
 
     return $infos;
 
+
+}
+
+function editUSer($bdd, $id, $prenom,$nom,$pseudo,$naissance,$description,$nomCv, $nomPp,
+    $recruteur,$entreprise,$mail,$telFix,$tel,$adresse,$code_postal,$ville){
+
+
+    $sql = "UPDATE User "
+        ." SET `prenom`=:prenom,"
+        ." `nom`=:nom,"
+        ." `pseudo`=:pseudo,"
+        ." `description`=:description,"
+        ." `mail`=:mail,"
+        ." `tel`=:tel,"
+        ." `profilePic`=:profilePic,"
+        ." `recruteur`=:recruteur,"
+        ." `telFix`=:telFix,"
+        ." `naissance`=STR_TO_DATE(:naissance, '%d/%m/%Y'),"
+        ." `entreprise`=:entreprise,"
+        ." `adresse`=:adresse,"
+        ." `code_postale`=:code_postale,"
+        ." `ville`=:ville,"
+        ." `cv`=:cv"
+
+        ." WHERE id=:id";
+
+    $query = $bdd->prepare($sql);
+    $query->bindParam(':prenom',$prenom);
+    $query->bindParam(':nom',$nom);
+    $query->bindParam(':pseudo',$pseudo);
+    $query->bindParam(':description',$description);
+    $query->bindParam(':mail',$mail);
+    $query->bindParam(':tel',$tel);
+    $query->bindParam(':profilePic',$nomPp);
+    $query->bindParam(':recruteur',$recruteur);
+    $query->bindParam(':telFix',$telFix);
+    $query->bindParam(':naissance',$naissance);
+    $query->bindParam(':entreprise',$entreprise);
+    $query->bindParam(':adresse',$adresse);
+    $query->bindParam(':code_postale',$code_postal);
+    $query->bindParam(':ville',$ville);
+    $query->bindParam(':cv',$nomCv);
+    $query->bindParam(':id',$id);
+
+    $query->execute();
+    $query->closeCursor();
 
 }
 
@@ -315,7 +360,7 @@ function infosUser($bdd, $idUser){
 }*/
 
 //Nb Compétence
-function nbSkill($bdd,$user){
+/*function nbSkill($bdd,$user){
 
     $sql = "SELECT max(idSkill) as nbSkill FROM AddSkill INNER JOIN User ON User.id = AddSkill.idUser"
         ." WHERE User.pseudo like ':u'";
@@ -349,4 +394,4 @@ function nbSkill($bdd,$user){
 
     $query->closeCursor();
 
-}
+}*/

@@ -5,9 +5,11 @@
  * Date: 18/12/18
  * Time: 08:38
  */
+include "modele/modele.php";
+include "modele/fonctions.php";
+$user = infosUser($bdd, $_SESSION['id']);
 
-include 'modele/modele.php';
-include 'modele/fonctions.php';
+
 $lesOffres = listeDesOffresDembauches($bdd);
 
 include 'vues/vueTopMenu2.php';

@@ -326,6 +326,11 @@ function handleFiles() {
     document.getElementById('cv').value = file[0].name
 }
 
+function autoNameCv(input){
+    var file = input.files;
+    document.getElementById('cvNew').value = file[0].name
+}
+
 
 /*
 
