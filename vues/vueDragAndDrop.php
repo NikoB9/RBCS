@@ -4,56 +4,17 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../assets/css/style.css">
     <title></title>
-
-    <style>
-        .rowPerso{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            heigth-min: 100%;
-        }
-        .dropper{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            heigth: 100vh;
-            width: 88vw;
-            margin-left: 20vw;
-            border: solid blue;
-        }
-        .Selection{
-            position: fixed;
-            top:0;
-            left:0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            heigth: 100vh;
-            width: 18vw;
-            margin-rigth: 2vw;
-            border: solid blue;
-        }
-        iframe{
-            heigth: 25vh;
-            width: 60vw;
-            margin-rigth: 2vw;
-            margin-left: 2vw;
-        }
-    </style>
 </head>
 
 <body>
 
-<div class="rowPerso">
 
     <div class="Selection">
         <div>
             <p>Nombre de QCM : <span id="nbQCM"></span> | Nombre de QCU : <span id="nbQCU"></span> </p>
-            <button type="button" onclick="">Terminer</button>
-            <button type="button" onclick="">Annuler</button>
-
+            <button type="button" onclick="" class="success">Terminer</button>
+            <button type="button" onclick="" class="danger">Annuler</button>
         </div>
-    </br>
         <div class="draggable" draggable="true">QCM</div>
         <div class="draggable" draggable="true">QCU</div>
     </div>
@@ -61,7 +22,6 @@
     <div class="dropper">
     </div>
 
-</div>
 <script>
     var nbQCM = 0;
     var nbQCU = 0;

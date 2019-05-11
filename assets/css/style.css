@@ -1,3 +1,90 @@
-.dropper {
-	border: 5px solid red !important;
+:root {
+	--blue-1: 99, 202, 185;
+	--red: 254, 88, 88;
+	--yellow: 255, 181, 72;
+	--purple: 99, 93, 157;
+	--blue-2: 17, 58, 114;
 }
+
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+	background: none;
+}
+
+html {
+	font-size: 14px;
+	background: rgb(var(--blue-2), .3);
+	background: linear-gradient(225deg, rgba(var(--blue-2), .3) 0%, rgba(var(--blue-2), .8) 100%);
+}
+
+body {
+	display: grid;
+	grid-template-columns: 1rem 300px auto 1rem;
+	grid-template-rows: 50px auto auto;
+	grid-template-areas: 
+		". 		header 		header 		."
+		". 		selection 	dropper 		."
+		". 		. 			dropper 		."
+		;
+	grid-gap: 1.5rem;
+}
+
+button {
+	border-radius: 100rem;
+	padding: .3rem .5rem;
+}
+button.success {
+	background: rgb(var(--blue-1));
+}
+button.danger {
+	background: rgb(var(--red));
+}
+
+.selection {
+	grid-area: selection;
+	position: sticky;
+	top: 2rem;
+	background: rgb(var(--red));
+	border-radius: .5rem;
+	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .5);
+}
+
+.selection div {
+	margin: 2rem 1.5rem;
+	padding: 1rem;
+	border-radius: 1rem;
+	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .3);
+	transition: all ease-in-out .3s;
+}
+
+.selection > *:not(.draggable) {
+	background: rgb(var(--blue-2));
+	color: white;
+}
+
+.selection > .draggable {
+	background: rgb(var(--yellow));
+}
+
+.selection:hover > .draggable {
+	opacity: .7;
+	box-shadow: none;
+}
+
+.selection:hover > .draggable:hover {
+	border-radius: 0;
+	opacity: 1;
+	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .7);
+}
+
+.dropper {
+	grid-area: dropper;
+	border-radius: 2rem;
+	background: rgb(var(--purple));
+	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .5);
+	padding: 2rem;
+}
+
