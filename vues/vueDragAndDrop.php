@@ -6,7 +6,14 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <title></title>
 </head>
-
+<script>
+    var ID = [];
+    var IdReponse = "IdReponse"+ID[0];
+    var ReponseType = [];
+    var nbQCM = 0;
+    var nbQCU = 0;
+    var idQuestion = 0;
+</script>
 <body>
 
     <div class="header">
@@ -15,7 +22,8 @@
 
     <div class="Selection">
         <div>
-            <p>Nombre de QCM : <span id="nbQCM"></span></p><p>Nombre de QCU : <span id="nbQCU"></span></p><br>
+            <p>Nombre de QCM : <span id="nbQCM"></span></p><br>
+            <p>Nombre de QCU : <span id="nbQCU"></span> </p><br>
             <button type="button" onclick="" class="success">Terminer</button>
             <button type="button" onclick="" class="danger">Annuler</button>
         </div>
@@ -27,11 +35,9 @@
     </div>
 
 <script>
-    var nbQCM = 0;
-    var nbQCU = 0;
     ActualiserCompteur();
 
-    var idIframe = 0;
+
     (function() {
 
         var dndHandler = {
@@ -76,9 +82,9 @@
                     target.className = 'dropper'; // Application du design par défaut
 
                     clonedElement = target.appendChild(clonedElement); // Ajout de l'élément cloné à la zone de drop actuelle
-                    clonedElement.id = idIframe;
-                    AjouterQuestion(idIframe)
-                    idIframe = idIframe + 1;
+                    clonedElement.id ="divQuestion"+idQuestion;
+                    AjouterQuestion(idQuestion)
+                    idQuestion = idQuestion + 1;
                     dndHandler.applyDragEvents(clonedElement); // Nouvelle application des événements qui ont été perdus lors du cloneNode()
 
                     if (target == draggedElement.parentNode){
@@ -107,21 +113,44 @@
 
     })();
 
-    function AjouterQuestion(idIframe) {
-        divdropper = document.getElementById(idIframe);
+    function AjouterQuestion(idQuestionParam) {
+        divdropper = document.getElementById("divQuestion"+idQuestionParam);
         if (divdropper.innerHTML == "QCM"){
-            typeQuestion = "1";
+            ReponseType.push("checkbox");
             nbQCM = nbQCM + 1;
         }
         else{
-            typeQuestion = "0";
+            ReponseType.push("radio");
             nbQCU = nbQCU + 1;
         }
+        ID.push(0);
         ActualiserCompteur();
         divdropper.innerHTML="";
-        const iframe = document.createElement('iframe');
-        iframe.src = './Composant_form/FormQestion.php?estQCM='+typeQuestion;
-        divdropper.appendChild(iframe);
+
+        const inputText = document.createElement('input');
+        inputText.type="text";
+        inputText.name="titre";
+        inputText.placeholder="titre";
+        divdropper.appendChild(inputText);
+
+        const inputText2 = document.createElement('input');
+        inputText2.type="text";
+        inputText2.name="qestion";
+        inputText2.placeholder="qestion";
+        divdropper.appendChild(inputText2);
+
+        const divReponse = document.createElement('div');
+        divReponse.id="divReponse"+idQuestionParam;
+        divdropper.appendChild(divReponse);
+
+        const buttonAjouter = document.createElement('button');
+        buttonAjouter.type="button";
+        buttonAjouter.id="buttonAjouter"+idQuestionParam;
+        buttonAjouter.addEventListener("click", function() {AjouterReponse('divReponse'+idQuestionParam, idQuestionParam)} );
+        divdropper.appendChild(buttonAjouter);
+        buttonAjouterIH = document.getElementById("buttonAjouter"+idQuestionParam);
+        buttonAjouterIH.innerHTML = "Ajouter une reponse";
+
     }
 
     function ActualiserCompteur(){
@@ -130,6 +159,27 @@
 
         spanNbQCM = document.getElementById('nbQCU');
         spanNbQCM.innerHTML=' '+nbQCU+' ';
+    }
+    function AjouterReponse (num, idQ) {
+        IdReponse = "IdReponse" + ID[idQ];
+        divIdReponse = document.getElementById(num);
+        const InputText = document.createElement('input');
+        InputText.placeholder = "Reponse";
+        InputText.type = 'text';
+        InputText.name = IdReponse;
+        divIdReponse.appendChild(InputText);
+
+        const checkboxReponse = document.createElement('input');
+        checkboxReponse.type = ReponseType[idQ];
+        checkboxReponse.name = 'checkbox[]';
+        checkboxReponse.value = ID[idQ];
+        divIdReponse.appendChild(checkboxReponse);
+
+        const Sautligne = document.createElement('br');
+        divIdReponse.appendChild(Sautligne);
+
+        ID[idQ]++;
+        IdReponse = "IdReponse" + ID[idQ];
     }
 
 </script>

@@ -57,7 +57,7 @@ else
 
     <div id="divReponse"></div>
 
-    <button type="button" onclick="AjouterReponse()">Ajouter une reponse</button>
+    <button type="button" onclick="AjouterReponse(1)">Ajouter une reponse</button>
     <input type="submit" name="valider" class="" value="valider">
 </form>
 </body>
@@ -66,10 +66,11 @@ else
 
 <script>
 
-    function AjouterReponse () {
-        divIdReponse = document.getElementById('divReponse');
+    function AjouterReponse (num) {
 
+        divIdReponse = document.getElementById('divReponse');
         const InputText = document.createElement('input');
+        InputText.placeholder=num;
         InputText.type = 'text';
         InputText.name = IdReponse;
         divIdReponse.appendChild(InputText);

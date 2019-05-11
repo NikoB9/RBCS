@@ -104,6 +104,8 @@
                 </div>
                 <div id="alertPjPp">
                 </div>
+                <div id="alertPseudo">
+                </div>
 
 
                 <input type="hidden" name="userInfos">
