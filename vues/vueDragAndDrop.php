@@ -2,6 +2,7 @@
 ?>
 <html><head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title></title>
 
     <style>
@@ -31,6 +32,12 @@
             width: 18vw;
             margin-rigth: 2vw;
             border: solid blue;
+        }
+        iframe{
+            heigth: 25vh;
+            width: 60vw;
+            margin-rigth: 2vw;
+            margin-left: 2vw;
         }
     </style>
 </head>
@@ -135,8 +142,6 @@
         }
         divdropper.innerHTML="";
         const iframe = document.createElement('iframe');
-        iframe.width = '300';
-        iframe.height = '200';
         iframe.src = './Composant_form/FormQestion.php?estQCM='+typeQuestion;
         divdropper.appendChild(iframe);
 
@@ -147,11 +152,3 @@
 
 
 </body></html>
-
-
-<iframe id="inlineFrameExample"
-        title="Inline Frame Example"
-        width="300"
-        height="200"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik%22%3E
-</iframe>

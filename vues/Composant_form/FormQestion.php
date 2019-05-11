@@ -58,7 +58,7 @@ else
 
     <div id="divReponse"></div>
 
-    <button type="button" onclick="AjouterReponse()">Ajouter</button>
+    <button type="button" onclick="AjouterReponse()">Ajouter une reponse</button>
     <input type="submit" name="valider" class="" value="valider">
 </form>
 </body>
