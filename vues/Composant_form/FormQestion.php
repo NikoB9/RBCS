@@ -29,7 +29,6 @@ if(isset($_POST["checkbox"])) {
     $query = $bdd->prepare($sql);
 
         foreach ($_POST["checkbox"] as $valeur) {
-            echo $tabId[$valeur];
             $query->bindParam(':idReponse', $tabId[$valeur]);
             $query->execute();
         }

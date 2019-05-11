@@ -2,7 +2,7 @@
 ?>
 <html><head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title></title>
 
     <style>
@@ -47,6 +47,13 @@
 <div class="rowPerso">
 
     <div class="Selection">
+        <div>
+            <p>Nombre de QCM : <span id="nbQCM"></span> | Nombre de QCU : <span id="nbQCU"></span> </p>
+            <button type="button" onclick="">Terminer</button>
+            <button type="button" onclick="">Annuler</button>
+
+        </div>
+    </br>
         <div class="draggable" draggable="true">QCM</div>
         <div class="draggable" draggable="true">QCU</div>
     </div>
@@ -54,8 +61,12 @@
     <div class="dropper">
     </div>
 
-​</div>
+</div>
 <script>
+    var nbQCM = 0;
+    var nbQCU = 0;
+    ActualiserCompteur();
+
     var idIframe = 0;
     (function() {
 
@@ -136,16 +147,25 @@
         divdropper = document.getElementById(idIframe);
         if (divdropper.innerHTML == "QCM"){
             typeQuestion = "1";
+            nbQCM = nbQCM + 1;
         }
         else{
             typeQuestion = "0";
+            nbQCU = nbQCU + 1;
         }
+        ActualiserCompteur();
         divdropper.innerHTML="";
         const iframe = document.createElement('iframe');
         iframe.src = './Composant_form/FormQestion.php?estQCM='+typeQuestion;
         divdropper.appendChild(iframe);
+    }
 
+    function ActualiserCompteur(){
+        spanNbQCM = document.getElementById('nbQCM');
+        spanNbQCM.innerHTML=' '+nbQCM+' ';
 
+        spanNbQCM = document.getElementById('nbQCU');
+        spanNbQCM.innerHTML=' '+nbQCU+' ';
     }
 
 </script>
