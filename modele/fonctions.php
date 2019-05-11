@@ -209,7 +209,7 @@ function listeDesOffresDembauches($bdd){
 
     //echo "passe1";
 
-    $sql = "SELECT *, DATE_FORMAT(beginningDate, '%d/%m/%Y') as dateD, DATE_FORMAT(closingDate, '%d/%m/%Y') as dateF FROM JobOffer INNER JOIN User ON JobOffer.idUser = User.id WHERE closingDate >= '".date("Y-m-d")."'";
+    $sql = "SELECT *, JobOffer.id as idOffre, DATE_FORMAT(beginningDate, '%d/%m/%Y') as dateD, DATE_FORMAT(closingDate, '%d/%m/%Y') as dateF FROM JobOffer INNER JOIN User ON JobOffer.idUser = User.id WHERE closingDate >= '".date("Y-m-d")."'";
 
     //echo $sql;
 
@@ -228,6 +228,7 @@ function listeDesOffresDembauches($bdd){
             //$dateD = date("d-m-Y",strtotime(str_replace('-','/',$fetch->beginningDate)));
             //$dateF = date("d-m-Y",strtotime(str_replace('-','/',$fetch->closingDate)));
 
+            $lesOffres[$i]['id'] = $fetch->idOffre;
             $lesOffres[$i]['dateD'] = $fetch->dateD;
             $lesOffres[$i]['dateF'] = $fetch->dateF;
             $lesOffres[$i]['titre'] = $fetch->title;
@@ -246,7 +247,7 @@ function listeDesOffresDembauches($bdd){
     }
     catch (Exception $e){
         //$query->rollback();
-     //   echo $e->getMessage();
+        //echo $e->getMessage();
     }
 
 

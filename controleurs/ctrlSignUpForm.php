@@ -315,7 +315,7 @@ elseif ($pjProfilePc == false){
 }
 elseif ($userAlreadyExist){
     echo "<script>
-    document.getElementById('alertPjPp').innerHTML =
+    document.getElementById('alertPseudo').innerHTML =
     '<div class=\"alert alert-danger\" role=\"alert\">'
       +'<h4 class=\"alert-heading\">Utilisateur existant</h4>'
       +'<p>Vous avez essayé de modifier votre pseudo ou votre adresse de messagerie et nous n\'y voyons pas d\'inconvénient.</p>'
