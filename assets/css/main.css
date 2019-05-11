@@ -199,6 +199,80 @@ input#checkVisible{
 
 /***********OPEN LATERAL MENU****************/
 
+#lateralMenu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 75vh;
+    background: #1E4C67;
+    z-index: 10;
+    margin-top: 15vh;
+    margin-bottom: 10vh;
+    background: linear-gradient(to right, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 100% ), url("../img/fond1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: none;
+    overflow: auto;
+
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari et Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* sur Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* sur Safari et Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* sur Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.card.perso{
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 0;
+    width: 87px !important;
+}
+
+.rowPerso.menuL .card.perso .card-body{
+    padding: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.rowPerso.menuL .card.perso .card-footer{
+    padding: 0;
+    text-align: center;
+}
+
 .divMenuLateralBtn{
     background: #3c6177;
     width: 80px;

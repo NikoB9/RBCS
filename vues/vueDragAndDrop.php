@@ -1,4 +1,42 @@
 <?php
+if(isset($_POST["titre0"])) {
+    include "../modele/modele.php";
+    $IdQuestion = 0;
+    while (isset($_POST["titre".$IdQuestion])) {
+        $sql = "INSERT into question (titre, question, estQCM) VALUES ( :titre, :question, :estQCM)";
+        $query = $bdd->prepare($sql);
+        $query->bindParam(':titre', $_POST["titre".$IdQuestion]);
+        $query->bindParam(':question', $_POST["qestion".$IdQuestion]);
+        $query->bindParam(':estQCM', $_POST["estQCM".$IdQuestion]);
+        $query->execute();
+
+        $idQuestion = $bdd->lastInsertId();
+
+        $sql = "INSERT into reponse (idQuestion, reponse, estValide) VALUES ( :idQuestion, :reponse, FALSE )";
+        $query = $bdd->prepare($sql);
+        $query->bindParam(':idQuestion', $idQuestion);
+
+        $tabId = array();
+        $IdReponse = 0;
+        while (isset($_POST[$IdQuestion."IdReponse".$IdReponse])) {
+            $query->bindParam(':reponse', $_POST[$IdQuestion."IdReponse".$IdReponse]);
+            $query->execute();
+            $IdReponse = $IdReponse + 1;
+            array_push($tabId, $bdd->lastInsertId());
+        }
+        $query->closeCursor();
+
+        $sql = "UPDATE reponse SET estValide = TRUE WHERE idReponse = :idReponse";
+        $query = $bdd->prepare($sql);
+
+        foreach ($_POST["checkbox".$IdQuestion] as $valeur) {
+            $query->bindParam(':idReponse', $tabId[$valeur]);
+            $query->execute();
+        }
+        $query->closeCursor();
+        $IdQuestion = $IdQuestion + 1;
+    }
+}
 ?>
 <html><head>
     <meta charset="utf-8">
@@ -6,32 +44,39 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <title></title>
 </head>
-
+<script>
+    var ID = [];
+    var IdReponse = "IdReponse"+ID[0];
+    var ReponseType = [];
+    var nbQCM = 0;
+    var nbQCU = 0;
+    var idQuestion = 0;
+</script>
 <body>
-
+<form class="" method="post" action="">
     <div class="header">
         HEADER
     </div>
 
     <div class="Selection">
         <div>
-            <p>Nombre de QCM : <span id="nbQCM"></span></p><p>Nombre de QCU : <span id="nbQCU"></span></p><br>
-            <button type="button" onclick="" class="success">Terminer</button>
+            <p>Nombre de QCM : <span id="nbQCM"></span></p><br>
+            <p>Nombre de QCU : <span id="nbQCU"></span> </p><br>
+            <button type="submit" onclick="" class="success">Terminer</button>
             <button type="button" onclick="" class="danger">Annuler</button>
         </div>
         <div class="draggable" draggable="true">QCM</div>
         <div class="draggable" draggable="true">QCU</div>
     </div>
+        <div class="dropper">
+        </div>
 
-    <div class="dropper">
-    </div>
+
 
 <script>
-    var nbQCM = 0;
-    var nbQCU = 0;
     ActualiserCompteur();
 
-    var idIframe = 0;
+
     (function() {
 
         var dndHandler = {
@@ -76,9 +121,9 @@
                     target.className = 'dropper'; // Application du design par défaut
 
                     clonedElement = target.appendChild(clonedElement); // Ajout de l'élément cloné à la zone de drop actuelle
-                    clonedElement.id = idIframe;
-                    AjouterQuestion(idIframe)
-                    idIframe = idIframe + 1;
+                    clonedElement.id ="divQuestion"+idQuestion;
+                    AjouterQuestion(idQuestion)
+                    idQuestion = idQuestion + 1;
                     dndHandler.applyDragEvents(clonedElement); // Nouvelle application des événements qui ont été perdus lors du cloneNode()
 
                     if (target == draggedElement.parentNode){
@@ -107,21 +152,57 @@
 
     })();
 
-    function AjouterQuestion(idIframe) {
-        divdropper = document.getElementById(idIframe);
+    function AjouterQuestion(idQuestionParam) {
+        divdropper = document.getElementById("divQuestion"+idQuestionParam);
         if (divdropper.innerHTML == "QCM"){
-            typeQuestion = "1";
+            inputHiddenValue = 0;
+            ReponseType.push("checkbox");
             nbQCM = nbQCM + 1;
         }
         else{
-            typeQuestion = "0";
+            inputHiddenValue = 1;
+            ReponseType.push("radio");
             nbQCU = nbQCU + 1;
         }
+
+        ID.push(0);
         ActualiserCompteur();
         divdropper.innerHTML="";
-        const iframe = document.createElement('iframe');
-        iframe.src = './Composant_form/FormQestion.php?estQCM='+typeQuestion;
-        divdropper.appendChild(iframe);
+
+        const inputHidden = document.createElement('input');
+        inputHidden.type="hidden";
+        inputHidden.name="estQCM"+idQuestionParam;
+        inputHidden.id="estQCM"+idQuestionParam;
+        inputHidden.value=inputHiddenValue;
+        divdropper.appendChild(inputHidden);
+
+        const inputText = document.createElement('input');
+        inputText.type="text";
+        inputText.name="titre"+idQuestionParam;
+        inputText.placeholder="titre";
+        divdropper.appendChild(inputText);
+
+        const Sautligne = document.createElement('br');
+        divdropper.appendChild(Sautligne);
+
+        const inputText2 = document.createElement('input');
+        inputText2.type="text";
+        inputText2.name="qestion"+idQuestionParam;
+        inputText2.placeholder="qestion";
+        divdropper.appendChild(inputText2);
+
+        const divReponse = document.createElement('div');
+        divReponse.id="divReponse"+idQuestionParam;
+        divdropper.appendChild(divReponse);
+
+        const buttonAjouter = document.createElement('button');
+        buttonAjouter.type="button";
+        buttonAjouter.id="buttonAjouter"+idQuestionParam;
+        buttonAjouter.addEventListener("click", function() {AjouterReponse('divReponse'+idQuestionParam, idQuestionParam)} );
+        divdropper.appendChild(buttonAjouter);
+        buttonAjouterIH = document.getElementById("buttonAjouter"+idQuestionParam);
+        buttonAjouterIH.innerHTML = "Ajouter une reponse";
+
     }
 
     function ActualiserCompteur(){
@@ -131,8 +212,29 @@
         spanNbQCM = document.getElementById('nbQCU');
         spanNbQCM.innerHTML=' '+nbQCU+' ';
     }
+    function AjouterReponse (num, idQ) {
+        IdReponse = idQ + "IdReponse" + ID[idQ];
+        divIdReponse = document.getElementById(num);
+        const InputText = document.createElement('input');
+        InputText.placeholder = "Reponse";
+        InputText.type = 'text';
+        InputText.name = IdReponse;
+        divIdReponse.appendChild(InputText);
+
+        const checkboxReponse = document.createElement('input');
+        checkboxReponse.type = ReponseType[idQ];
+        checkboxReponse.name = 'checkbox'+idQ+"[]";
+        checkboxReponse.value = ID[idQ];
+        divIdReponse.appendChild(checkboxReponse);
+
+        const Sautligne = document.createElement('br');
+        divIdReponse.appendChild(Sautligne);
+
+        ID[idQ]++;
+        IdReponse = idQ + "IdReponse" + ID[idQ];
+    }
 
 </script>
 
-
+</form>
 </body></html>

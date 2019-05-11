@@ -21,7 +21,7 @@ html {
 	background: linear-gradient(225deg, rgba(var(--blue-2), .3) 0%, rgba(var(--blue-2), .8) 100%);
 }
 
-body {
+form {
 	display: grid;
 	grid-template-columns: 1rem 20rem auto 1rem;
 	grid-template-rows: 1rem 5rem auto auto;
