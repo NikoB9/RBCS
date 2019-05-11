@@ -2,16 +2,20 @@
 ?>
 <html><head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
     <title></title>
 </head>
 
 <body>
 
+    <div class="header">
+        HEADER
+    </div>
 
     <div class="Selection">
         <div>
-            <p>Nombre de QCM : <span id="nbQCM"></span> | Nombre de QCU : <span id="nbQCU"></span> </p>
+            <p>Nombre de QCM : <span id="nbQCM"></span></p><p>Nombre de QCU : <span id="nbQCU"></span></p><br>
             <button type="button" onclick="" class="success">Terminer</button>
             <button type="button" onclick="" class="danger">Annuler</button>
         </div>
