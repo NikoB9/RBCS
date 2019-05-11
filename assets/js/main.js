@@ -278,6 +278,58 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+    $( "#datepickerDebut" ).datepicker({
+        dateFormat: 'dd/mm/yy',
+        defaultDate: "+1w",
+        numberOfMonths: 2,
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '-100:+0',
+        maxDate: '+0Y',
+        onClose: function( selectedDate ) {
+            $( "#datepickerInutile" ).datepicker( "option", "minDate", selectedDate );
+        }
+    });
+    $( "#datepickerInutile" ).datepicker({
+        dateFormat: 'dd/mm/yy',
+        defaultDate: "+1w",
+        numberOfMonths: 2,
+        changeMonth: true,
+        changeYear: true,
+        maxDate: '+0Y',
+        onClose: function( selectedDate ) {
+            $( "#datepickerDebut" ).datepicker( "option", "maxDate", selectedDate );
+        }
+    });
+});
+
+$(document).ready(function() {
+    $( "#datepickerFin" ).datepicker({
+        dateFormat: 'dd/mm/yy',
+        defaultDate: "+1w",
+        numberOfMonths: 2,
+        changeMonth: true,
+        changeYear: true,
+        yearRange: '-100:+0',
+        maxDate: '+0Y',
+        onClose: function( selectedDate ) {
+            $( "#datepickerInutile2" ).datepicker( "option", "minDate", selectedDate );
+        }
+    });
+    $( "#datepickerInutile2" ).datepicker({
+        dateFormat: 'dd/mm/yy',
+        defaultDate: "+1w",
+        numberOfMonths: 2,
+        changeMonth: true,
+        changeYear: true,
+        maxDate: '+0Y',
+        onClose: function( selectedDate ) {
+            $( "#datepickerFin" ).datepicker( "option", "maxDate", selectedDate );
+        }
+    });
+});
+
 
 //AjaxAddSkil
 function addSkillAjax(libelleSkill){

@@ -25,7 +25,7 @@
     <div class="rowPerso">
         <div class="card" id="cardForm" style="background: <?php echo $uneOffre['couleurFond'] ?>;opacity: 1;">
             <div class="card-header">
-                <?php echo $uneOffre['titre'] ?>
+                Offre n°<?php echo $uneOffre['id']." : ".$uneOffre['titre']  ?>
             </div>
             <div class="card-body">
                 <!--<b><u>Offre</u> :</b>-->
@@ -40,8 +40,8 @@
                 </div>
             </div>
             <div class="card-footer">
-                Offre valable du <?php echo $uneOffre['dateD'] ?> au <?php echo $uneOffre['dateF'] ?>
-                Recruteur : <?php echo $uneOffre['recruteur'] ?>
+                <span style="float: left">Offre valable du <?php echo $uneOffre['dateD'] ?> au <?php echo $uneOffre['dateF'] ?></span>
+                <span style="float: right">Recruteur : <?php echo $uneOffre['recruteur'] ?></span>
             </div>
         </div>
     </div>
