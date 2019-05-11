@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56fa5d6d-b6f2-4162-bf1d-51707354515f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/img/resume.svg" afterDir="false" />
+    <list default="true" id="56fa5d6d-b6f2-4162-bf1d-51707354515f" name="Default Changelist" comment="enregistrement données user en cours et adaptation pour modification formulaire">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleurs/ctrlSignUpForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleurs/ctrlSignUpForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modele/fonctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/fonctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vues/vueTopMenu2.php" beforeDir="false" afterPath="$PROJECT_DIR$/vues/vueTopMenu2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vues/Composant_form/FormQestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/vues/Composant_form/FormQestion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vues/vueDragAndDrop.php" beforeDir="false" afterPath="$PROJECT_DIR$/vues/vueDragAndDrop.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,70 +12,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1341051679">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="8" />
-          <entry key="project.open.time.23" value="1" />
-          <entry key="project.open.time.27" value="1" />
-          <entry key="project.open.time.35" value="2" />
-          <entry key="project.open.time.39" value="2" />
-          <entry key="project.open.time.41" value="1" />
-          <entry key="project.open.time.43" value="1" />
-          <entry key="project.open.time.44" value="1" />
-          <entry key="project.open.time.45" value="1" />
-          <entry key="project.open.time.46" value="2" />
-          <entry key="project.open.time.47" value="1" />
-          <entry key="project.open.time.51" value="1" />
-          <entry key="project.open.time.55" value="1" />
-          <entry key="project.open.time.56" value="1" />
-          <entry key="project.open.time.64" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="18" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="css" value="7" />
-          <entry key="jpeg" value="4" />
-          <entry key="js" value="10" />
-          <entry key="log_error" value="1" />
-          <entry key="php" value="55" />
-          <entry key="png" value="5" />
-          <entry key="svg" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="7" />
-          <entry key="Image" value="9" />
-          <entry key="JavaScript" value="10" />
-          <entry key="PHP" value="55" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="SVG" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="701" />
-          <entry key="js" value="2109" />
-          <entry key="php" value="14800" />
-          <entry key="svg" value="14" />
-          <entry key="txt" value="223" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="701" />
-          <entry key="HTML" value="39" />
-          <entry key="JavaScript" value="2109" />
-          <entry key="PHP" value="14761" />
-          <entry key="PLAIN_TEXT" value="223" />
-          <entry key="SVG" value="14" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="RBCS" />
@@ -86,76 +23,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modele/fonctions.php">
+        <entry file="file://$PROJECT_DIR$/vues/Composant_form/FormQestion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="51" column="29" lean-forward="true" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modele/modele.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="55">
+              <caret line="60" column="72" selection-start-line="60" selection-start-column="72" selection-end-line="60" selection-end-column="72" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vues/vueTopMenu2.php">
+        <entry file="file://$PROJECT_DIR$/vues/vueDragAndDrop.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="19" column="104" selection-start-line="19" selection-start-column="104" selection-end-line="19" selection-end-column="104" />
-              <folding>
-                <element signature="e#719#725#0#HTML" expanded="true" />
-                <element signature="e#838#844#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/img/resume.svg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controleurs/ctrlAccueil.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="157" column="23" selection-start-line="157" selection-start-column="17" selection-end-line="157" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controleurs/ctrlSignUpForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="322" column="86" selection-start-line="322" selection-start-column="86" selection-end-line="322" selection-end-column="86" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="655">
+              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -164,6 +44,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>reset</find>
       <find>oncl</find>
       <find>transition: linear all .4s;</find>
       <find>hidde</find>
@@ -193,7 +74,6 @@
       <find>botM</find>
       <find>ico</find>
       <find>use</find>
-      <find>icon</find>
     </findStrings>
     <replaceStrings>
       <replace>transition: linear all .3s;</replace>
@@ -216,27 +96,22 @@
         <option value="$PROJECT_DIR$/controleurs/ctrlAccueil.php" />
         <option value="$PROJECT_DIR$/vues/vueAccueil.php" />
         <option value="$PROJECT_DIR$/assets/js/main.js" />
-        <option value="$PROJECT_DIR$/vues/vueSignUpForm.php" />
-        <option value="$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php" />
-        <option value="$PROJECT_DIR$/assets/css/main.css" />
         <option value="$PROJECT_DIR$/controleurs/ctrlSignUpForm.php" />
+        <option value="$PROJECT_DIR$/vues/vueSignUpForm.php" />
+        <option value="$PROJECT_DIR$/assets/css/main.css" />
         <option value="$PROJECT_DIR$/modele/fonctions.php" />
-        <option value="$PROJECT_DIR$/assets/img/resume.svg" />
+        <option value="$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php" />
         <option value="$PROJECT_DIR$/vues/vueTopMenu2.php" />
+        <option value="$PROJECT_DIR$/vues/Composant_form/FormQestion.php" />
+        <option value="$PROJECT_DIR$/vues/vueDragAndDrop.php" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.0" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1369" />
+    <option name="x" value="1368" />
     <option name="width" value="1016" />
-    <option name="height" value="575" />
+    <option name="height" value="576" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -244,36 +119,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
               <item name="RBCS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RBCS" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RBCS" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RBCS" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RBCS" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
@@ -300,22 +151,28 @@
               <item name="RBCS" type="462c0819:PsiDirectoryNode" />
               <item name="vues" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RBCS" type="462c0819:PsiDirectoryNode" />
+              <item name="vues" type="462c0819:PsiDirectoryNode" />
+              <item name="Composant_form" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Archive" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/img" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/img" />
       <recent name="$PROJECT_DIR$/assets" />
@@ -361,8 +218,8 @@
       <workItem from="1557310888087" duration="24350000" />
       <workItem from="1557405939532" duration="92000" />
       <workItem from="1557418773340" duration="12578000" />
-      <workItem from="1557515306714" duration="11720000" />
-      <workItem from="1557565404961" duration="7138000" />
+      <workItem from="1557515306714" duration="11483000" />
+      <workItem from="1557567281995" duration="3582000" />
     </task>
     <task id="LOCAL-00001" summary="Version Debut">
       <created>1551860828694</created>
@@ -392,24 +249,24 @@
       <option name="project" value="LOCAL" />
       <updated>1557351289208</updated>
     </task>
-    <task id="LOCAL-00005" summary="fin du sign up menu user et latéral à prévoir">
-      <created>1557531092801</created>
+    <task id="LOCAL-00005" summary="enregistrement données user en cours et adaptation pour modification formulaire">
+      <created>1557569938573</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1557531092801</updated>
+      <updated>1557569938573</updated>
     </task>
     <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173476000" />
+    <option name="totallyTimeSpent" value="169683000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921754" visible="true" weight="0.26685795" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921754" visible="true" weight="0.14501718" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5007825" side_tool="true" weight="0.19242424" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -455,17 +312,13 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Version Final" />
     <MESSAGE value="Version Debut" />
     <MESSAGE value="litle update" />
     <MESSAGE value="base de données et avancement du formulaire utilisateur" />
     <MESSAGE value="enregistrement données user en cours et adaptation pour modification formulaire" />
-    <MESSAGE value="fin du sign up menu user et latéral à prévoir" />
-    <option name="LAST_COMMIT_MESSAGE" value="fin du sign up menu user et latéral à prévoir" />
+    <option name="LAST_COMMIT_MESSAGE" value="enregistrement données user en cours et adaptation pour modification formulaire" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/vues/vueBottomMenu.php">
@@ -492,9 +345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vues/Composant_form/FormQestion.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -516,6 +366,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modele/modele.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.log_error">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -523,6 +380,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1427">
           <caret line="329" selection-start-line="329" selection-end-line="329" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controleurs/ctrlAccueil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -620,62 +484,55 @@
     <entry file="file://$PROJECT_DIR$/assets/img/postulant.jpeg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controleurs/ctrlAccueil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/modele.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modele/fonctions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="51" column="29" lean-forward="true" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+        <state relative-caret-position="5560">
+          <caret line="283" selection-start-line="282" selection-end-line="283" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/vueTopMenu2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="138" column="15" selection-start-line="138" selection-start-column="15" selection-end-line="138" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controleurs/ctrlSignUpForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="322" column="86" selection-start-line="322" selection-start-column="86" selection-end-line="322" selection-end-column="86" />
+        <state relative-caret-position="20">
+          <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+    <entry file="file://$PROJECT_DIR$/vues/Composant_form/FormQestion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="157" column="23" selection-start-line="157" selection-start-column="17" selection-end-line="157" selection-end-column="23" />
+        <state relative-caret-position="55">
+          <caret line="60" column="72" selection-start-line="60" selection-start-column="72" selection-end-line="60" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/img/resume.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vues/vueTopMenu2.php">
+    <entry file="file://$PROJECT_DIR$/vues/vueDragAndDrop.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="104" selection-start-line="19" selection-start-column="104" selection-end-line="19" selection-end-column="104" />
-          <folding>
-            <element signature="e#719#725#0#HTML" expanded="true" />
-            <element signature="e#838#844#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="655">
+          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
         </state>
       </provider>
     </entry>
