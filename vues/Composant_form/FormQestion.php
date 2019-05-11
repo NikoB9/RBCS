@@ -84,8 +84,8 @@ else
         const Sautligne = document.createElement('br');
         divIdReponse.appendChild(Sautligne);
 
-        ID++
-        IdReponse = "IdReponse"+ID
+        ID++;
+        IdReponse = "IdReponse"+ID;
     }
 </script>
 

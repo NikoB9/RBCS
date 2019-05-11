@@ -1,4 +1,42 @@
 <?php
+if(isset($_POST["titre0"])) {
+    include "../modele/modele.php";
+    $IdQuestion = 0;
+    while (isset($_POST["titre".$IdQuestion])) {
+        $sql = "INSERT into question (titre, question, estQCM) VALUES ( :titre, :question, :estQCM)";
+        $query = $bdd->prepare($sql);
+        $query->bindParam(':titre', $_POST["titre".$IdQuestion]);
+        $query->bindParam(':question', $_POST["qestion".$IdQuestion]);
+        $query->bindParam(':estQCM', $_POST["estQCM".$IdQuestion]);
+        $query->execute();
+
+        $idQuestion = $bdd->lastInsertId();
+
+        $sql = "INSERT into reponse (idQuestion, reponse, estValide) VALUES ( :idQuestion, :reponse, FALSE )";
+        $query = $bdd->prepare($sql);
+        $query->bindParam(':idQuestion', $idQuestion);
+
+        $tabId = array();
+        $IdReponse = 0;
+        while (isset($_POST[$IdQuestion."IdReponse".$IdReponse])) {
+            $query->bindParam(':reponse', $_POST[$IdQuestion."IdReponse".$IdReponse]);
+            $query->execute();
+            $IdReponse = $IdReponse + 1;
+            array_push($tabId, $bdd->lastInsertId());
+        }
+        $query->closeCursor();
+
+        $sql = "UPDATE reponse SET estValide = TRUE WHERE idReponse = :idReponse";
+        $query = $bdd->prepare($sql);
+
+        foreach ($_POST["checkbox".$IdQuestion] as $valeur) {
+            $query->bindParam(':idReponse', $tabId[$valeur]);
+            $query->execute();
+        }
+        $query->closeCursor();
+        $IdQuestion = $IdQuestion + 1;
+    }
+}
 ?>
 <html><head>
     <meta charset="utf-8">
@@ -15,7 +53,7 @@
     var idQuestion = 0;
 </script>
 <body>
-
+<form class="" method="post" action="">
     <div class="header">
         HEADER
     </div>
@@ -24,15 +62,16 @@
         <div>
             <p>Nombre de QCM : <span id="nbQCM"></span></p><br>
             <p>Nombre de QCU : <span id="nbQCU"></span> </p><br>
-            <button type="button" onclick="" class="success">Terminer</button>
+            <button type="submit" onclick="" class="success">Terminer</button>
             <button type="button" onclick="" class="danger">Annuler</button>
         </div>
         <div class="draggable" draggable="true">QCM</div>
         <div class="draggable" draggable="true">QCU</div>
     </div>
+        <div class="dropper">
+        </div>
 
-    <div class="dropper">
-    </div>
+
 
 <script>
     ActualiserCompteur();
@@ -116,20 +155,30 @@
     function AjouterQuestion(idQuestionParam) {
         divdropper = document.getElementById("divQuestion"+idQuestionParam);
         if (divdropper.innerHTML == "QCM"){
+            inputHiddenValue = 0;
             ReponseType.push("checkbox");
             nbQCM = nbQCM + 1;
         }
         else{
+            inputHiddenValue = 1;
             ReponseType.push("radio");
             nbQCU = nbQCU + 1;
         }
+
         ID.push(0);
         ActualiserCompteur();
         divdropper.innerHTML="";
 
+        const inputHidden = document.createElement('input');
+        inputHidden.type="hidden";
+        inputHidden.name="estQCM"+idQuestionParam;
+        inputHidden.id="estQCM"+idQuestionParam;
+        inputHidden.value=inputHiddenValue;
+        divdropper.appendChild(inputHidden);
+
         const inputText = document.createElement('input');
         inputText.type="text";
-        inputText.name="titre";
+        inputText.name="titre"+idQuestionParam;
         inputText.placeholder="titre";
         divdropper.appendChild(inputText);
 
@@ -138,7 +187,7 @@
 
         const inputText2 = document.createElement('input');
         inputText2.type="text";
-        inputText2.name="qestion";
+        inputText2.name="qestion"+idQuestionParam;
         inputText2.placeholder="qestion";
         divdropper.appendChild(inputText2);
 
@@ -164,7 +213,7 @@
         spanNbQCM.innerHTML=' '+nbQCU+' ';
     }
     function AjouterReponse (num, idQ) {
-        IdReponse = "IdReponse" + ID[idQ];
+        IdReponse = idQ + "IdReponse" + ID[idQ];
         divIdReponse = document.getElementById(num);
         const InputText = document.createElement('input');
         InputText.placeholder = "Reponse";
@@ -174,7 +223,7 @@
 
         const checkboxReponse = document.createElement('input');
         checkboxReponse.type = ReponseType[idQ];
-        checkboxReponse.name = 'checkbox[]';
+        checkboxReponse.name = 'checkbox'+idQ+"[]";
         checkboxReponse.value = ID[idQ];
         divIdReponse.appendChild(checkboxReponse);
 
@@ -182,10 +231,10 @@
         divIdReponse.appendChild(Sautligne);
 
         ID[idQ]++;
-        IdReponse = "IdReponse" + ID[idQ];
+        IdReponse = idQ + "IdReponse" + ID[idQ];
     }
 
 </script>
 
-
+</form>
 </body></html>
