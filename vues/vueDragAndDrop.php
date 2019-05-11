@@ -133,6 +133,9 @@
         inputText.placeholder="titre";
         divdropper.appendChild(inputText);
 
+        const Sautligne = document.createElement('br');
+        divdropper.appendChild(Sautligne);
+
         const inputText2 = document.createElement('input');
         inputText2.type="text";
         inputText2.name="qestion";
