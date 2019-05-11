@@ -53,6 +53,7 @@ button.danger {
 }
 button:hover, button:focus {
 	box-shadow: -2px 2px 5px currentColor;
+	transform: translate(2px, -2px);
 }
 
 [draggable] {
@@ -104,6 +105,7 @@ button:hover, button:focus {
 	border-radius: 0;
 	opacity: 1;
 	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .7);
+	transform: translate(.25rem, -.25rem);
 }
 
 .dropper {
@@ -116,5 +118,7 @@ button:hover, button:focus {
 
 .dropper > div {
 	border-radius: 3rem;
-	border-bottom: 3px solid white;
+	background: rgba(0, 0, 0, .1);
+	box-shadow: -2px 2px 5px rgba(0, 0, 0, .3);
+	margin: 1rem 0;
 }
