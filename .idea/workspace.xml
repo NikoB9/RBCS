@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56fa5d6d-b6f2-4162-bf1d-51707354515f" name="Default Changelist" comment="enregistrement données user en cours et adaptation pour modification formulaire">
+    <list default="true" id="56fa5d6d-b6f2-4162-bf1d-51707354515f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vues/Composant_form/FormQestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/vues/Composant_form/FormQestion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vues/vueDragAndDrop.php" beforeDir="false" afterPath="$PROJECT_DIR$/vues/vueDragAndDrop.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vues/Composant_form/FormQestion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="640">
+              <caret line="53" selection-start-line="53" selection-end-line="61" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -43,26 +41,25 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vues/vueDragAndDrop.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1095">
-              <caret line="63" column="6" lean-forward="true" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
+            <state relative-caret-position="1024">
+              <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/style.css">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="42" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>reset</find>
-      <find>oncl</find>
-      <find>transition: linear all .4s;</find>
-      <find>hidde</find>
-      <find>formSignUp</find>
       <find>valida</find>
       <find>signIn</find>
       <find>&lt;input type=&quot;hidden&quot; name=&quot;sign&quot; value=&quot;in&quot;&gt;</find>
@@ -88,6 +85,11 @@
       <find>botM</find>
       <find>ico</find>
       <find>use</find>
+      <find>AjouterQuestion</find>
+      <find>idIframe</find>
+      <find>ReponseType</find>
+      <find>idQuestion</find>
+      <find>ID</find>
     </findStrings>
     <replaceStrings>
       <replace>transition: linear all .3s;</replace>
@@ -134,7 +136,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,6 +189,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -249,6 +251,7 @@
       <workItem from="1557567281995" duration="3582000" />
       <workItem from="1557574617987" duration="5796000" />
       <workItem from="1557581958547" duration="597000" />
+      <workItem from="1557584217870" duration="6963000" />
     </task>
     <task id="LOCAL-00001" summary="Version Debut">
       <created>1551860828694</created>
@@ -285,17 +288,24 @@
       <option name="project" value="LOCAL" />
       <updated>1557569938573</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="enregistrement données user en cours et adaptation pour modification formulaire">
+      <created>1557592691833</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1557592691833</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176076000" />
+    <option name="totallyTimeSpent" value="183039000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921754" visible="true" weight="0.14745627" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921754" visible="true" weight="0.14864865" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5007825" side_tool="true" weight="0.19242424" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -552,19 +562,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/style.css">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="42" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vues/Composant_form/FormQestion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="640">
+          <caret line="53" selection-start-line="53" selection-end-line="61" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vues/vueDragAndDrop.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="63" column="6" lean-forward="true" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
+        <state relative-caret-position="1024">
+          <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
         </state>
       </provider>
     </entry>
