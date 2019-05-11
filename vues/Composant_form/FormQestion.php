@@ -36,7 +36,6 @@ if(isset($_POST["checkbox"])) {
     $query->closeCursor();
 }
 else
-    echo "cocher au moins une case !!!";
 
 if ($_GET["estQCM"])
     echo "<script>var typebutton = 'checkbox'</script>";
