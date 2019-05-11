@@ -16,16 +16,18 @@
 
 html {
 	font-size: 14px;
+	font-family: 'Montserrat', sans-serif;
 	background: rgb(var(--blue-2), .3);
 	background: linear-gradient(225deg, rgba(var(--blue-2), .3) 0%, rgba(var(--blue-2), .8) 100%);
 }
 
 body {
 	display: grid;
-	grid-template-columns: 1rem 300px auto 1rem;
-	grid-template-rows: 50px auto auto;
+	grid-template-columns: 1rem 20rem auto 1rem;
+	grid-template-rows: 1rem 5rem auto auto;
 	grid-template-areas: 
-		". 		header 		header 		."
+		". 		.			.				."
+		". 		.			header 			."
 		". 		selection 	dropper 		."
 		". 		. 			dropper 		."
 		;
@@ -34,13 +36,37 @@ body {
 
 button {
 	border-radius: 100rem;
-	padding: .3rem .5rem;
+	padding: .3rem .6rem;
+	/* margin: 0 .5rem; */
+	cursor: pointer;
+	text-transform: uppercase;
+	text-shadow: 0 0 1px black;
+	transition: all ease-in-out .2s;
 }
 button.success {
-	background: rgb(var(--blue-1));
+	background: rgb(var(--blue-1), .4);
+	color: rgb(var(--blue-1));
 }
 button.danger {
-	background: rgb(var(--red));
+	background: rgb(var(--red), .4);
+	color: rgb(var(--red));
+}
+button:hover, button:focus {
+	box-shadow: -2px 2px 5px currentColor;
+}
+
+[draggable] {
+	cursor: move;
+}
+
+.header {
+	grid-area: header;
+	background: white;
+	position: sticky;
+	top: .5rem;
+	border-radius: .5rem;
+	box-shadow: -.25rem .25rem 1.5rem rgba(0, 0, 0, .5);
+	padding: 1rem;
 }
 
 .selection {
@@ -88,3 +114,7 @@ button.danger {
 	padding: 2rem;
 }
 
+.dropper > div {
+	border-radius: 3rem;
+	border-bottom: 3px solid white;
+}
