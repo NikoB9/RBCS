@@ -16,6 +16,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        z-index: 11;
     }
 </style>
 

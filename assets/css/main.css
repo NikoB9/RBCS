@@ -115,9 +115,7 @@ input#checkVisible{
     z-index: 11;
 }
 
-#botMenuDiv{
-    z-index: 11;
-}
+
 
 #deconnexion{
     width: 10vh;
@@ -133,6 +131,7 @@ input#checkVisible{
 
 
 /****DROPDOWN POUR LE MENU UTILISATEUR****/
+
 .UserMenudropbtn {
     color: white;
     font-size: 16px;
@@ -196,6 +195,64 @@ input#checkVisible{
     border-radius: 30px;
     margin-top: -4.5vh;
     margin-left: -4.5vh;
+}
+
+/***********OPEN LATERAL MENU****************/
+
+.divMenuLateralBtn{
+    background: #3c6177;
+    width: 80px;
+    height: 70px;
+    position: fixed;
+    border-radius: 20px;
+    top: 10px;
+    left: 10px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    opacity: 0.8;
+}
+
+.ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.hamRotate.active {
+    transform: rotate(45deg);
+}
+.hamRotate180.active {
+    transform: rotate(180deg);
+}
+.line {
+    fill:none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke:#000;
+    stroke-width:5.5;
+    stroke-lineca
+    p:round;
+}
+
+.menuLateral .top {
+    stroke-dasharray: 40 172;
+}
+.menuLateral .middle {
+    stroke-dasharray: 40 111;
+}
+.menuLateral .bottom {
+    stroke-dasharray: 40 172;
+}
+.menuLateral.active .top {
+    stroke-dashoffset: -132px;
+}
+.menuLateral.active .middle {
+    stroke-dashoffset: -71px;
+}
+.menuLateral.active .bottom {
+    stroke-dashoffset: -132px;
 }
 
 /****FORM SIGNUP COMPLET********/

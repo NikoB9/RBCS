@@ -11,6 +11,7 @@
 	padding: 0;
 	border: none;
 	box-sizing: border-box;
+	background: none;
 }
 
 html {
@@ -31,6 +32,17 @@ body {
 	grid-gap: 1.5rem;
 }
 
+button {
+	border-radius: 100rem;
+	padding: .3rem .5rem;
+}
+button.success {
+	background: rgb(var(--blue-1));
+}
+button.danger {
+	background: rgb(var(--red));
+}
+
 .selection {
 	grid-area: selection;
 	position: sticky;
@@ -40,21 +52,29 @@ body {
 	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .5);
 }
 
-.selection .draggable {
+.selection div {
 	margin: 2rem 1.5rem;
 	padding: 1rem;
-	background: rgb(var(--yellow));
 	border-radius: 1rem;
 	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .3);
 	transition: all ease-in-out .3s;
 }
 
-.selection:hover .draggable {
+.selection > *:not(.draggable) {
+	background: rgb(var(--blue-2));
+	color: white;
+}
+
+.selection > .draggable {
+	background: rgb(var(--yellow));
+}
+
+.selection:hover > .draggable {
 	opacity: .7;
 	box-shadow: none;
 }
 
-.selection:hover .draggable:hover {
+.selection:hover > .draggable:hover {
 	border-radius: 0;
 	opacity: 1;
 	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .7);
