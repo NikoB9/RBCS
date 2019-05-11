@@ -318,7 +318,7 @@ function addSkillAjax(libelleSkill){
     });
 }
 
-
+/**********Auto completion formulaire*********/
 var inputPjCv = document.getElementById("pjCv");
 inputPjCv.addEventListener("change", handleFiles, false);
 function handleFiles() {
@@ -329,6 +329,21 @@ function handleFiles() {
 function autoNameCv(input){
     var file = input.files;
     document.getElementById('cvNew').value = file[0].name
+}
+
+/***********Menu lateral************/
+function diplayMenuLateral(){
+
+    const lateralMenu = document.getElementById("lateralMenu");
+
+
+    if (lateralMenu.style.display == "none" || lateralMenu.style.display == ""){
+        lateralMenu.style.display = "block";
+    }
+    else {
+        lateralMenu.style.display = "none";
+    }
+
 }
 
 

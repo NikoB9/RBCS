@@ -17,3 +17,5 @@ echo "<div style='padding-top: 10vh;padding-bottom: 10vh'>";
 include "vues/vueOffreEmbauches.php";
 echo "</div>";
 include 'vues/vueBottomMenu.php';
+include 'vues/vueLateralMenu.php';
+

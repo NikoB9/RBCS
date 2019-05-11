@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56fa5d6d-b6f2-4162-bf1d-51707354515f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/img/resume.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vues/vueLateralMenu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controleurs/ctrlSignUpForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleurs/ctrlSignUpForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modele/fonctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/modele/fonctions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vues/vueBottomMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vues/vueBottomMenu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vues/vueTopMenu2.php" beforeDir="false" afterPath="$PROJECT_DIR$/vues/vueTopMenu2.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,40 +43,41 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="7" />
-          <entry key="jpeg" value="4" />
-          <entry key="js" value="10" />
+          <entry key="jpeg" value="8" />
+          <entry key="jpg" value="3" />
+          <entry key="js" value="11" />
           <entry key="log_error" value="1" />
-          <entry key="php" value="55" />
-          <entry key="png" value="5" />
+          <entry key="php" value="64" />
+          <entry key="png" value="10" />
           <entry key="svg" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="7" />
-          <entry key="Image" value="9" />
-          <entry key="JavaScript" value="10" />
-          <entry key="PHP" value="55" />
+          <entry key="Image" value="21" />
+          <entry key="JavaScript" value="11" />
+          <entry key="PHP" value="64" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SVG" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="701" />
-          <entry key="js" value="2109" />
-          <entry key="php" value="14800" />
+          <entry key="css" value="767" />
+          <entry key="js" value="2318" />
+          <entry key="php" value="15512" />
           <entry key="svg" value="14" />
-          <entry key="txt" value="223" />
+          <entry key="txt" value="237" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="701" />
+          <entry key="CSS" value="767" />
           <entry key="HTML" value="39" />
-          <entry key="JavaScript" value="2109" />
-          <entry key="PHP" value="14761" />
-          <entry key="PLAIN_TEXT" value="223" />
+          <entry key="JavaScript" value="2318" />
+          <entry key="PHP" value="15473" />
+          <entry key="PLAIN_TEXT" value="237" />
           <entry key="SVG" value="14" />
         </counts>
       </usages-collector>
@@ -85,56 +88,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modele/fonctions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="51" column="29" lean-forward="true" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modele/modele.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vues/vueLateralMenu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vues/vueTopMenu2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="19" column="104" selection-start-line="19" selection-start-column="104" selection-end-line="19" selection-end-column="104" />
-              <folding>
-                <element signature="e#719#725#0#HTML" expanded="true" />
-                <element signature="e#838#844#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/img/resume.svg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controleurs/ctrlAccueil.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="157" column="23" selection-start-line="157" selection-start-column="17" selection-end-line="157" selection-end-column="23" />
+            <state relative-caret-position="465">
+              <caret line="36" column="71" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -142,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controleurs/ctrlSignUpForm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="322" column="86" selection-start-line="322" selection-start-column="86" selection-end-line="322" selection-end-column="86" />
+            <state relative-caret-position="1335">
+              <caret line="290" column="34" lean-forward="true" selection-start-line="290" selection-start-column="34" selection-end-line="290" selection-end-column="34" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -152,10 +119,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vues/vueOffreEmbauches.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vues/vueSignUpForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="12" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="300">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -207,7 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vues/vueBottomMenu.php" />
         <option value="$PROJECT_DIR$/vues/vueTopMenu.php" />
         <option value="$PROJECT_DIR$/vues/vueOffreEmbauches.php" />
         <option value="$PROJECT_DIR$/index.php" />
@@ -215,14 +202,16 @@
         <option value="$PROJECT_DIR$/modele/modele.php" />
         <option value="$PROJECT_DIR$/controleurs/ctrlAccueil.php" />
         <option value="$PROJECT_DIR$/vues/vueAccueil.php" />
-        <option value="$PROJECT_DIR$/assets/js/main.js" />
         <option value="$PROJECT_DIR$/vues/vueSignUpForm.php" />
-        <option value="$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php" />
-        <option value="$PROJECT_DIR$/assets/css/main.css" />
-        <option value="$PROJECT_DIR$/controleurs/ctrlSignUpForm.php" />
         <option value="$PROJECT_DIR$/modele/fonctions.php" />
         <option value="$PROJECT_DIR$/assets/img/resume.svg" />
+        <option value="$PROJECT_DIR$/assets/css/main.css" />
+        <option value="$PROJECT_DIR$/vues/vueBottomMenu.php" />
         <option value="$PROJECT_DIR$/vues/vueTopMenu2.php" />
+        <option value="$PROJECT_DIR$/assets/js/main.js" />
+        <option value="$PROJECT_DIR$/controleurs/ctrlSignUpForm.php" />
+        <option value="$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php" />
+        <option value="$PROJECT_DIR$/vues/vueLateralMenu.php" />
       </list>
     </option>
   </component>
@@ -362,7 +351,7 @@
       <workItem from="1557405939532" duration="92000" />
       <workItem from="1557418773340" duration="12578000" />
       <workItem from="1557515306714" duration="11720000" />
-      <workItem from="1557565404961" duration="7138000" />
+      <workItem from="1557565404961" duration="13434000" />
     </task>
     <task id="LOCAL-00001" summary="Version Debut">
       <created>1551860828694</created>
@@ -399,11 +388,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557531092801</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="menu user plus que menu latéral à prévoir">
+      <created>1557572628641</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1557572628641</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173476000" />
+    <option name="totallyTimeSpent" value="179772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="0" width="1440" height="900" extended-state="6" />
@@ -465,16 +461,10 @@
     <MESSAGE value="base de données et avancement du formulaire utilisateur" />
     <MESSAGE value="enregistrement données user en cours et adaptation pour modification formulaire" />
     <MESSAGE value="fin du sign up menu user et latéral à prévoir" />
-    <option name="LAST_COMMIT_MESSAGE" value="fin du sign up menu user et latéral à prévoir" />
+    <MESSAGE value="menu user plus que menu latéral à prévoir" />
+    <option name="LAST_COMMIT_MESSAGE" value="menu user plus que menu latéral à prévoir" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vues/vueBottomMenu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/semantic.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -484,13 +474,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/jquery-ui/js/jquery-1.9.1.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vues/vueOffreEmbauches.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vues/Composant_form/FormQestion.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -519,77 +502,10 @@
     <entry file="file://$PROJECT_DIR$/.log_error">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1427">
-          <caret line="329" selection-start-line="329" selection-end-line="329" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vues/vueAccueil.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
           <caret line="178" column="35" selection-start-line="178" selection-start-column="35" selection-end-line="178" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vues/vueSignUpForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="362" column="63" selection-start-line="362" selection-start-column="63" selection-end-line="362" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#legend#0;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#legend#0;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#3;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#0;n#div#3;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#4;n#fieldset#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#1;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#legend#0;n#fieldset#1;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#legend#0;n#fieldset#1;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#fieldset#1;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#fieldset#1;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#strong#0;n#label#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#fieldset#1;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#fieldset#1;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#fieldset#1;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#strong#0;n#label#0;n#td#1;n#tr#0;n#tbody#0;n#table#1;n#div#0;n#fieldset#1;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#strong#0;n#label#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#legend#0;n#fieldset#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#legend#0;n#fieldset#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#fieldset#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#fieldset#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#fieldset#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#fieldset#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#fieldset#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#2;n#fieldset#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#1;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vues/vueTopMenu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -599,45 +515,13 @@
     <entry file="file://$PROJECT_DIR$/assets/img/addUser.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/img/postulant.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/img/postulantIco.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/img/recruteurPick.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/img/recruteur2.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/img/recruteur.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/img/recruteur.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/img/postulant.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controleurs/ctrlAccueil.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="647">
           <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modele/modele.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
@@ -648,34 +532,125 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controleurs/ctrlSignUpForm.php">
+    <entry file="file://$PROJECT_DIR$/assets/img/resume.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/vueTopMenu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="322" column="86" selection-start-line="322" selection-start-column="86" selection-end-line="322" selection-end-column="86" />
+        <state relative-caret-position="75">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/vueBottomMenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modele/modele.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="337" selection-start-line="337" selection-end-line="337" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="117" selection-start-line="117" selection-end-line="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/recruteurPickIco.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/recruteur3.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/ruche2.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/recruteur.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/recruteur.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/recruteur2.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/recrutement sans cv.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/postulantIco.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/postulant.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/modifR2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/monitor-1307227_960_720.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/img/postulant.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/vueTopMenu2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="36" column="71" lean-forward="true" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+    <entry file="file://$PROJECT_DIR$/controleurs/ctrlSignUpForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="157" column="23" selection-start-line="157" selection-start-column="17" selection-end-line="157" selection-end-column="23" />
+        <state relative-caret-position="1335">
+          <caret line="290" column="34" lean-forward="true" selection-start-line="290" selection-start-column="34" selection-end-line="290" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/img/resume.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vues/vueTopMenu2.php">
+    <entry file="file://$PROJECT_DIR$/vues/vueOffreEmbauches.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="104" selection-start-line="19" selection-start-column="104" selection-end-line="19" selection-end-column="104" />
-          <folding>
-            <element signature="e#719#725#0#HTML" expanded="true" />
-            <element signature="e#838#844#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="405">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/vueSignUpForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/vueLateralMenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
         </state>
       </provider>
     </entry>
