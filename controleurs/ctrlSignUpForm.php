@@ -249,19 +249,25 @@ if (isset($_POST['userInfos'])){
 
     try{
 
-        if($pjProfilePc && $pjCv){
+        $userAlreadyExist = false;
+        if (!anotherUserExist($_POST['mail'], $_POST['pseudo'], $_SESSION['id'], $bdd)){
+            if($pjProfilePc && $pjCv){
 
-            //echo "avant if";
+                //echo "avant if";
 
-            //echo "rec1 : ".$_POST['recruteur'] ;
-            $recruteur = ($_POST['recruteur'] == 1) ? 0 : 1;
+                //echo "rec1 : ".$_POST['recruteur'] ;
+                $recruteur = ($_POST['recruteur'] == 1) ? 0 : 1;
 
-            //echo "rec2 : ".$recruteur;
+                //echo "rec2 : ".$recruteur;
 
-            //echo "apres if";
-            editUSer($bdd,$_SESSION['id'],$_POST['prenom'],$_POST['nom'],$_POST['pseudo'],$_POST['naissance'],$_POST['description'], $nomCv, $nomPp,
-                $recruteur, $_POST['entreprise'], $_POST['mail'],$_POST['telFix'],$_POST['tel'],$_POST['adresse'],$_POST['code_postal'],$_POST['ville']);
-            //echo "enregistrement données";
+                //echo "apres if";
+                editUSer($bdd,$_SESSION['id'],$_POST['prenom'],$_POST['nom'],$_POST['pseudo'],$_POST['naissance'],$_POST['description'], $nomCv, $nomPp,
+                    $recruteur, $_POST['entreprise'], $_POST['mail'],$_POST['telFix'],$_POST['tel'],$_POST['adresse'],$_POST['code_postal'],$_POST['ville']);
+                //echo "enregistrement données";
+            }
+        }
+        else{
+            $userAlreadyExist = true;
         }
 
 
@@ -296,7 +302,7 @@ if ($pjCv == false){
     +'</div>';
 </script>";
 }
-if ($pjProfilePc == false){
+elseif ($pjProfilePc == false){
     echo "<script>
     document.getElementById('alertPjPp').innerHTML =
     '<div class=\"alert alert-danger\" role=\"alert\">'
@@ -307,3 +313,16 @@ if ($pjProfilePc == false){
     +'</div>';
 </script>";
 }
+elseif ($userAlreadyExist){
+    echo "<script>
+    document.getElementById('alertPjPp').innerHTML =
+    '<div class=\"alert alert-danger\" role=\"alert\">'
+      +'<h4 class=\"alert-heading\">Utilisateur existant</h4>'
+      +'<p>Vous avez essayé de modifier votre pseudo ou votre adresse de messagerie et nous n\'y voyons pas d\'inconvénient.</p>'
+      +'<hr>'
+      +'<p>Cependant le pseudo ou l\'adresse de messagerie choisie est déjà assigné(e) à un autre utilisateur.</p>'
+    +'</div>';
+</script>";
+}
+
+

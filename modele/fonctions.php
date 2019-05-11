@@ -43,6 +43,48 @@ function userExist($user,$bdd){
 
 }
 
+function anotherUserExist($mail, $pseudo, $id, $bdd){
+    $bool = false;
+    $sql = "SELECT count(*) as bool FROM User WHERE (pseudo like TRIM(:pseudo) or mail like TRIM(:mail)) AND id!=:id";
+    //echo $sql;
+    $query = $bdd->prepare($sql);
+
+    //echo $mail.$pseudo.$id;
+
+    $query->bindParam(':mail', $mail);
+    $query->bindParam(':pseudo', $pseudo);
+    $query->bindParam(':id', $id);
+
+    //echo $query;
+
+    try{
+
+        if ($query->execute()){
+
+            $fetch = $query->fetch(PDO::FETCH_OBJ);
+
+            //echo "login : ".$user."bool : ".$query->rowCount();
+
+
+            if($fetch->bool >= 1){
+                $bool = true;
+            }
+
+        }
+        else{
+            echo "rate";
+        }
+    }
+    catch (Exception $e){
+        //$query->rollback();
+        //echo $e->getMessage();
+    }
+    $query->closeCursor();
+
+    return $bool;
+
+}
+
 function pwdExist($pwd,$bdd){
 
     $bool = false;
@@ -71,7 +113,7 @@ function ajouterUtilisateur($user,$ad,$pwd,$bdd){
 
     $bool = -1;
 
-    $sql = "INSERT into User (pseudo, mail, mdp) VALUES (:pseudo, :mail, :mdp)";
+    $sql = "INSERT into User (pseudo, mail, mdp) VALUES (TRIM(:pseudo), TRIM(:mail), :mdp)";
     $query = $bdd->prepare($sql);
     $query->bindParam(':pseudo', $user);
     $query->bindParam(':mail', $ad);
