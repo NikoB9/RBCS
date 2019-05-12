@@ -19,11 +19,18 @@ if(isset($_POST["checkbox0"])) {
 ?>
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+<form class="" method="post" action="">
 <body class="container">
+<div class="fixedLeft"> <!-- a metre sur le coté gauche et fixe (comme la div rouge du form drag and drop)-->
+    <p>Du texte</p><br>
+    <p>Encore du texte</p>
+    <button type="submit" onclick="" class="success">Terminer</button>
+</div>
 
 <?php
-print '<form class="" method="post" action="">';
 
 $sql =  'SELECT idQuestion, titre, question, estQCM FROM question WHERE idOffre = '.$_GET["idOffre"];
 $idQuestion = 0;
@@ -41,14 +48,14 @@ foreach  ($bdd->query($sql) as $row) {
     $query->execute();
     while  ($row = $query->fetch(PDO::FETCH_OBJ)) {
 
-        print  '<label>'.$row->reponse.' </label> <input type="'.$typebutton.'" name="checkbox'.$idQuestion.'[]" valeur"'.$row->idReponse.'" > </input></br>';
+        print  '<label>'.$row->reponse.' </label> <input type="'.$typebutton.'" name="checkbox'.$idQuestion.'[]" value="'.$row->idReponse.'" > </input></br>';
 
 
     }
     $idQuestion = $idQuestion + 1;
 }
-print '<input type="submit" name="valider" class="" value="valider"></form>';
 ?>
 
 </body>
+</form>
 </html>
