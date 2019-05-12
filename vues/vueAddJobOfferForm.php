@@ -45,41 +45,14 @@
         flex-direction: column;
         justify-content: center;
     }
-    @media (min-width: 1176px) {
-
-        .divColAdaptative{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        #conteneurImg{
-            max-width:230px;
-            width:100%;
-            height:calc(100% - 50px);
-            border-radius: 20px;
-            border: solid 2px #1E4C67;
-            min-height: 160px;
-            margin-bottom: 12px;
-        }
-
-    }
-    @media (max-width: 1175px) {
-
-        .divColAdaptative{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        #conteneurImg{
-            width:100%;
-            height:calc(100% - 50px);
-            border-radius: 20px;
-            border: solid 2px #1E4C67;
-            min-height: 160px;
-            margin-bottom: 12px;
-        }
+    #conteneurImg{
+        max-width:230px;
+        width:100%;
+        height:calc(100% - 50px);
+        border-radius: 20px;
+        border: solid 2px #1E4C67;
+        min-height: 160px;
+        margin-bottom: 12px;
     }
     #ui-datepicker-div{
         z-index: 10!important;
@@ -104,13 +77,13 @@
                 </div>
 
 
-                <div id="alertPj">
+                <div id="alertDescriptiveImg">
                 </div>
-                <div id="alertPjPp">
+                <div id="alertChrono">
                 </div>
 
 
-                <input type="hidden" name="userInfos">
+                <input type="hidden" name="addOffer">
 
                 <div class="rowPerso">
 
