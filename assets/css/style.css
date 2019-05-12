@@ -140,6 +140,7 @@ input[type="radio"]:focus::after {
 	border-radius: .5rem;
 	box-shadow: -.25rem .25rem 1.5rem rgba(0, 0, 0, .5);
 	padding: 1rem;
+	z-index: 1050;
 }
 
 .selection {
