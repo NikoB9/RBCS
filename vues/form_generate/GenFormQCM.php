@@ -1,5 +1,6 @@
 <?php
 include "../../modele/modele.php";
+
 if(isset($_POST["checkbox0"])) {
     $IdQuestion = 0;
     while (isset($_POST["checkbox".$IdQuestion])) {
@@ -16,6 +17,8 @@ if(isset($_POST["checkbox0"])) {
         $IdQuestion = $IdQuestion + 1;
     }
 }
+
+
 ?>
 <html>
 <head>
@@ -29,7 +32,7 @@ if(isset($_POST["checkbox0"])) {
         <div>
             <p>Du texte</p>
             <p>Encore du texte</p>
-            <button type="submit" onclick="" class="success">Terminer</button>
+            <button type="" onclick="" class="success">Terminer</button>
         </div>
     </div>
 
