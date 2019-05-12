@@ -3,8 +3,9 @@ if(isset($_POST["titre0"])) {
     include "../modele/modele.php";
     $IdQuestion = 0;
     while (isset($_POST["titre".$IdQuestion])) {
-        $sql = "INSERT into question (titre, question, estQCM) VALUES ( :titre, :question, :estQCM)";
+        $sql = "INSERT into question (idOffre, titre, question, estQCM) VALUES (:idOffre, :titre, :question, :estQCM)";
         $query = $bdd->prepare($sql);
+        $query->bindParam(':idOffre', $_GET["idOffre"]);
         $query->bindParam(':titre', $_POST["titre".$IdQuestion]);
         $query->bindParam(':question', $_POST["qestion".$IdQuestion]);
         $query->bindParam(':estQCM', $_POST["estQCM".$IdQuestion]);
