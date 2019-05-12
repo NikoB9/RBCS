@@ -53,7 +53,7 @@
                         <img src="assets/img/online-job-search-symbol.svg" width="40px" height="40px">
                     </div>
                     <div class="card-footer">
-                        Candidater
+                        Postuler
                     </div>
                 </div>
             </a>

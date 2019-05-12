@@ -307,23 +307,23 @@ $(document).ready(function() {
 $(document).ready(function() {
     $( "#datepickerFin" ).datepicker({
         dateFormat: 'dd/mm/yy',
-        defaultDate: "+1w",
+        defaultDate: "+0Y",
         numberOfMonths: 2,
         changeMonth: true,
         changeYear: true,
         yearRange: '-100:+0',
-        maxDate: '+0Y',
+        maxDate: '+1Y',
         onClose: function( selectedDate ) {
             $( "#datepickerInutile2" ).datepicker( "option", "minDate", selectedDate );
         }
     });
     $( "#datepickerInutile2" ).datepicker({
         dateFormat: 'dd/mm/yy',
-        defaultDate: "+1w",
+        defaultDate: "+0w",
         numberOfMonths: 2,
         changeMonth: true,
         changeYear: true,
-        maxDate: '+0Y',
+        maxDate: '+1Y',
         onClose: function( selectedDate ) {
             $( "#datepickerFin" ).datepicker( "option", "maxDate", selectedDate );
         }
