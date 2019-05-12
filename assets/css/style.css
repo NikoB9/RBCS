@@ -28,7 +28,7 @@
 html {
 	font-size: 14px;
 	font-family: 'Montserrat', sans-serif;
-	background: rgb(var(--blue-2), .3);
+	background: rgba(var(--blue-2), .3);
 	background: linear-gradient(225deg, rgba(var(--blue-2), .3) 0%, rgba(var(--blue-2), .8) 100%);
 }
 
@@ -55,11 +55,11 @@ button {
 	border: 1px solid currentColor;
 }
 button.success {
-	background: rgb(var(--blue-1), .4);
+	background: rgba(var(--blue-1), .4);
 	color: rgb(var(--blue-1));
 }
 button.danger {
-	background: rgb(var(--red), .4);
+	background: rgba(var(--red), .4);
 	color: rgb(var(--red));
 }
 button:hover, button:focus {
@@ -75,7 +75,7 @@ input[type="number"],
 	font-size: 1rem;
 	margin: .5rem 0;
 	padding: .5rem 1rem;
-	background: rgba(var(--blue-1));
+	background: rgb(var(--blue-1));
 	border-radius: 100rem;
 	border-bottom: 3px solid transparent;
 	transition: all ease-in-out .3s;
@@ -113,6 +113,7 @@ input[type="radio"]::after {
 	align-items: center;
 	border-radius: .5em;
 	transform: translate(-.4em, -.4em);
+	transition: all ease-in-out .2s;
 }
 input[type="radio"]::after {
 	border-radius: 100%;
@@ -143,6 +144,10 @@ input[type="radio"]:focus::after {
 	box-shadow: -.25rem .25rem 1.5rem rgba(0, 0, 0, .5);
 	padding: 1rem;
 	z-index: 1050;
+	transition: all ease-in-out .5s;
+}
+.header:hover {
+	transform: scale(1.02)
 }
 
 .selection {
@@ -152,6 +157,7 @@ input[type="radio"]:focus::after {
 	background: rgb(var(--red));
 	border-radius: .5rem;
 	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .5);
+	transform: skew(0, -3deg);
 }
 
 .selection div {
@@ -160,6 +166,7 @@ input[type="radio"]:focus::after {
 	border-radius: 1rem;
 	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .3);
 	transition: all ease-in-out .3s;
+	transform: skew(0, 3deg);
 }
 
 .selection > div:not(.draggable) {
@@ -188,7 +195,8 @@ input[type="radio"]:focus::after {
 	border-radius: 2rem;
 	background: rgb(var(--purple));
 	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .5);
-	padding: 2rem;
+	padding: 2rem 2rem 4rem 2rem;
+	position: relative;
 }
 
 .dropper > div {
@@ -197,6 +205,7 @@ input[type="radio"]:focus::after {
 	box-shadow: -2px 2px 5px rgba(0, 0, 0, .3);
 	margin: 1rem 0;
 	padding: 1rem 3rem;
+	transition: all ease-in-out .5s;
 	display: grid;
 	grid-template-columns: 400px auto;
 	grid-gap: 1rem;
@@ -205,13 +214,16 @@ input[type="radio"]:focus::after {
 		".			answers"
 		".			button";
 }
+.dropper > div:hover {
+	transform: scale(1.01);
+}
 .dropper > .divQuestion {
 	grid-area: question;
 }
 .dropper .divQuestion input[type="text"],
 .dropper .divQuestion .like-input {
 	width: 100%;
-	background: rgba(var(--yellow));
+	background: rgb(var(--yellow));
 }
 .dropper .divQuestion input[type="text"]:hover,
 .dropper .divQuestion .linke-input:hover {
@@ -256,4 +268,18 @@ input[type="radio"]:focus::after {
 }
 .dropper > div > button {
 	grid-area: button;
+}
+
+.dropper > .fa-trash-alt {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	border-radius: 100%;
+	width: 3rem;
+	height: 3rem;
+	background: rgb(var(--red));
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
