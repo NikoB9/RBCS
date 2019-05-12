@@ -32,7 +32,7 @@ if (isset($_POST['addOffer'])){
         $rpErr = $_FILES['resumePicture']['error'];   //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
 
         //$extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'pdf' , 'doc' , 'docx' , 'odt' , 'mp4');
-        $extensions_valides = array('pdf', 'doc' , 'docx' , 'odt');
+        $extensions_valides = array('jpg' , 'jpeg' , 'gif' , 'png' , 'ico' , 'svg');
         //1. strrchr renvoie l'extension avec le point (« . »).
         //2. substr(chaine,1) ignore le premier caractère de chaine.
         //3. strtolower met l'extension en minuscules.
@@ -77,10 +77,10 @@ if (isset($_POST['addOffer'])){
 
 
                 //echo "apres if";
-                //addJobOffer($bdd,$_SESSION['id'],$_POST['title'],$_POST['backgoundColor'],$_POST['beginningDate'],$_POST['closingDate'],$_POST['resumeLong'],
-                  //  $_POST['resume'], $_POST['chrono'],$resumePicture,$_POST['profilAccepted'],$_POST['profilRefused'],$_POST['adresse'],$_POST['code_postal'],$_POST['ville']);
-                echo "enregistrement données";
-                print_r($_POST);
+                $insert = addJobOffer($bdd,$_SESSION['id'],$_POST['title'],$_POST['backgoundColor'],$_POST['beginningDate'],$_POST['closingDate'],$_POST['resumeLong'],
+                    $_POST['resume'], $_POST['chrono'],$resumePicture,$_POST['profilAccepted'],$_POST['profilRefused'],$_POST['adresse'],$_POST['code_postal'],$_POST['ville']);
+                echo "enregistrement données : ".$insert;
+                //print_r($_POST);
             }
         }
         else{

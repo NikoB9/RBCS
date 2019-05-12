@@ -168,37 +168,66 @@ function compteExist($user, $pwd,$bdd){
 }
 
 
+function addJobOffer($bdd, $idRecruteur, $titre, $couleurFond, $dateDebut, $dateFin, $description, $resume, $chrono, $photoDescriptive, $messageAccepte, $messageRefuse, $adresse, $cp, $ville){
 
-function ajouterOffreDembauche($bdd,$dateDebut, $dateFin, $titre, $resume, $description, $couleurFond, $photoDescriptive, $idRecruteur){
+    $insert = false;
+
+    try{
+
+        /*$sql = "INSERT INTO JobOffer (beginningDate, closingDate, title, resume, resumeLong, backgroundColor, resumePicture, idUser, chrono, acceptedUserMessage, refusedUserMessage, address, pin_code, city)"
+            ." VALUES (STR_TO_DATE(:dd, '%d/%m/%Y'), STR_TO_DATE(:df, '%d/%m/%Y'), :t , :r , :rl, :bc , :rp , :id, :chrono, :acceptedUserMessage, :refusedUserMessage, :address, :pin_code, :city)";
+
+        echo $sql;
+        echo $dateDebut;
+        echo $dateFin;
+        echo $chrono;
+        echo $idRecruteur;
 
 
-    $dateDebutSql = date("Y-m-d H:i:s",strtotime(str_replace('/','-',$dateDebut)));
-    $dateFinSql = date("Y-m-d H:i:s",strtotime(str_replace('/','-',$dateFin)));
+        $query = $bdd->prepare($sql);
+        $query->bindParam(':dd', $dateDebut);
+        $query->bindParam(':df', $dateFin);
+        $query->bindParam(':t', $titre);
+        $query->bindParam(':r', $resume);
+        $query->bindParam(':rl', $description);
+        $query->bindParam(':bc', $couleurFond);
+        $query->bindParam(':rp', $photoDescriptive);
+        $query->bindParam(':id', $idRecruteur);
 
-    $sql = "INSERT INTO JobOffer (beginningDate, closingDate, title, resume, resumeLong, backgroundColor, resumePicture, idUser)"
-        ." VALUES (:dd, :df, :t , :r , :rl, :bc , :rp , :id)";
 
-    $query = $bdd->prepare($sql);
-    $query->bindParam(':dd', $dateDebutSql);
-    $query->bindParam(':df', $dateFinSql);
-    $query->bindParam(':t', $titre);
-    $query->bindParam(':r', $resume);
-    $query->bindParam(':rl', $description);
-    $query->bindParam(':bc', $couleurFond);
-    $query->bindParam(':rp', $photoDescriptive);
-    $query->bindParam(':id', $idRecruteur);
+        $query->bindParam(':chrono', $chrono);
+        $query->bindParam(':acceptedUserMessage', $messageAccepte);
+        $query->bindParam(':refusedUserMessage', $messageRefuse);
+        $query->bindParam(':address', $adresse);
+        $query->bindParam(':pin_code', $cp);
+        $query->bindParam(':city', $ville);
 
-    if ($query->execute){
-        return true;
+        */$sql = "INSERT INTO JobOffer (beginningDate, closingDate, title, resume, resumeLong, backgroundColor, resumePicture, idUser, chrono, acceptedUserMessage, refusedUserMessage, address, pin_code, city)"
+            ." VALUES (STR_TO_DATE('".$dateDebut."', '%d/%m/%Y'), STR_TO_DATE('".$dateFin."', '%d/%m/%Y'), '".$titre."' , '".$resume."' , '".$description."', '".$couleurFond."' , '".$photoDescriptive."' , '".$idRecruteur."', '".$chrono."', '".$messageAccepte."', '".$messageRefuse."', '".$adresse."', '".$cp."', '".$ville."')";
+
+        echo $sql;
+
+        $query = $bdd->prepare($sql);
+
+
+        if ($query->execute){
+            $insert = true;
+        }
+        else{
+            echo $query->debugDumpParams();
+        }
     }
-    else{
+    catch (Exception $e){
 
         //$query->rollback();
-        return false;
+        echo $e->getMessage();
+        echo "error";
 
     }
 
     $query->closeCursor();
+
+    return $insert;
 }
 
 
@@ -234,7 +263,7 @@ function listeDesOffresDembauches($bdd){
             $lesOffres[$i]['titre'] = $fetch->title;
             $lesOffres[$i]['resume'] = $fetch->resume;
             $lesOffres[$i]['description'] = $fetch->resumeLong;
-            $lesOffres[$i]['couleurFond'] = $fetch->bacgkroundColor;
+            $lesOffres[$i]['couleurFond'] = $fetch->backgroundColor;
             $lesOffres[$i]['image'] = str_replace("imgages","images",$fetch->resumePicture);
             $lesOffres[$i]['recruteur'] = strtoupper($fetch->nom)." ".$fetch->prenom;
 
