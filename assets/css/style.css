@@ -89,13 +89,6 @@ input[type="number"]:focus {
 	background: rgba(var(--blue-1), .6);
 	border-bottom: 3px solid currentColor;
 }
-input[type="text"]::after,
-input[type="number"]::after {
-	content: attr(placeholder);
-	position: absolute;
-	top: -1rem;
-	left: 0;
-}
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -128,6 +121,11 @@ input[type="radio"]:checked::after {
 }
 input[type="checkbox"]:checked::after {
 	content: '✔';
+}
+
+input[type="checkbox"]:focus::after,
+input[type="radio"]:focus::after {
+	border-bottom-color: white;
 }
 
 [draggable] {
@@ -230,6 +228,10 @@ input[type="checkbox"]:checked::after {
 	-webkit-column-break-inside: avoid;
               page-break-inside: avoid;
                    break-inside: avoid;
+}
+
+.dropper .divReponse > div > input[type="text"] {
+	width: 100%;
 }
 .dropper > div > button {
 	grid-area: button;
