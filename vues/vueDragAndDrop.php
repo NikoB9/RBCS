@@ -177,23 +177,28 @@ if(isset($_POST["titre0"])) {
         inputHidden.value=inputHiddenValue;
         divdropper.appendChild(inputHidden);
 
+
+        const divQuestion = document.createElement('div');
+        divQuestion.id="divQuestion"+idQuestionParam;
+        divQuestion.className = "divQuestion";
+        divdropper.appendChild(divQuestion);
+
         const inputText = document.createElement('input');
         inputText.type="text";
         inputText.name="titre"+idQuestionParam;
         inputText.placeholder="titre";
-        divdropper.appendChild(inputText);
-
-        const Sautligne = document.createElement('br');
-        divdropper.appendChild(Sautligne);
+        divQuestion.appendChild(inputText);
 
         const inputText2 = document.createElement('input');
         inputText2.type="text";
         inputText2.name="qestion"+idQuestionParam;
         inputText2.placeholder="qestion";
-        divdropper.appendChild(inputText2);
+        divQuestion.appendChild(inputText2);
+
 
         const divReponse = document.createElement('div');
         divReponse.id="divReponse"+idQuestionParam;
+        divReponse.className = "divReponse";
         divdropper.appendChild(divReponse);
 
         const buttonAjouter = document.createElement('button');
@@ -216,20 +221,24 @@ if(isset($_POST["titre0"])) {
     function AjouterReponse (num, idQ) {
         IdReponse = idQ + "IdReponse" + ID[idQ];
         divIdReponse = document.getElementById(num);
+
+        const divReponse = document.createElement('div');
+        divIdReponse.appendChild(divReponse);
+
         const InputText = document.createElement('input');
         InputText.placeholder = "Reponse";
         InputText.type = 'text';
         InputText.name = IdReponse;
-        divIdReponse.appendChild(InputText);
+        divReponse.appendChild(InputText);
 
         const checkboxReponse = document.createElement('input');
         checkboxReponse.type = ReponseType[idQ];
         checkboxReponse.name = 'checkbox'+idQ+"[]";
         checkboxReponse.value = ID[idQ];
-        divIdReponse.appendChild(checkboxReponse);
+        divReponse.appendChild(checkboxReponse);
 
-        const Sautligne = document.createElement('br');
-        divIdReponse.appendChild(Sautligne);
+        /*const Sautligne = document.createElement('br');
+        divIdReponse.appendChild(Sautligne);*/
 
         ID[idQ]++;
         IdReponse = idQ + "IdReponse" + ID[idQ];
