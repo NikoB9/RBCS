@@ -42,6 +42,7 @@ if(isset($_POST["titre0"])) {
 <html><head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/style.css">
     <title></title>
 </head>
@@ -60,7 +61,7 @@ if(isset($_POST["titre0"])) {
     </div>
 
     <div class="Selection">
-        <div>
+        <div class="resume">
             <p>Nombre de QCM : <span id="nbQCM"></span></p><br>
             <p>Nombre de QCU : <span id="nbQCU"></span> </p><br>
             <button type="submit" onclick="" class="success">Terminer</button>
@@ -70,8 +71,8 @@ if(isset($_POST["titre0"])) {
         <div class="draggable" draggable="true">QCU</div>
     </div>
     <div class="dropper">
+        <span class="fa fa-trash-alt"></span>
     </div>
-
 
 
 <script>
