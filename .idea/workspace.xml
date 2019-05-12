@@ -3,9 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="56fa5d6d-b6f2-4162-bf1d-51707354515f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleurs/ctrlAddJobOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleurs/ctrlAddJobOffer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controleurs/ctrlSignUpForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleurs/ctrlSignUpForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vues/vueAddJobOfferForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/vues/vueAddJobOfferForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vues/vueLateralMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/vues/vueLateralMenu.php" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vues/Composant_form/FormQestion.php" beforeDir="false" afterPath="$PROJECT_DIR$/vues/Composant_form/FormQestion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vues/vueDragAndDrop.php" beforeDir="false" afterPath="$PROJECT_DIR$/vues/vueDragAndDrop.php" afterDir="false" />
+>>>>>>> master
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,10 +21,61 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/vues/vueAddJobOfferForm.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="421">
+                    <caret line="81" column="36" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="36" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1341051679">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.127" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="1" />
+          <entry key="php" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JavaScript" value="1" />
+          <entry key="PHP" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="4" />
+          <entry key="php" value="324" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="1" />
+          <entry key="JavaScript" value="4" />
+          <entry key="PHP" value="323" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="RBCS" />
@@ -26,8 +85,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vues/Composant_form/FormQestion.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+=======
             <state relative-caret-position="1020">
               <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="65" />
+>>>>>>> master
             </state>
           </provider>
         </entry>
@@ -35,17 +99,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modele/modele.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="90">
               <caret line="11" column="21" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vues/vueDragAndDrop.php">
+        <entry file="file://$PROJECT_DIR$/controleurs/ctrlAddJobOffer.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="564">
+              <caret line="325" column="20" selection-start-line="325" selection-start-column="20" selection-end-line="325" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controleurs/ctrlSignUpForm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="308" column="4" lean-forward="true" selection-start-line="308" selection-start-column="4" selection-end-line="313" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+=======
             <state relative-caret-position="3240">
               <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
+>>>>>>> master
             </state>
           </provider>
         </entry>
@@ -115,8 +208,6 @@
         <option value="$PROJECT_DIR$/modele/modele.php" />
         <option value="$PROJECT_DIR$/controleurs/ctrlAccueil.php" />
         <option value="$PROJECT_DIR$/vues/vueAccueil.php" />
-        <option value="$PROJECT_DIR$/assets/js/main.js" />
-        <option value="$PROJECT_DIR$/controleurs/ctrlSignUpForm.php" />
         <option value="$PROJECT_DIR$/vues/vueSignUpForm.php" />
         <option value="$PROJECT_DIR$/assets/css/main.css" />
         <option value="$PROJECT_DIR$/modele/fonctions.php" />
@@ -125,14 +216,25 @@
         <option value="$PROJECT_DIR$/vues/Composant_form/FormQestion.php" />
         <option value="$PROJECT_DIR$/assets/css/style.css" />
         <option value="$PROJECT_DIR$/vues/vueDragAndDrop.php" />
+        <option value="$PROJECT_DIR$/controleurs/ctrlSignUpForm.php" />
+        <option value="$PROJECT_DIR$/vues/vueLateralMenu.php" />
+        <option value="$PROJECT_DIR$/vues/vueAddJobOfferForm.php" />
+        <option value="$PROJECT_DIR$/assets/js/main.js" />
+        <option value="$PROJECT_DIR$/controleurs/ctrlAddJobOffer.php" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.0" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1368" />
-    <option name="width" value="1016" />
-    <option name="height" value="576" />
+    <option name="x" value="3286" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -161,22 +263,18 @@
             <path>
               <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
               <item name="RBCS" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RBCS" type="462c0819:PsiDirectoryNode" />
               <item name="controleurs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
               <item name="RBCS" type="462c0819:PsiDirectoryNode" />
               <item name="modele" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RBCS" type="462c0819:PsiDirectoryNode" />
-              <item name="profiles_img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RBCS" type="462c0819:PsiDirectoryNode" />
-              <item name="users_resume" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RBCS" type="b2602c69:ProjectViewProjectNode" />
@@ -255,7 +353,12 @@
       <workItem from="1557567281995" duration="3582000" />
       <workItem from="1557574617987" duration="5796000" />
       <workItem from="1557581958547" duration="597000" />
+<<<<<<< HEAD
+      <workItem from="1557588374483" duration="356000" />
+      <workItem from="1557657698448" duration="4772000" />
+=======
       <workItem from="1557584217870" duration="14072000" />
+>>>>>>> master
     </task>
     <task id="LOCAL-00001" summary="Version Debut">
       <created>1551860828694</created>
@@ -317,13 +420,21 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="181204000" />
+=======
     <option name="totallyTimeSpent" value="190148000" />
+>>>>>>> master
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="3286" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921754" visible="true" weight="0.15101388" />
+=======
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49921754" visible="true" weight="0.14864865" />
+>>>>>>> master
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5007825" side_tool="true" weight="0.19242424" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -369,6 +480,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Version Final" />
@@ -426,13 +540,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.log_error">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1427">
-          <caret line="329" selection-start-line="329" selection-end-line="329" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controleurs/ctrlAccueil.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -556,16 +663,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controleurs/ctrlSignUpForm.php">
+    <entry file="file://$PROJECT_DIR$/vues/vueDragAndDrop.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="31" />
+        <state relative-caret-position="691">
+          <caret line="63" column="6" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vues/Composant_form/FormQestion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/controleurs/ctrlOffreEmbauches.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="165">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -575,29 +692,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modele/modele.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="90">
           <caret line="11" column="21" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="21" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/vues/vueLateralMenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+=======
     <entry file="file://$PROJECT_DIR$/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vues/Composant_form/FormQestion.php">
+    <entry file="file://$PROJECT_DIR$/controleurs/ctrlSignUpForm.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="494">
+          <caret line="308" column="4" lean-forward="true" selection-start-line="308" selection-start-column="4" selection-end-line="313" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+=======
         <state relative-caret-position="1020">
           <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="65" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vues/vueDragAndDrop.php">
+    <entry file="file://$PROJECT_DIR$/vues/vueAddJobOfferForm.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="81" column="36" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="564">
+          <caret line="325" column="20" selection-start-line="325" selection-start-column="20" selection-end-line="325" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controleurs/ctrlAddJobOffer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+=======
         <state relative-caret-position="3240">
           <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
+>>>>>>> master
         </state>
       </provider>
     </entry>

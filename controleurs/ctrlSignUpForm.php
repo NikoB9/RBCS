@@ -11,6 +11,8 @@ $user = infosUser($bdd, $_SESSION['id']);
 
 $pjCv = true;
 $pjProfilePc = true;
+$userAlreadyExist = false;
+
 
 if (isset($_POST['userInfos'])){
     if (!empty($_FILES['pjCv']['name']) && isset($_FILES['pjCv']['name'])) {
@@ -249,7 +251,6 @@ if (isset($_POST['userInfos'])){
 
     try{
 
-        $userAlreadyExist = false;
         if (!anotherUserExist($_POST['mail'], $_POST['pseudo'], $_SESSION['id'], $bdd)){
             if($pjProfilePc && $pjCv){
 
