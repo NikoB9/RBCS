@@ -4,6 +4,7 @@
 	--yellow: 255, 181, 72;
 	--purple: 99, 93, 157;
 	--blue-2: 17, 58, 114;
+	--green: 50, 170, 70;
 }
 
 ::-moz-selection {
@@ -80,6 +81,16 @@ input[type="number"],
 	border-bottom: 3px solid transparent;
 	transition: all ease-in-out .3s;
 }
+.background-blue {
+	background: rgba(var(--blue-1), .2);
+}
+.background-green {
+	background: rgba(var(--green), .8);
+}
+.background-red {
+	background: rgba(var(--red), .8);
+}
+
 input[type="text"]:hover,
 input[type="number"]:hover,
 .like-input:hover {

@@ -209,7 +209,6 @@ if(isset($_POST["titre0"])) {
         divdropper.appendChild(buttonAjouter);
         buttonAjouterIH = document.getElementById("buttonAjouter"+idQuestionParam);
         buttonAjouterIH.innerHTML = "Ajouter une reponse";
-
     }
 
     function ActualiserCompteur(){
