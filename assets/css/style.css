@@ -69,6 +69,7 @@ button:hover, button:focus {
 
 input[type="text"],
 input[type="number"],
+textarea,
 .like-input {
 	position: relative;
 	color: black;
@@ -76,16 +77,18 @@ input[type="number"],
 	margin: .5rem 0;
 	padding: .5rem 1rem;
 	background: rgb(var(--blue-1));
-	border-radius: 100rem;
+	border-radius: 2rem;
 	border-bottom: 3px solid transparent;
 	transition: all ease-in-out .3s;
 }
 input[type="text"]:hover,
 input[type="number"]:hover,
+textarea:hover,
 .like-input:hover {
 	background: rgba(var(--blue-1), .8);
 }
 input[type="text"]:focus,
+textarea:focus,
 input[type="number"]:focus {
 	color: white;
 	background: rgba(var(--blue-1), .6);
@@ -221,15 +224,18 @@ input[type="radio"]:focus::after {
 	grid-area: question;
 }
 .dropper .divQuestion input[type="text"],
+.dropper .divQuestion textarea,
 .dropper .divQuestion .like-input {
 	width: 100%;
 	background: rgb(var(--yellow));
 }
 .dropper .divQuestion input[type="text"]:hover,
+.dropper .divQuestion textarea:hover,
 .dropper .divQuestion .linke-input:hover {
 	background: rgba(var(--yellow), .8);
 }
-.dropper .divQuestion input[type="text"]:focus {
+.dropper .divQuestion input[type="text"]:focus,
+.dropper .divQuestion textarea:focus {
 	background: rgba(var(--yellow), .6);
 }
 .dropper .divReponse {
@@ -248,6 +254,7 @@ input[type="radio"]:focus::after {
 }
 
 .dropper .divReponse > * > input[type="text"],
+.dropper .divReponse > * > textarea,
 .dropper .divReponse > * > .like-input {
 	width: 100%;
 }
