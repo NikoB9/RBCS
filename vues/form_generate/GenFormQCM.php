@@ -1,6 +1,21 @@
 <?php
 include "../../modele/modele.php";
+if(isset($_POST["checkbox0"])) {
+    $IdQuestion = 0;
+    while (isset($_POST["checkbox".$IdQuestion])) {
 
+        $sql = "INSERT into reponseCandidat (idCandidat, idReponse) VALUES ( :idCandidat, :idReponse)";
+        $query = $bdd->prepare($sql);
+        $query->bindParam(':idCandidat', $_GET["idCandidat"] );
+
+        foreach ($_POST["checkbox".$IdQuestion] as $valeur) {
+            $query->bindParam(':idReponse', $valeur);
+            $query->execute();
+        }
+        $query->closeCursor();
+        $IdQuestion = $IdQuestion + 1;
+    }
+}
 ?>
 <html>
 <head>
@@ -26,7 +41,7 @@ foreach  ($bdd->query($sql) as $row) {
     $query->execute();
     while  ($row = $query->fetch(PDO::FETCH_OBJ)) {
 
-        print  '<label>'.$row->reponse.' </label> <input type="'.$typebutton.'" name="checkbox'.$idQuestion.'" valeur"'.$row->idReponse.'" > </input></br>';
+        print  '<label>'.$row->reponse.' </label> <input type="'.$typebutton.'" name="checkbox'.$idQuestion.'[]" valeur"'.$row->idReponse.'" > </input></br>';
 
 
     }
