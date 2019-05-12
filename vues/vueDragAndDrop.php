@@ -69,8 +69,8 @@ if(isset($_POST["titre0"])) {
         <div class="draggable" draggable="true">QCM</div>
         <div class="draggable" draggable="true">QCU</div>
     </div>
-        <div class="dropper">
-        </div>
+    <div class="dropper">
+    </div>
 
 
 
