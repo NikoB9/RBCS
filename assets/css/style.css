@@ -68,7 +68,8 @@ button:hover, button:focus {
 }
 
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+.like-input {
 	position: relative;
 	color: black;
 	font-size: 1rem;
@@ -80,7 +81,8 @@ input[type="number"] {
 	transition: all ease-in-out .3s;
 }
 input[type="text"]:hover,
-input[type="number"]:hover {
+input[type="number"]:hover,
+.like-input:hover {
 	background: rgba(var(--blue-1), .8);
 }
 input[type="text"]:focus,
@@ -160,7 +162,7 @@ input[type="radio"]:focus::after {
 	transition: all ease-in-out .3s;
 }
 
-.selection > *:not(.draggable) {
+.selection > div:not(.draggable) {
 	background: rgb(var(--blue-2));
 	color: white;
 }
@@ -206,11 +208,13 @@ input[type="radio"]:focus::after {
 .dropper > .divQuestion {
 	grid-area: question;
 }
-.dropper .divQuestion input[type="text"] {
+.dropper .divQuestion input[type="text"],
+.dropper .divQuestion .like-input {
 	width: 100%;
 	background: rgba(var(--yellow));
 }
-.dropper .divQuestion input[type="text"]:hover {
+.dropper .divQuestion input[type="text"]:hover,
+.dropper .divQuestion .linke-input:hover {
 	background: rgba(var(--yellow), .8);
 }
 .dropper .divQuestion input[type="text"]:focus {
@@ -221,7 +225,7 @@ input[type="radio"]:focus::after {
 	columns: 2 240px;
 	column-gap: 1rem;
 }
-.dropper .divReponse > div {
+.dropper .divReponse > * {
 	width: 100%;
 	display: flex;
 	justify-content: flex-start;
@@ -231,8 +235,24 @@ input[type="radio"]:focus::after {
                    break-inside: avoid;
 }
 
-.dropper .divReponse > div > input[type="text"] {
+.dropper .divReponse > * > input[type="text"],
+.dropper .divReponse > * > .like-input {
 	width: 100%;
+}
+.dropper .divReponse > * > input[type="checkbox"]::before,
+.dropper .divReponse > * > input[type="radio"]::before {
+	content: 'Bonne réponse';
+	font-size: .6em;
+	position: absolute;
+	top: -1em;
+	left: .5em;
+	text-align: center;
+	z-index: 5;
+	background: rgba(255, 255, 255, .2);
+	transform: rotate(45deg);
+	border-radius: .5em;
+	padding: .2em;
+
 }
 .dropper > div > button {
 	grid-area: button;
