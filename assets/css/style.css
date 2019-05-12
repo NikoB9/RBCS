@@ -4,6 +4,7 @@
 	--yellow: 255, 181, 72;
 	--purple: 99, 93, 157;
 	--blue-2: 17, 58, 114;
+	--green: 40, 170, 70;
 }
 
 ::-moz-selection {
@@ -76,10 +77,19 @@ textarea,
 	font-size: 1rem;
 	margin: .5rem 0;
 	padding: .5rem 1rem;
-	background: rgb(var(--blue-1));
+	background: rgba(var(--blue-1), .4);
 	border-radius: 2rem;
 	border-bottom: 3px solid transparent;
 	transition: all ease-in-out .3s;
+}
+.background-green {
+	background: rgba(var(--green), .8);
+}
+.background-green-l {
+	background: rgba(var(--green), .4);
+}
+.background-red {
+	background: rgba(var(--red), .8);
 }
 input[type="text"]:hover,
 input[type="number"]:hover,
@@ -196,7 +206,7 @@ input[type="radio"]:focus::after {
 .dropper {
 	grid-area: dropper;
 	border-radius: 2rem;
-	background: rgb(var(--purple));
+	background: rgba(var(--purple), .4);
 	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .5);
 	padding: 2rem 2rem 4rem 2rem;
 	position: relative;

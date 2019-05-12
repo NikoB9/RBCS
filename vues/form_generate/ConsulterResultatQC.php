@@ -38,9 +38,9 @@ include "../../modele/modele.php";
         foreach  ($bdd->query($sql) as $row) {
             echo '<div>';
                 if ($row['estQCM'])
-                    $typebutton="checkbox";
-                else
                     $typebutton="radio";
+                else
+                    $typebutton="checkbox";
                 echo '<div class="divQuestion">';
                     echo  '<h3 class="like-input">'.$row['titre'].' </h3>';
                     echo  '<p class="like-input">'.$row['question'].' </p>';
@@ -62,7 +62,7 @@ include "../../modele/modele.php";
                         }
                         else{
                             if ($row->estValide){
-                                echo  '<label><span class="like-input background-green">'.$row->reponse.'</span><input type="'.$typebutton.'" name="checkbox'.$idQuestion.'[]" value="'.$row->idReponse.'" disabled> </input> </label>';
+                                echo  '<label><span class="like-input background-green-l">'.$row->reponse.'</span><input type="'.$typebutton.'" name="checkbox'.$idQuestion.'[]" value="'.$row->idReponse.'" disabled> </input> </label>';
                             }
                             else{
                                 echo  '<label><span class="like-input background-blue">'.$row->reponse.'</span><input type="'.$typebutton.'" name="checkbox'.$idQuestion.'[]" value="'.$row->idReponse.'" disabled> </input> </label>';

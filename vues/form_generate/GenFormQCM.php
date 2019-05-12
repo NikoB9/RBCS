@@ -45,9 +45,9 @@ if(isset($_POST["checkbox0"])) {
         foreach  ($bdd->query($sql) as $row) {
             echo '<div>';
                 if ($row['estQCM'])
-                    $typebutton="checkbox";
-                else
                     $typebutton="radio";
+                else
+                    $typebutton="checkbox";
                 echo '<div class="divQuestion">';
                     echo  '<h3 class="like-input">'.$row['titre'].' </h3>';
                     echo  '<p class="like-input">'.$row['question'].' </p>';
@@ -59,10 +59,7 @@ if(isset($_POST["checkbox0"])) {
                 $query->execute();
                 echo '<div class="divReponse">';
                     while  ($row = $query->fetch(PDO::FETCH_OBJ)) {
-
                         echo  '<label><span class="like-input">'.$row->reponse.'</span><input type="'.$typebutton.'" name="checkbox'.$idQuestion.'[]" value="'.$row->idReponse.'" > </input> </label>';
-
-
                     }
                 echo '</div>';
                 $idQuestion = $idQuestion + 1;
