@@ -281,51 +281,26 @@ $(document).ready(function() {
 $(document).ready(function() {
     $( "#datepickerDebut" ).datepicker({
         dateFormat: 'dd/mm/yy',
-        defaultDate: "+1w",
+        defaultDate: "+0w",
         numberOfMonths: 2,
         changeMonth: true,
         changeYear: true,
-        yearRange: '-100:+0',
-        maxDate: '+0Y',
+        yearRange: '-100:+5',
+        minDate:new Date(),
+        //maxDate: '+1Y',
         onClose: function( selectedDate ) {
-            $( "#datepickerInutile" ).datepicker( "option", "minDate", selectedDate );
+            $( "#datepickerFin" ).datepicker( "option", "minDate", selectedDate );
         }
     });
-    $( "#datepickerInutile" ).datepicker({
-        dateFormat: 'dd/mm/yy',
-        defaultDate: "+1w",
-        numberOfMonths: 2,
-        changeMonth: true,
-        changeYear: true,
-        maxDate: '+0Y',
-        onClose: function( selectedDate ) {
-            $( "#datepickerDebut" ).datepicker( "option", "maxDate", selectedDate );
-        }
-    });
-});
-
-$(document).ready(function() {
     $( "#datepickerFin" ).datepicker({
-        dateFormat: 'dd/mm/yy',
-        defaultDate: "+0Y",
-        numberOfMonths: 2,
-        changeMonth: true,
-        changeYear: true,
-        yearRange: '-100:+0',
-        maxDate: '+1Y',
-        onClose: function( selectedDate ) {
-            $( "#datepickerInutile2" ).datepicker( "option", "minDate", selectedDate );
-        }
-    });
-    $( "#datepickerInutile2" ).datepicker({
         dateFormat: 'dd/mm/yy',
         defaultDate: "+0w",
         numberOfMonths: 2,
         changeMonth: true,
         changeYear: true,
-        maxDate: '+1Y',
+        //maxDate: '+2Y',
         onClose: function( selectedDate ) {
-            $( "#datepickerFin" ).datepicker( "option", "maxDate", selectedDate );
+            $( "#datepickerDebut" ).datepicker( "option", "maxDate", selectedDate );
         }
     });
 });

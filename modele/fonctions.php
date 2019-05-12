@@ -174,14 +174,16 @@ function addJobOffer($bdd, $idRecruteur, $titre, $couleurFond, $dateDebut, $date
 
     try{
 
-        /*$sql = "INSERT INTO JobOffer (beginningDate, closingDate, title, resume, resumeLong, backgroundColor, resumePicture, idUser, chrono, acceptedUserMessage, refusedUserMessage, address, pin_code, city)"
+        $sql = "INSERT INTO JobOffer (beginningDate, closingDate, title, resume, resumeLong, backgroundColor, resumePicture, idUser, chrono, acceptedUserMessage, refusedUserMessage, address, pin_code, city)"
             ." VALUES (STR_TO_DATE(:dd, '%d/%m/%Y'), STR_TO_DATE(:df, '%d/%m/%Y'), :t , :r , :rl, :bc , :rp , :id, :chrono, :acceptedUserMessage, :refusedUserMessage, :address, :pin_code, :city)";
 
-        echo $sql;
+        /*echo $sql;
         echo $dateDebut;
         echo $dateFin;
         echo $chrono;
-        echo $idRecruteur;
+        echo $idRecruteur;*/
+
+        $query = $bdd->prepare($sql);
 
 
         $query = $bdd->prepare($sql);
@@ -202,26 +204,24 @@ function addJobOffer($bdd, $idRecruteur, $titre, $couleurFond, $dateDebut, $date
         $query->bindParam(':pin_code', $cp);
         $query->bindParam(':city', $ville);
 
-        */$sql = "INSERT INTO JobOffer (beginningDate, closingDate, title, resume, resumeLong, backgroundColor, resumePicture, idUser, chrono, acceptedUserMessage, refusedUserMessage, address, pin_code, city)"
+        /*$sql = "INSERT INTO JobOffer (beginningDate, closingDate, title, resume, resumeLong, backgroundColor, resumePicture, idUser, chrono, acceptedUserMessage, refusedUserMessage, address, pin_code, city)"
             ." VALUES (STR_TO_DATE('".$dateDebut."', '%d/%m/%Y'), STR_TO_DATE('".$dateFin."', '%d/%m/%Y'), '".$titre."' , '".$resume."' , '".$description."', '".$couleurFond."' , '".$photoDescriptive."' , '".$idRecruteur."', '".$chrono."', '".$messageAccepte."', '".$messageRefuse."', '".$adresse."', '".$cp."', '".$ville."')";
-
-        echo $sql;
-
-        $query = $bdd->prepare($sql);
+*/
+        //echo $sql;
 
 
-        if ($query->execute){
+        if ($query->execute()){
             $insert = true;
         }
         else{
-            echo $query->debugDumpParams();
+            //echo $query->debugDumpParams();
         }
     }
     catch (Exception $e){
 
         //$query->rollback();
-        echo $e->getMessage();
-        echo "error";
+        //echo $e->getMessage();
+        //echo "error";
 
     }
 

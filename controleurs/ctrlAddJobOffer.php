@@ -79,7 +79,7 @@ if (isset($_POST['addOffer'])){
                 //echo "apres if";
                 $insert = addJobOffer($bdd,$_SESSION['id'],$_POST['title'],$_POST['backgoundColor'],$_POST['beginningDate'],$_POST['closingDate'],$_POST['resumeLong'],
                     $_POST['resume'], $_POST['chrono'],$resumePicture,$_POST['profilAccepted'],$_POST['profilRefused'],$_POST['adresse'],$_POST['code_postal'],$_POST['ville']);
-                echo "enregistrement données : ".$insert;
+                //echo "enregistrement données : ".$insert;
                 //print_r($_POST);
             }
         }

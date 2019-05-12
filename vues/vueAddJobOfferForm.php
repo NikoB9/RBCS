@@ -116,7 +116,6 @@
                                     <input style="background-color:rgba(12, 84, 96, 0.47);text-align: center;z-index: 10!important;" type="text" id="datepickerDebut" name="beginningDate"
                                            value="<?php $date = date("d/m/Y") ; echo $date?>"
                                            class="form-control">
-                                    <input style="display: none" type="text" id="datepickerInutile" >
                                 </div>
                             </div>
 
@@ -128,7 +127,6 @@
                                     <input style="background-color:rgba(12, 84, 96, 0.47);text-align: center;z-index: 8!important;" type="text" id="datepickerFin" name="closingDate"
                                            value="<?php $date = date("d/m/Y") ; echo $date?>"
                                            class="form-control">
-                                    <input style="display: none" type="text" id="datepickerInutile2" >
                                 </div>
                             </div>
 
