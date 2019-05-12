@@ -187,13 +187,13 @@ if(isset($_POST["titre0"])) {
         const inputText = document.createElement('input');
         inputText.type="text";
         inputText.name="titre"+idQuestionParam;
-        inputText.placeholder="titre";
+        inputText.placeholder="Titre";
         divQuestion.appendChild(inputText);
 
-        const inputText2 = document.createElement('input');
-        inputText2.type="text";
+        const inputText2 = document.createElement('textarea');
         inputText2.name="qestion"+idQuestionParam;
-        inputText2.placeholder="qestion";
+        inputText2.placeholder="Question";
+        inputText2.rows=5;
         divQuestion.appendChild(inputText2);
 
 
