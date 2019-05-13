@@ -113,6 +113,8 @@ if(isset($_POST["titre0"])) {
                     //lorsque l'élément quitte la zone de drop
                 });
 
+
+
                 var dndHandler = this; // Cette variable est nécessaire pour que l'événement "drop" ci-dessous accède facilement au namespace "dndHandler"
 
                 dropper.addEventListener('drop', function(e) {
@@ -129,7 +131,8 @@ if(isset($_POST["titre0"])) {
 
                     clonedElement = target.appendChild(clonedElement); // Ajout de l'élément cloné à la zone de drop actuelle
                     clonedElement.id ="divQuestion"+idQuestion;
-                    AjouterQuestion(idQuestion)
+                    AjouterQuestion(idQuestion);
+                    clonedElement.atr('draggable', "false");
                     idQuestion = idQuestion + 1;
                     dndHandler.applyDragEvents(clonedElement); // Nouvelle application des événements qui ont été perdus lors du cloneNode()
 

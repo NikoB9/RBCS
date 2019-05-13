@@ -43,6 +43,42 @@ function userExist($user,$bdd){
 
 }
 
+function alreadyParticipate($bdd, $offerId, $idUser){
+    $bool = false;
+    $sql = "SELECT count(*) as bool FROM noteCandidat WHERE  idCandidat like :idUser or idOffre like :idOffre";
+    $query = $bdd->prepare($sql);
+    $query->bindParam(':idUser', $idUser);
+    $query->bindParam(':idOffre', $offerId);
+
+    //echo $query;
+
+    try{
+
+        if ($query->execute()){
+
+            $fetch = $query->fetch(PDO::FETCH_OBJ);
+
+            //echo "login : ".$user."bool : ".$query->rowCount();
+
+
+            if($fetch->bool == 1){
+                $bool = true;
+            }
+
+        }
+        else{
+            echo "rate";
+        }
+    }
+    catch (Exception $e){
+        //$query->rollback();
+        //echo $e->getMessage();
+    }
+    $query->closeCursor();
+
+    return $bool;
+}
+
 function anotherUserExist($mail, $pseudo, $id, $bdd){
     $bool = false;
     $sql = "SELECT count(*) as bool FROM User WHERE (pseudo like TRIM(:pseudo) or mail like TRIM(:mail)) AND id!=:id";
@@ -170,7 +206,7 @@ function compteExist($user, $pwd,$bdd){
 
 function addJobOffer($bdd, $idRecruteur, $titre, $couleurFond, $dateDebut, $dateFin, $description, $resume, $chrono, $photoDescriptive, $messageAccepte, $messageRefuse, $adresse, $cp, $ville){
 
-    $insert = false;
+    $insert = -1;
 
     try{
 
@@ -211,7 +247,7 @@ function addJobOffer($bdd, $idRecruteur, $titre, $couleurFond, $dateDebut, $date
 
 
         if ($query->execute()){
-            $insert = true;
+            $insert = $bdd->lastInsertId();
         }
         else{
             //echo $query->debugDumpParams();
@@ -315,6 +351,7 @@ function oneJobOffer($bdd, $idOffre){
         $oneOffer['address'] = $offre->address;
         $oneOffer['pin_code'] = $offre->pin_code;
         $oneOffer['city'] = $offre->City;
+        $oneOffer['email'] = $offre->mail;
 
     }
     catch (Exception $e){

@@ -41,10 +41,8 @@
     ?>
 
         <tr>
-            <td colspan='1'>
-                <div class="rowPerso">
-                    <?php echo $uneOffre['titre'];?>
-                </div>
+            <td colspan='1' style="cursor: pointer" <?php echo "onclick=\"window.location.href='?p=ctrlShowOffer&offerId=".$uneOffre['id']."'\""; ?>>
+                <?php echo $uneOffre['titre'];?>
             </td>
             <td colspan='1' style="text-align: center;">
                 <button type='reset' data-tooltip="Visualiser le commentaire" onclick="commentaireControl('$row->id')" data-position="top right" class="circular ui icon button ">

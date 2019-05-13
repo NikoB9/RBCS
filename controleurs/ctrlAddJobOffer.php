@@ -82,6 +82,7 @@ if (isset($_POST['addOffer'])){
                     $_POST['resume'], $_POST['chrono'],$resumePicture,$_POST['profilAccepted'],$_POST['profilRefused'],$_POST['adresse'],$_POST['code_postal'],$_POST['ville']);
                 //echo "enregistrement données : ".$insert;
                 //print_r($_POST);
+                echo $insert;
             }
         }
         else{

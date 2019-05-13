@@ -15,6 +15,7 @@
     #cardForm{
         margin-bottom: 30px;
         margin-top: 30px;
+        cursor: pointer;
     }
 </style>
 
@@ -23,7 +24,7 @@
 <?php foreach ($lesOffres as $uneOffre){
 ?>
     <div class="rowPerso">
-        <div class="card" id="cardForm" style="background: <?php echo $uneOffre['couleurFond'] ?>;opacity: 1;">
+        <div class="card" id="cardForm" style="background: <?php echo $uneOffre['couleurFond'] ?>;opacity: 1;" <?php echo "onclick=\"window.location.href='?p=ctrlShowOffer&offerId=".$uneOffre['id']."'\""; ?>>
             <div class="card-header">
                 Offre n°<?php echo $uneOffre['id']." : ".$uneOffre['titre']  ?>
             </div>
@@ -35,7 +36,7 @@
                         <img class="imgPres" src="<?php echo $uneOffre['image'] ?>" alt="aucune photo de présentation">
                     </div>
                     <div class="colPerso" style="margin-left: 2vw;">
-                        <?php echo $uneOffre['resume'] ?>
+                        <?php echo nl2br($uneOffre['resume']) ?>
                     </div>
                 </div>
             </div>

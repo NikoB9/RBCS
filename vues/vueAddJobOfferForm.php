@@ -68,7 +68,7 @@
             </div>
             <div class="card-body">
                 <?php
-                if($user['recruteur'] == 1 && $insert != 1){
+                if($user['recruteur'] == 1 && $insert == -1){
                 ?>
 
                 <div class="alert alert-warning" role="alert">
@@ -304,7 +304,7 @@
                 <div class=\"card-footer\"></div>";
 
             }
-            elseif ($insert == -1){
+            elseif ($insert != -1){
 
                 echo "
                 <div class=\"alert alert-success\" role=\"alert\">

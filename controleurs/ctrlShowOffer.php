@@ -8,7 +8,7 @@
 include "modele/modele.php";
 include "modele/fonctions.php";
 $user = infosUser($bdd, $_SESSION['id']);
-$offre = oneJobOffer($bdd, $_GET['idOffre']);
+$offre = oneJobOffer($bdd, $_GET['offerId']);
 
 
 include 'vues/vueTopMenu2.php';

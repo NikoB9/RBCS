@@ -73,7 +73,7 @@
 
         <div class="rowPerso menuL">
 
-            <a href="">
+            <a href="?p=ctrlListeDesOffresParRecruteur">
                 <div class="card perso">
 
                     <div class="card-body">
