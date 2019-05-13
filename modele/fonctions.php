@@ -281,6 +281,56 @@ function listeDesOffresDembauchesRecruiter($bdd, $idR){
 
 }
 
+
+function oneJobOffer($bdd, $idOffre){
+
+
+    $sql = "SELECT *, DATE_FORMAT(beginningDate, '%d/%m/%Y') as dateD, DATE_FORMAT(closingDate, '%d/%m/%Y') as dateF FROM JobOffer INNER JOIN User ON JobOffer.idUser = User.id WHERE JobOffer.id = '".$idOffre."'";
+
+    //echo $sql;
+
+    $query = $bdd->prepare($sql);
+
+    $oneOffer = array();
+
+    try {
+
+        $query->execute();
+
+
+        $offre = $query->fetch(PDO::FETCH_OBJ);
+
+        $oneOffer['id'] = $idOffre;
+        $oneOffer['dateD'] = $offre->dateD;
+        $oneOffer['dateF'] = $offre->dateF;
+        $oneOffer['titre'] = $offre->title;
+        $oneOffer['resume'] = $offre->resume;
+        $oneOffer['description'] = $offre->resumeLong;
+        $oneOffer['couleurFond'] = $offre->backgroundColor;
+        $oneOffer['image'] = str_replace("imgages","images",$offre->resumePicture);
+        $oneOffer['recruteur'] = strtoupper($offre->nom)." ".$offre->prenom;
+        $oneOffer['chrono'] = $offre->chrono;
+        $oneOffer['acceptedUserMessage'] = $offre->acceptedUserMessage;
+        $oneOffer['refusedUserMessage'] = $offre->refusedUserMessage;
+        $oneOffer['address'] = $offre->address;
+        $oneOffer['pin_code'] = $offre->pin_code;
+        $oneOffer['city'] = $offre->City;
+
+    }
+    catch (Exception $e){
+        //$query->rollback();
+        //echo $e->getMessage();
+    }
+
+
+    $query->closeCursor();
+
+    return $oneOffer;
+
+}
+
+
+
 function listeDesOffresDembauches($bdd){
 
     /*ON PEUT VOIR LES OFFRES QUI ONT COMMENCEES MAIS PAS CELLES QUI SONT TERMINEES A MOINS D'ETRE SELECTIONNER*/

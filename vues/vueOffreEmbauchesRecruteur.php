@@ -47,6 +47,9 @@
                 </div>
             </td>
             <td colspan='1' style="text-align: center;">
+                <button type='reset' data-tooltip="Visualiser le commentaire" onclick="commentaireControl('$row->id')" data-position="top right" class="circular ui icon button ">
+                <i class="edit icon"></i>
+                </button>
             </td>
         </tr>
 

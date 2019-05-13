@@ -313,7 +313,7 @@
                     <hr>
                     <p class=\"mb-0\">Voulez-vous créer un test ?</p>
                     <div class='rowPerso'>
-                        <p><a target='_blank' href='vues/vueDragAndDrop.php?idOffre=".$insert."' onclick=\"window.location.href ='?p=ctrlListeDesOffresParRecruteur' \"><button type=\"button\" class=\"btn btn-info\"><strong>Oui</strong></button></a></p>
+                        <p><a href='vues/vueDragAndDrop.php?idOffre=".$insert."'\"><button type=\"button\" class=\"btn btn-info\"><strong>Oui</strong></button></a></p>
                         <p><a href='?p=ctrlListeDesOffresParRecruteur'><button type=\"button\" class=\"btn btn-danger\"><strong>Non</strong></button></a></p>
                     </div>
                 </div>";
