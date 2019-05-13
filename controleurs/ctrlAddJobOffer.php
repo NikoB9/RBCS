@@ -11,6 +11,7 @@ $user = infosUser($bdd, $_SESSION['id']);
 
 $badResumePicture = false;
 $badChrono = false;
+$insert = -1;
 
 if (isset($_POST['addOffer'])){
     if (isset($_FILES['resumePicture']['name']) && !empty($_FILES['resumePicture']['name'])) {

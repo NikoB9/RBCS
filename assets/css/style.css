@@ -15,7 +15,7 @@
 ::selection {
 	color: rgb(var(--blue-2));
 	background-color: rgb(var(--blue-1));
-} 
+}
 
 * {
 	margin: 0;
@@ -37,7 +37,7 @@ form {
 	display: grid;
 	grid-template-columns: 1rem 20rem auto 1rem;
 	grid-template-rows: 1rem 5rem auto auto;
-	grid-template-areas: 
+	grid-template-areas:
 		". 		.			.				."
 		". 		.			header 			."
 		". 		selection 	dropper 		."
@@ -222,7 +222,7 @@ input[type="radio"]:focus::after {
 	display: grid;
 	grid-template-columns: 400px auto;
 	grid-gap: 1rem;
-	grid-template-areas: 
+	grid-template-areas:
 		"question	answers"
 		".			answers"
 		".			button";

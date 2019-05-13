@@ -68,7 +68,7 @@
             </div>
             <div class="card-body">
                 <?php
-                if($user['recruteur'] == 1){
+                if($user['recruteur'] == 1 && $insert != 1){
                 ?>
 
                 <div class="alert alert-warning" role="alert">
@@ -169,11 +169,11 @@
 
                                 </div>
 
-                                <div class="colPerso" style="margin-top: 20px">
+                                <!--<div class="colPerso" style="margin-top: 20px">
 
                                     <button type="button" class="btn btn-info"><strong>Créer un test</strong></button>
 
-                                </div>
+                                </div>-->
 
                             </div>
 
@@ -290,7 +290,7 @@
 
             <?php
             }
-            else{
+            elseif ($user['recruteur'] != 1){
 
                 echo "
                 <div class=\"alert alert-danger\" role=\"alert\">
@@ -298,6 +298,24 @@
                     <p>Vous n'êtes pas autorisé à utiliser cette fonctionnalité.</p>
                     <hr>
                     <p class=\"mb-0\">Nous nous réservons le droit de vous bannir en cas de récidive.</p>
+                </div>";
+                //FERMETURE BODY ET FOOTER VIDE
+                echo "</div>
+                <div class=\"card-footer\"></div>";
+
+            }
+            elseif ($insert == -1){
+
+                echo "
+                <div class=\"alert alert-success\" role=\"alert\">
+                    <h4 class=\"alert-heading\">Enregistrement réussi !</h4>
+                    <p>votre formulaire a bien été enregistré.</p>
+                    <hr>
+                    <p class=\"mb-0\">Voulez-vous créer un test ?</p>
+                    <div class='rowPerso'>
+                        <p><a target='_blank' href='vues/vueDragAndDrop.php?idOffre=".$insert."' onclick=\"window.location.href ='?p=ctrlListeDesOffresParRecruteur' \"><button type=\"button\" class=\"btn btn-info\"><strong>Oui</strong></button></a></p>
+                        <p><a href='?p=ctrlListeDesOffresParRecruteur'><button type=\"button\" class=\"btn btn-danger\"><strong>Non</strong></button></a></p>
+                    </div>
                 </div>";
                 //FERMETURE BODY ET FOOTER VIDE
                 echo "</div>

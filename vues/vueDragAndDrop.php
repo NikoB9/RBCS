@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST["titre0"])) {
     include "../modele/modele.php";
     $IdQuestion = 0;
@@ -65,7 +66,7 @@ if(isset($_POST["titre0"])) {
             <p>Nombre de QCM : <span id="nbQCM"></span></p><br>
             <p>Nombre de QCU : <span id="nbQCU"></span> </p><br>
             <button type="submit" onclick="" class="success">Terminer</button>
-            <button type="button" onclick="" class="danger">Annuler</button>
+            <button type="button" onclick="window.location.href = '../index.php?p=ctrlListeDesOffresParRecruteur'" class="danger">Annuler</button>
         </div>
         <div class="draggable" draggable="true">QCM</div>
         <div class="draggable" draggable="true">QCU</div>

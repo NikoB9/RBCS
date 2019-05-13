@@ -230,6 +230,56 @@ function addJobOffer($bdd, $idRecruteur, $titre, $couleurFond, $dateDebut, $date
     return $insert;
 }
 
+function listeDesOffresDembauchesRecruiter($bdd, $idR){
+
+
+    $sql = "SELECT *, JobOffer.id as idOffre, DATE_FORMAT(beginningDate, '%d/%m/%Y') as dateD, DATE_FORMAT(closingDate, '%d/%m/%Y') as dateF FROM JobOffer INNER JOIN User ON JobOffer.idUser = User.id WHERE idUser = '".$idR."'";
+
+    //echo $sql;
+
+    $query = $bdd->prepare($sql);
+
+    $lesOffres = array();
+
+    try {
+
+        $query->execute();
+
+        $i = 0;
+
+        while ($fetch = $query->fetch(PDO::FETCH_OBJ)){
+
+            //$dateD = date("d-m-Y",strtotime(str_replace('-','/',$fetch->beginningDate)));
+            //$dateF = date("d-m-Y",strtotime(str_replace('-','/',$fetch->closingDate)));
+
+            $lesOffres[$i]['id'] = $fetch->idOffre;
+            $lesOffres[$i]['dateD'] = $fetch->dateD;
+            $lesOffres[$i]['dateF'] = $fetch->dateF;
+            $lesOffres[$i]['titre'] = $fetch->title;
+            $lesOffres[$i]['resume'] = $fetch->resume;
+            $lesOffres[$i]['description'] = $fetch->resumeLong;
+            $lesOffres[$i]['couleurFond'] = $fetch->backgroundColor;
+            $lesOffres[$i]['image'] = str_replace("imgages","images",$fetch->resumePicture);
+            $lesOffres[$i]['recruteur'] = strtoupper($fetch->nom)." ".$fetch->prenom;
+
+            $i++;
+
+        }
+
+        //print_r($lesOffres);
+
+    }
+    catch (Exception $e){
+        //$query->rollback();
+        //echo $e->getMessage();
+    }
+
+
+    $query->closeCursor();
+
+    return $lesOffres;
+
+}
 
 function listeDesOffresDembauches($bdd){
 
