@@ -38,6 +38,10 @@ if(isset($_POST["titre0"])) {
         $query->closeCursor();
         $IdQuestion = $IdQuestion + 1;
     }
+
+    echo"<script> window.location.href = '../index.php?p=ctrlListeDesOffresParRecruteur' </script>";
+
+
 }
 ?>
 <html><head>

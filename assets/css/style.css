@@ -29,7 +29,7 @@
 html {
 	font-size: 14px;
 	font-family: 'Montserrat', sans-serif;
-	background: rgba(var(--blue-2), .3);
+	background: rgba(var(--blue-2), .2);
 	background: linear-gradient(225deg, rgba(var(--blue-2), .3) 0%, rgba(var(--blue-2), .8) 100%);
 }
 
@@ -206,7 +206,7 @@ input[type="radio"]:focus::after {
 .dropper {
 	grid-area: dropper;
 	border-radius: 2rem;
-	background: rgba(var(--purple), .4);
+	background: rgba(var(--purple), .2);
 	box-shadow: -.25rem .25rem 1rem rgba(0, 0, 0, .5);
 	padding: 2rem 2rem 4rem 2rem;
 	position: relative;
