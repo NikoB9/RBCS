@@ -16,6 +16,7 @@ if(isset($_POST["checkbox0"])) {
         $query->closeCursor();
         $IdQuestion = $IdQuestion + 1;
     }
+    header('Location: /RBCS/vues/form_generate/ConsulterResultatQC.php?idOffre='.$_GET["idOffre"].'&idCandidat='.$_GET["idCandidat"]);
 }
 
 
