@@ -30,6 +30,13 @@
 <h1 class="title">APPLICANTS</h1>
 
 <div class="rowPerso">
+    <div id="choixUtilisateur"></div>
+</div>
+<br>
+
+
+<div class="rowPerso">
+
     <table class="ui celled table">
         <thead>
         <tr>
@@ -43,31 +50,31 @@
 
 
 
-<?php foreach ($lesCandidats as $candidat){
+<?php if (sizeof($lesCandidats )){ foreach ($lesCandidats as $candidat){
     ?>
 
         <tr>
             <td colspan='1' style="cursor: pointer" <?php echo "onclick=\"window.location.href='?p=ctrlShowUser&userId=".$candidat['id']."'\""; ?>>
                 <?php echo $candidat['nom']." ".$candidat['prenom'];?>
             </td>
-            <td colspan='1' style="cursor: pointer" <?php echo "onclick=\"window.location.href='vues/form_generate/ConsulterResultatQC.php?idOffre=".$_GET['offerId']."&idCandidat=".$candidat['id']."'\""; ?>>
+            <td colspan='1' style="cursor: pointer" <?php echo "onclick=\"window.open('vues/form_generate/ConsulterResultatQC.php?idOffre=".$offerId."&idCandidat=".$candidat['id']."')\""; ?>>
                 <?php echo $candidat['note'];?>
             </td>
             <td colspan='1' style="text-align: center;">
                 <?php
-                if ($candidat['accepted'] === 1){
+                if ($candidat['accepted']){
                     echo "<i class=\"check icon\"></i>";
                 }
-                elseif ($candidat['accepted'] === 0){
+                elseif ($candidat['accepted'] != ''){
                     echo "<i class=\"delete icon\"></i>";
                 }
                 else {
                     ?>
-                    <button type='reset' data-tooltip="Accepter le candidat" onclick=""
+                    <button type='reset' data-tooltip="Accepter le candidat" <?php echo "onclick=\"window.location.href='?p=ctrlApplicants&offerId=".$offerId."&idCandidat=".$candidat['id']."&accepted=1'\"";?>
                             class="circular ui green icon button ">
                         <i class="check icon"></i>
                     </button>
-                    <button type='reset' data-tooltip="Refuser le candidat" onclick=""
+                    <button type='reset' data-tooltip="Refuser le candidat" <?php echo "onclick=\"window.location.href='?p=ctrlApplicants&offerId=".$offerId."&idCandidat=".$candidat['id']."&accepted=0'\"";?>
                             class="circular ui red icon button ">
                         <i class="delete icon"></i>
                     </button>
@@ -78,6 +85,9 @@
         </tr>
 
     <?php
+}}
+else{
+    echo "<tr><td colspan='3' style='text-align: center'>Aucun candidat</td> </tr>";
 }
 ?>
         </tbody>

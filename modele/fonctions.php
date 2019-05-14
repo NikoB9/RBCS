@@ -43,6 +43,7 @@ function userExist($user,$bdd){
 
 }
 
+
 function testExist($offerId,$bdd){
     $bool = false;
     $sql = "SELECT count(*) as bool FROM question WHERE  idOffre like :offerId";
@@ -79,9 +80,40 @@ function testExist($offerId,$bdd){
 
 }
 
+function answeredToUser($bdd, $offerId, $idCandidat, $accepted){
+    $bool = false;
+    $sql = "UPDATE noteCandidat SET idCandidat = :idc, accepted = :a WHERE idOffre like :idOffre";
+    $query = $bdd->prepare($sql);
+    $query->bindParam(':idc', $idCandidat);
+    $query->bindParam(':a', $accepted);
+    $query->bindParam(':idOffre', $offerId);
+
+    //echo $query;
+
+    try{
+
+        if ($query->execute()){
+
+            //echo "login : ".$user."bool : ".$query->rowCount();
+            $bool = true;
+
+        }
+        else{
+            echo "rate";
+        }
+    }
+    catch (Exception $e){
+        //$query->rollback();
+        echo $e->getMessage();
+    }
+    $query->closeCursor();
+
+    return $bool;
+}
+
 function alreadyParticipate($bdd, $offerId, $idUser){
     $bool = false;
-    $sql = "SELECT count(*) as bool FROM noteCandidat WHERE  idCandidat like :idUser or idOffre like :idOffre";
+    $sql = "SELECT count(*) as bool FROM noteCandidat WHERE  idCandidat like :idUser AND idOffre like :idOffre";
     $query = $bdd->prepare($sql);
     $query->bindParam(':idUser', $idUser);
     $query->bindParam(':idOffre', $offerId);
@@ -114,7 +146,6 @@ function alreadyParticipate($bdd, $offerId, $idUser){
 
     return $bool;
 }
-
 function anotherUserExist($mail, $pseudo, $id, $bdd){
     $bool = false;
     $sql = "SELECT count(*) as bool FROM User WHERE (pseudo like TRIM(:pseudo) or mail like TRIM(:mail)) AND id!=:id";
