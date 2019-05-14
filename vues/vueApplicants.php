@@ -47,10 +47,10 @@
     ?>
 
         <tr>
-            <td colspan='1' style="cursor: pointer" <?php echo "onclick=\"window.location.href=''\""; ?>>
+            <td colspan='1' style="cursor: pointer" <?php echo "onclick=\"window.location.href='?p=ctrlShowUser&userId=".$candidat['id']."'\""; ?>>
                 <?php echo $candidat['nom']." ".$candidat['prenom'];?>
             </td>
-            <td colspan='1' style="cursor: pointer" <?php echo "onclick=\"window.location.href=''\""; ?>>
+            <td colspan='1' style="cursor: pointer" <?php echo "onclick=\"window.location.href='vues/form_generate/ConsulterResultatQC.php?idOffre=".$_GET['offerId']."&idCandidat=".$candidat['id']."'\""; ?>>
                 <?php echo $candidat['note'];?>
             </td>
             <td colspan='1' style="text-align: center;">
