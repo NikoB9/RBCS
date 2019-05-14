@@ -123,7 +123,18 @@
         </div>
         <div class="card-footer">
             <div class="colPerso">
-                <button type="submit" class="btn btn-success" onclick="window.location.href = '?p=ctrlTest&offerId=<?php echo $offre['id'] ?>'">Participer au test</button>
+                <?php
+                if ($testExist){
+                    ?>
+                    <button type="submit" class="btn btn-success" onclick="window.location.href = '?p=ctrlTest&offerId=<?php echo $offre['id'] ?>'">Participer au test</button>
+                    <?php
+                }
+                else{
+                    ?>
+                    <h3 style="color: red;text-align: center">Aucun test n'existe pour cette offre</h3>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </div>

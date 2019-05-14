@@ -20,6 +20,11 @@
 
         width: 80vw !important;
     }
+    .button.circular.ui.button{
+        padding-top: 10px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
 </style>
 
 <h1 class="title">MY JOB OFFERS</h1>
@@ -45,8 +50,14 @@
                 <?php echo $uneOffre['titre'];?>
             </td>
             <td colspan='1' style="text-align: center;">
-                <button type='reset' data-tooltip="Visualiser le commentaire" onclick="commentaireControl('$row->id')" data-position="top right" class="circular ui icon button ">
+                <button type='reset' data-tooltip="Modifier l'offre" onclick="" class="circular ui blue icon button ">
                 <i class="edit icon"></i>
+                </button>
+                <button type='reset' data-tooltip="Supprimer l'offre" onclick=""  class="circular ui red icon button ">
+                    <i class="trash icon"></i>
+                </button>
+                <button type='reset' data-tooltip="Sélection des candidats" <?php echo "onclick=\"window.location.href='?p=ctrlApplicants&offerId=".$uneOffre['id']."'\""; ?>  class="circular ui green icon button ">
+                    <i class="users icon"></i>
                 </button>
             </td>
         </tr>

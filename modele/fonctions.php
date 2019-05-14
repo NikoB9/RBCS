@@ -43,6 +43,42 @@ function userExist($user,$bdd){
 
 }
 
+function testExist($offerId,$bdd){
+    $bool = false;
+    $sql = "SELECT count(*) as bool FROM question WHERE  idOffre like :offerId";
+    $query = $bdd->prepare($sql);
+    $query->bindParam(':offerId', $offerId);
+
+    //echo $query;
+
+    try{
+
+        if ($query->execute()){
+
+            $fetch = $query->fetch(PDO::FETCH_OBJ);
+
+            //echo "login : ".$user."bool : ".$query->rowCount();
+
+
+            if($fetch->bool >= 1){
+                $bool = true;
+            }
+
+        }
+        else{
+            echo "rate";
+        }
+    }
+    catch (Exception $e){
+        //$query->rollback();
+        //echo $e->getMessage();
+    }
+    $query->closeCursor();
+
+    return $bool;
+
+}
+
 function alreadyParticipate($bdd, $offerId, $idUser){
     $bool = false;
     $sql = "SELECT count(*) as bool FROM noteCandidat WHERE  idCandidat like :idUser or idOffre like :idOffre";
@@ -61,7 +97,7 @@ function alreadyParticipate($bdd, $offerId, $idUser){
             //echo "login : ".$user."bool : ".$query->rowCount();
 
 
-            if($fetch->bool == 1){
+            if($fetch->bool >= 1){
                 $bool = true;
             }
 
@@ -264,6 +300,50 @@ function addJobOffer($bdd, $idRecruteur, $titre, $couleurFond, $dateDebut, $date
     $query->closeCursor();
 
     return $insert;
+}
+
+function listeDesCandidats($bdd, $offerId){
+    $sql = "SELECT User.id, User.nom, User.prenom, noteCandidat.accepted, noteCandidat.note FROM noteCandidat INNER JOIN User ON noteCandidat.idCandidat = User.id WHERE idOffre = '".$offerId."'";
+
+    //echo $sql;
+
+    $query = $bdd->prepare($sql);
+
+    $lesCandidats = array();
+
+    try {
+
+        $query->execute();
+
+        $i = 0;
+
+        while ($fetch = $query->fetch(PDO::FETCH_OBJ)){
+
+            //$dateD = date("d-m-Y",strtotime(str_replace('-','/',$fetch->beginningDate)));
+            //$dateF = date("d-m-Y",strtotime(str_replace('-','/',$fetch->closingDate)));
+
+            $lesCandidats[$i]['id'] = $fetch->id;
+            $lesCandidats[$i]['nom'] = $fetch->nom;
+            $lesCandidats[$i]['prenom'] = $fetch->prenom;
+            $lesCandidats[$i]['note'] = $fetch->note;
+            $lesCandidats[$i]['accepted'] = $fetch->accepted;
+
+            $i++;
+
+        }
+
+        //print_r($lesOffres);
+
+    }
+    catch (Exception $e){
+        //$query->rollback();
+        //echo $e->getMessage();
+    }
+
+
+    $query->closeCursor();
+
+    return $lesCandidats;
 }
 
 function listeDesOffresDembauchesRecruiter($bdd, $idR){

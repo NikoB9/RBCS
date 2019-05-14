@@ -7,15 +7,15 @@
  */
 include "modele/modele.php";
 include "modele/fonctions.php";
-$offerId = $_GET['offerId'];
 $user = infosUser($bdd, $_SESSION['id']);
-$offre = oneJobOffer($bdd, $offerId);
-$testExist = testExist($offerId,$bdd);
 
+
+$lesCandidats = listeDesCandidats($bdd, $_GET['offerId']);
+//print_r($lesCandidats);
 
 include 'vues/vueTopMenu2.php';
 echo "<div style='padding-top: 10vh;padding-bottom: 10vh'>";
-include "vues/vueShowOffer.php";
+include "vues/vueApplicants.php";
 echo "</div>";
 include 'vues/vueBottomMenu.php';
 include 'vues/vueLateralMenu.php';
