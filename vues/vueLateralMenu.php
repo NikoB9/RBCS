@@ -58,7 +58,7 @@
                 </div>
             </a>
 
-            <a href="">
+            <a href="?p=ctrlListeDesOffresParCandidat">
                 <div class="card perso">
                     <div class="card-body">
                         <img src="assets/img/job-search-symbol-with-a-man-and-bars-graphic.svg" width="40px" height="40px">

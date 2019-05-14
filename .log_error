@@ -9,3 +9,8 @@ Stack trace:
   thrown in /var/www/html/RBCS/controleurs/ctrlCreationDeForm.php on line 9
 [13-May-2019 21:46:55 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/RBCS/index.php:10) in /var/www/html/RBCS/controleurs/ctrlTest.php on line 13
 [13-May-2019 21:47:49 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/RBCS/index.php:10) in /var/www/html/RBCS/controleurs/ctrlTest.php on line 13
+[14-May-2019 20:44:41 Europe/Berlin] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\RBCS\modele\fonctions.php on line 720
+[14-May-2019 20:44:58 Europe/Berlin] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\RBCS\modele\fonctions.php on line 720
+[14-May-2019 20:47:41 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\RBCS\vues\vueApplicants.php on line 46
+[14-May-2019 21:26:36 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\RBCS\vues\vueApplicants.php on line 46
+[14-May-2019 21:27:09 Europe/Berlin] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in C:\xampp\htdocs\RBCS\vues\vueApplicants.php on line 53

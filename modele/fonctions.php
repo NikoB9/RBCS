@@ -333,8 +333,9 @@ function addJobOffer($bdd, $idRecruteur, $titre, $couleurFond, $dateDebut, $date
     return $insert;
 }
 
-function listeDesCandidats($bdd, $offerId){
-    $sql = "SELECT User.id, User.nom, User.prenom, noteCandidat.accepted, noteCandidat.note FROM noteCandidat INNER JOIN User ON noteCandidat.idCandidat = User.id WHERE idOffre = '".$offerId."'";
+function listeDesCandidats($bdd, $offerId)
+{
+    $sql = "SELECT User.id, User.nom, User.prenom, noteCandidat.accepted, noteCandidat.note FROM noteCandidat INNER JOIN User ON noteCandidat.idCandidat = User.id WHERE idOffre = '" . $offerId . "'";
 
     //echo $sql;
 
@@ -348,7 +349,7 @@ function listeDesCandidats($bdd, $offerId){
 
         $i = 0;
 
-        while ($fetch = $query->fetch(PDO::FETCH_OBJ)){
+        while ($fetch = $query->fetch(PDO::FETCH_OBJ)) {
 
             //$dateD = date("d-m-Y",strtotime(str_replace('-','/',$fetch->beginningDate)));
             //$dateF = date("d-m-Y",strtotime(str_replace('-','/',$fetch->closingDate)));
@@ -365,16 +366,46 @@ function listeDesCandidats($bdd, $offerId){
 
         //print_r($lesOffres);
 
-    }
-    catch (Exception $e){
+    } catch (Exception $e) {
         //$query->rollback();
         //echo $e->getMessage();
     }
+}
+
+function listeDesoffresParCandidat($bdd, $idCandidat){
+        $sql = "SELECT nc.accepted, nc.note, jo.id,jo.title, jo.acceptedUserMessage, jo.refusedUserMessage FROM noteCandidat nc INNER JOIN JobOffer jo ON nc.idOffre = jo.id WHERE idCandidat = '".$idCandidat."'";
+
+        $query = $bdd->prepare($sql);
+
+        $listeOffres = array();
+
+        try {
+
+            $query->execute();
+
+            $i = 0;
+
+            while ($fetch = $query->fetch(PDO::FETCH_OBJ)){
+
+                $listeOffres[$i]['title'] = $fetch->title;
+                $listeOffres[$i]['note'] = $fetch->note;
+                $listeOffres[$i]['id'] = $fetch->id;
+                $listeOffres[$i]['accepted'] = $fetch->accepted;
+                $listeOffres[$i]['acceptedUserMessage'] = $fetch->acceptedUserMessage;
+                $listeOffres[$i]['refusedUserMessage'] = $fetch->refusedUserMessage;
+
+                $i++;
+
+            }
+        }
+        catch (Exception $e){
+
+        }
 
 
     $query->closeCursor();
 
-    return $lesCandidats;
+    return $listeOffres;
 }
 
 function listeDesOffresDembauchesRecruiter($bdd, $idR){
@@ -715,3 +746,4 @@ function editUSer($bdd, $id, $prenom,$nom,$pseudo,$naissance,$description,$nomCv
     $query->closeCursor();
 
 }*/
+    ?>
