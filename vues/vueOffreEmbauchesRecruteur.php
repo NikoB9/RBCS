@@ -29,6 +29,10 @@
 
 <h1 class="title">MY JOB OFFERS</h1>
 
+<?php
+if($user['recruteur'] == 1){
+?>
+
 <div class="rowPerso">
     <table class="ui celled table">
         <thead>
@@ -42,7 +46,7 @@
 
 
 
-<?php foreach ($lesOffres as $uneOffre){
+<?php if (!empty($listeOffres )){ foreach ($lesOffres as $uneOffre){
     ?>
 
         <tr>
@@ -63,8 +67,28 @@
         </tr>
 
     <?php
+}}
+else{
+    echo "<tr><td colspan='3' style='text-align: center'>Vous n'avez posté aucune offre pour le moment</td> </tr>";
 }
 ?>
         </tbody>
     </table>
 </div>
+
+    <?php
+}
+elseif ($user['recruteur'] != 1){
+
+    echo "
+<div class=\"rowPerso\">
+
+                <div class=\"alert alert-danger\" role=\"alert\">
+                    <h4 class=\"alert-heading\">Hum Hum !</h4>
+                    <p>Vous n'êtes pas autorisé à utiliser cette fonctionnalité.</p>
+                    <hr>
+                    <p class=\"mb-0\">Nous nous réservons le droit de vous bannir en cas de récidive.</p>
+                </div></div>";
+
+
+}

@@ -27,6 +27,41 @@
     }
 </style>
 
+<!--Message Acceptation -->
+
+<div class="ui long Message_Acceptation modal" style="background-color: transparent">
+    <i class="close icon" style="margin-top: 25vh"></i>
+    <div class="header" style="margin-top: 25vh">
+        Vous avez été accepté
+
+    </div>
+
+    <div id="Message_Acceptation_content">
+
+    </div>
+
+    <div class="actions">
+        <div class="ui red approve button"><i class="trash alternate icon"></i> Fermer </div>
+    </div>
+</div>
+
+<!--Message refus-->
+
+<div class="ui long Message_refus modal" style="background-color: transparent">
+    <i class="close icon" style="margin-top: 25vh"></i>
+    <div class="header" style="margin-top: 25vh">
+        Vous avez été refusé
+    </div>
+
+    <div id="Message_refus_content">
+
+    </div>
+
+    <div class="actions">
+        <div class="ui red approve button"><i class="trash alternate icon"></i> Fermer </div>
+    </div>
+</div>
+
 <h1 class="title">Mes Candidatures</h1>
 
 <div class="rowPerso">
@@ -43,7 +78,7 @@
 
 
 
-<?php foreach ($listeOffres as $offre){
+<?php if (!empty($listeOffres )){  foreach ($listeOffres as $offre){
     ?>
 
         <tr>
@@ -56,19 +91,30 @@
             <td colspan='1' style="text-align: center;">
                 <?php
                 if ($offre['accepted'] == 1){
-                    echo "Accepté(e)";
+                    echo "<button type=\"reset\" data-tooltip=\"Message d'acceptation\" onclick=\"showAcceptedMessage('".$offre['id']."')\" class=\"circular ui green icon button\">"; ?>
+
+                        <i class="envelope icon"></i>
+                    </button>
+                <?php
                 }
-                elseif ($offre['accepted'] == 0){
-                    echo "Refusé(e)";
+                elseif ($offre['accepted'] == ''){
+                    echo "En Attente..";
                 }
                 else {
-                    echo "En Attente..";
+                    echo "<button type=\"reset\" data-tooltip=\"Message de refus\" onclick=\"showRefusedMessage('".$offre['id']."')\" class=\"circular ui red icon button \">"; ?>
+
+                    <i class="envelope icon"></i>
+                    </button>
+                    <?php
                 }
                 ?>
             </td>
         </tr>
 
     <?php
+}}
+else{
+    echo "<tr><td colspan='3' style='text-align: center'>Vous n'avez postulé à aucune offre pour le moment</td> </tr>";
 }
 ?>
         </tbody>

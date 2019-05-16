@@ -77,18 +77,48 @@ function ShowModalRequest(modal)
   $('.ui.basic.modal' + modal).modal({inverted: true}).modal('show');
 }
 
+function slashEscape(contents) {
+    return contents
+        .replace(/\\/g, '\\\\')
+        .replace(/"/g, '\\"')
+        .replace(/\n/g, '\\n');
+}
 
-//Affichage des paramètres du compte
-function param_compte()
+var replacements = {'\\\\': '\\', '\\n': '\n', '\\"': '"'};
+
+function slashUnescape(contents) {
+    return contents.replace(/\\(\\|n|")/g, function(replace) {
+        return replacements[replace];
+    });
+}
+
+
+//Affichage des messages
+function showAcceptedMessage(idOffre)
 {
-  $("#param_compte_content").load("pages/parametres_compte.php");
-  $('.ui.long.param_compte.modal').modal({
+    //alert("test");
+  $("#Message_Acceptation_content").load("vues/showMessage.php?id="+idOffre+"&r=1");
+  $('.ui.long.Message_Acceptation.modal').modal({
     onVisible: function(){
-        $('.ui.long.param_compte.modal').modal('refresh');
+        $('.ui.long.Message_Acceptation.modal').modal('refresh');
         $('body').addClass('scrolling');
     },
     observeChanges: true,
     transition: 'fade up'}).modal('show')//.addClass('scrolling active');
+}
+
+function showRefusedMessage(idOffre)
+{
+    //alert("test");
+
+    $("#Message_refus_content").load("vues/showMessage.php?id="+idOffre+"&r=0");
+    $('.ui.long.Message_refus.modal').modal({
+        onVisible: function(){
+            $('.ui.long.Message_refus.modal').modal('refresh');
+            $('body').addClass('scrolling');
+        },
+        observeChanges: true,
+        transition: 'fade up'}).modal('show')//.addClass('scrolling active');
 }
 
 

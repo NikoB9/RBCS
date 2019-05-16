@@ -50,7 +50,7 @@
 
 
 
-<?php if (sizeof($lesCandidats )){ foreach ($lesCandidats as $candidat){
+<?php if (!empty($lesCandidats )){ foreach ($lesCandidats as $candidat){
     ?>
 
         <tr>

@@ -71,32 +71,73 @@
 
         </div>
 
-        <div class="rowPerso menuL">
+        <?php
+        if($user['recruteur'] == 1) {
+            ?>
 
-            <a href="?p=ctrlListeDesOffresParRecruteur">
-                <div class="card perso">
+            <div class="rowPerso menuL">
 
-                    <div class="card-body">
-                        <img src="assets/img/list-with-possible-workers-to-choose.svg" width="40px" height="40px">
-                    </div>
-                    <div class="card-footer">
-                        Mes annonces
-                    </div>
-                </div>
-            </a>
+                <a href="?p=ctrlListeDesOffresParRecruteur">
+                    <div class="card perso">
 
-            <a href="?p=ctrlAddJobOffer">
-                <div class="card perso">
-                    <div class="card-body">
-                        <img src="assets/img/applicants.svg" width="40px" height="40px">
+                        <div class="card-body">
+                            <img src="assets/img/list-with-possible-workers-to-choose.svg" width="40px" height="40px">
+                        </div>
+                        <div class="card-footer">
+                            Mes annonces
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        Nouvelle offre
-                    </div>
-                </div>
-            </a>
+                </a>
 
-        </div>
+                <a href="?p=ctrlAddJobOffer">
+                    <div class="card perso">
+                        <div class="card-body">
+                            <img src="assets/img/applicants.svg" width="40px" height="40px">
+                        </div>
+                        <div class="card-footer">
+                            Nouvelle offre
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <?php
+        } else {
+         ?>
+            <div class="rowPerso menuL">
+
+                <a>
+
+                    <div class="card perso" style="background-color: red;opacity: 0.50;cursor: not-allowed;color: white">
+
+                        <div class="card-body">
+                            <img src="assets/img/list-with-possible-workers-to-choose.svg" width="40px" height="40px">
+                        </div>
+                        <div class="card-footer">
+                            Mes annonces
+                        </div>
+                    </div>
+
+                </a>
+                <a>
+
+                    <div class="card perso" style="background-color: red;opacity: 0.50;cursor: not-allowed;color: white">
+                        <div class="card-body">
+                            <img src="assets/img/applicants.svg" width="40px" height="40px">
+                        </div>
+                        <div class="card-footer">
+                            Nouvelle offre
+                        </div>
+                    </div>
+
+                </a>
+
+            </div>
+        <?php
+        }
+        ?>
+
 
         <br>
 
