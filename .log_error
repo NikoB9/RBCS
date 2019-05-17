@@ -14,3 +14,4 @@ Stack trace:
 [14-May-2019 20:47:41 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\RBCS\vues\vueApplicants.php on line 46
 [14-May-2019 21:26:36 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\RBCS\vues\vueApplicants.php on line 46
 [14-May-2019 21:27:09 Europe/Berlin] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in C:\xampp\htdocs\RBCS\vues\vueApplicants.php on line 53
+[15-May-2019 17:40:41 Europe/Berlin] PHP Warning:  sizeof(): Parameter must be an array or an object that implements Countable in C:\xampp\htdocs\RBCS\vues\vueApplicants.php on line 53
