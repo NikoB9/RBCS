@@ -364,12 +364,15 @@ function listeDesCandidats($bdd, $offerId)
 
         }
 
-        //print_r($lesOffres);
+        //echo "passe";
+        //print_r($lesCandidats);
 
     } catch (Exception $e) {
         //$query->rollback();
         //echo $e->getMessage();
     }
+
+    return $lesCandidats;
 }
 
 function listeDesoffresParCandidat($bdd, $idCandidat){

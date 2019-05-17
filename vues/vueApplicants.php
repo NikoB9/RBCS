@@ -49,8 +49,10 @@
 
 
 
+<?php
+//print_r($lesCandidats);
 
-<?php if (!empty($lesCandidats )){ foreach ($lesCandidats as $candidat){
+if (!empty($lesCandidats )){ foreach ($lesCandidats as $candidat){
     ?>
 
         <tr>
@@ -58,7 +60,7 @@
                 <?php echo $candidat['nom']." ".$candidat['prenom'];?>
             </td>
             <td colspan='1' style="cursor: pointer" <?php echo "onclick=\"window.open('vues/form_generate/ConsulterResultatQC.php?idOffre=".$offerId."&idCandidat=".$candidat['id']."')\""; ?>>
-                <?php echo $candidat['note'];?>
+                <?php echo $candidat['note']." %";?>
             </td>
             <td colspan='1' style="text-align: center;">
                 <?php

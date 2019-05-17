@@ -46,7 +46,7 @@ if($user['recruteur'] == 1){
 
 
 
-<?php if (!empty($listeOffres )){ foreach ($lesOffres as $uneOffre){
+<?php if (!empty($lesOffres )){ foreach ($lesOffres as $uneOffre){
     ?>
 
         <tr>
