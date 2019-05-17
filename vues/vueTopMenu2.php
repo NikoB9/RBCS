@@ -27,7 +27,7 @@
     <div class="UserMenudropdown">
         <?php
         if ($user['profilePic'] == ""){ ?>
-            <button class="UserMenudropbtn"><img id="iconMenuUser"  onclick="window.location.href = '?deconnexion'" src="assets/img/userIcon.png"></button>
+            <button class="UserMenudropbtn"><img id="iconMenuUser"  src="assets/img/userIcon.png"></button>
         <?php }else{
             echo "<button class=\"UserMenudropbtn\"><img id=\"iconMenuUser\"  onclick=\"window.location.href = '?deconnexion'\" src=\"".$user['profilePic']."\"></button>";
         }
