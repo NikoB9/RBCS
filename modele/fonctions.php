@@ -6,10 +6,47 @@
  * Time: 19:32
  */
 
+function userExistAndEmail($user, $mail, $bdd){
+    $bool = false;
+    $sql = "SELECT count(*) as bool FROM User WHERE  pseudo like TRIM(:login) or mail like TRIM(:login)  or mail like TRIM(:mail)";
+    $query = $bdd->prepare($sql);
+    $query->bindParam(':login', $user);
+    $query->bindParam(':mail', $mail);
+
+    //echo $query;
+
+    try{
+
+        if ($query->execute()){
+
+            $fetch = $query->fetch(PDO::FETCH_OBJ);
+
+            //echo "login : ".$user."bool : ".$query->rowCount();
+
+
+            if($fetch->bool == 1){
+                $bool = true;
+            }
+
+        }
+        else{
+            echo "rate";
+        }
+    }
+    catch (Exception $e){
+        //$query->rollback();
+        //echo $e->getMessage();
+    }
+    $query->closeCursor();
+
+    return $bool;
+
+}
+
 
 function userExist($user,$bdd){
     $bool = false;
-    $sql = "SELECT count(*) as bool FROM User WHERE  pseudo like :login or mail like :login";
+    $sql = "SELECT count(*) as bool FROM User WHERE  pseudo like TRIM(:login) or mail like TRIM(:login)";
     $query = $bdd->prepare($sql);
     $query->bindParam(':login', $user);
 
@@ -240,7 +277,7 @@ function compteExist($user, $pwd,$bdd){
 
     $id = -1;
 
-    $sql = "SELECT id FROM User WHERE  mdp like :mdp AND (pseudo like :login or mail like :login)";
+    $sql = "SELECT id FROM User WHERE  mdp like TRIM(:mdp) AND (pseudo like TRIM(:login) or mail like TRIM(:login))";
     $query = $bdd->prepare($sql);
     $query->bindParam(':mdp', $pwd);
     $query->bindParam(':login', $user);

@@ -75,7 +75,7 @@ elseif (isset($_POST['signup']) && $_POST['signup'] = 'signup'){
     $mdpVerif = $_POST['pwd2'];
     $ad = $_POST['mail'];
 
-    $userExist = userExist($user, $bdd);
+    $userExist = userExistAndEmail($user, $ad, $bdd);
 
     if(!$userExist && $mdp == $mdpVerif){
 
