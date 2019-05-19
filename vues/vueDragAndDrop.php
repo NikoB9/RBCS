@@ -61,10 +61,6 @@ if(isset($_POST["titre0"])) {
 </script>
 <body>
 <form class="" method="post" action="">
-    <div class="header">
-        HEADER
-    </div>
-
     <div class="Selection">
         <div class="resume">
             <p>Nombre de QCM : <span id="nbQCM"></span></p><br>
