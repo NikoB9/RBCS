@@ -7,10 +7,10 @@
  */
 
 
-$host   = "mysql-NicolasEtHugo.alwaysdata.net";
-$user   = "184058";
-$pass   = "dev91Web91Polytech";
-$db     = "nicolasethugo_rbcs";
+$host   = "remotemysql.com";
+$user   = "kQnEQkDgQK";
+$pass   = "xfojh8wGkd";
+$db     = "kQnEQkDgQK";
 $today  = date("Y-m-d");
 try // Connexion à la base de données avec PDO
 {

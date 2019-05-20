@@ -13,7 +13,6 @@ include "../../modele/modele.php";
     <div class="selection"> <!-- a metre sur le coté gauche et fixe (comme la div rouge du form drag and drop)-->
         <div>
             <p id="note"></p>
-            <p>Encore du texte</p>
         </div>
     </div>
 
