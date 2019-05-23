@@ -128,7 +128,6 @@ if(isset($_POST["titre0"])) {
                     clonedElement = target.appendChild(clonedElement); // Ajout de l'élément cloné à la zone de drop actuelle
                     clonedElement.id ="divQuestion"+idQuestion;
                     AjouterQuestion(idQuestion);
-                    clonedElement.atr('draggable', "false");
                     idQuestion = idQuestion + 1;
                     dndHandler.applyDragEvents(clonedElement); // Nouvelle application des événements qui ont été perdus lors du cloneNode()
 
