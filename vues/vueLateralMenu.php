@@ -31,7 +31,7 @@
                 </div>
             </a>
 
-            <a href="">
+            <a href="?p=ctrlEditPassword">
                 <div class="card perso">
                     <div class="card-body">
                         <img src="assets/img/pin-code.svg" width="40px" height="40px">

@@ -148,6 +148,38 @@ function answeredToUser($bdd, $offerId, $idCandidat, $accepted){
     return $bool;
 }
 
+function editPasword($bdd, $idCandidat, $mdp){
+    $bool = false;
+    $sql = "UPDATE User SET mdp = :mdp WHERE id = :idc";
+    $query = $bdd->prepare($sql);
+    $query->bindParam(':idc', $idCandidat);
+    $query->bindParam(':mdp', $mdp);
+
+    echo  $idCandidat;
+
+    //echo $query;
+
+    try{
+
+        if ($query->execute()){
+
+            //echo "login : ".$user."bool : ".$query->rowCount();
+            $bool = true;
+
+        }
+        else{
+            echo "rate";
+        }
+    }
+    catch (Exception $e){
+        //$query->rollback();
+        echo $e->getMessage();
+    }
+    $query->closeCursor();
+
+    return $bool;
+}
+
 function alreadyParticipate($bdd, $offerId, $idUser){
     $bool = false;
     $sql = "SELECT count(*) as bool FROM noteCandidat WHERE  idCandidat like :idUser AND idOffre like :idOffre";
@@ -229,7 +261,7 @@ function pwdExist($pwd,$bdd){
 
     $bool = false;
 
-    $sql = "SELECT  count(*) as bool FROM User WHERE mdp like :mdp";
+    $sql = "SELECT  count(*) as bool FROM User WHERE mdp like TRIM(:mdp)";
     //echo $sql;
     $query = $bdd->prepare($sql);
     $query->bindParam(':mdp', $pwd);
@@ -237,7 +269,7 @@ function pwdExist($pwd,$bdd){
     if ($query->execute()){
 
         $fetch = $query->fetch(PDO::FETCH_OBJ);
-        if($fetch->bool == 1){
+        if($fetch->bool >= 1){
             $bool = true;
         }
 
@@ -631,6 +663,7 @@ function infosUser($bdd, $idUser){
 
         $infos = array(
 
+            "id" => $user->id,
             "prenom" => $user->prenom,
             "nom" => $user->nom,
             "pseudo" => $user->pseudo,
