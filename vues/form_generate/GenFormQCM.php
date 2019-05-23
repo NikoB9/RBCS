@@ -31,8 +31,6 @@ if(isset($_POST["checkbox0"])) {
     <form class="" method="post" action="">
     <div class="selection"> <!-- a metre sur le coté gauche et fixe (comme la div rouge du form drag and drop)-->
         <div>
-            <p>Du texte</p>
-            <p>Encore du texte</p>
             <button type="" onclick="" class="success">Terminer</button>
         </div>
     </div>
