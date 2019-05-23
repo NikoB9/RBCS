@@ -12,7 +12,19 @@ include "../../modele/modele.php";
     <form class="" method="post" action="">
     <div class="selection"> <!-- a metre sur le coté gauche et fixe (comme la div rouge du form drag and drop)-->
         <div>
-            <p onclick="window.history.back()" style="cursor: pointer; padding: 10px;margin: 10px;border: solid 2px black;border-radius: 10px; text-align: center">Sortir</p>
+            <?php
+                echo "<script>
+function redirectionNote() {
+  if (window.history.length >= 28) {
+      window.location.href = '../../?p=ctrlListeDesOffresParCandidat';
+  }
+  else {
+      window.history.back();
+  }
+}
+</script>";
+            ?>
+            <p onclick="redirectionNote()" style="cursor: pointer; padding: 10px;margin: 10px;border: solid 2px black;border-radius: 10px; text-align: center">Sortir</p>
             <p id="note"></p>
         </div>
     </div>
