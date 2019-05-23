@@ -58,12 +58,62 @@ if (isset($_POST['userInfos'])){
             $transfertCouv = move_uploaded_file($cvUrlTmp, $nomCv);
 
 
-
         }
         else{
             $pjCv = false;
         }
 
+    }
+    elseif (!empty($_FILES['pjCvNew']['name']) && isset($_FILES['pjCvNew']['name'])) {
+        //$nomFichier = addcslashes ( $_POST['cvPj'] , "'" );
+
+
+        $unwanted_array = array('Š' => 'S', 'š' => 's', 'Ž' => 'Z', 'ž' => 'z', 'À' => 'A', 'Á' => 'A', 'Â' => 'A', 'Ã' => 'A', 'Ä' => 'A', 'Å' => 'A', 'Æ' => 'A', 'Ç' => 'C', 'È' => 'E', 'É' => 'E',
+            'Ê' => 'E', 'Ë' => 'E', 'Ì' => 'I', 'Í' => 'I', 'Î' => 'I', 'Ï' => 'I', 'Ñ' => 'N', 'Ò' => 'O', 'Ó' => 'O', 'Ô' => 'O', 'Õ' => 'O', 'Ö' => 'O', 'Ø' => 'O', 'Ù' => 'U',
+            'Ú' => 'U', 'Û' => 'U', 'Ü' => 'U', 'Ý' => 'Y', 'Þ' => 'B', 'ß' => 'Ss', 'à' => 'a', 'á' => 'a', 'â' => 'a', 'ã' => 'a', 'ä' => 'a', 'å' => 'a', 'æ' => 'a', 'ç' => 'c',
+            'è' => 'e', 'é' => 'e', 'ê' => 'e', 'ë' => 'e', 'ì' => 'i', 'í' => 'i', 'î' => 'i', 'ï' => 'i', 'ð' => 'o', 'ñ' => 'n', 'ò' => 'o', 'ó' => 'o', 'ô' => 'o', 'õ' => 'o',
+            'ö' => 'o', 'ø' => 'o', 'ù' => 'u', 'ú' => 'u', 'û' => 'u', 'ý' => 'y', 'þ' => 'b', 'ÿ' => 'y');
+
+        //IMAGE FICHIER
+        //$cvName = strtr( addcslashes (  $_FILES['cvPj']['name'] , "'" ) , $unwanted_array );
+        $cvName = strtr(addcslashes($_POST['cvNew'], "'"), $unwanted_array);
+        //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
+        $cvType = $_FILES['pjCvNew']['type'];    //Le type du fichier. Par exemple, cela peut être « image/png ».
+        $cvSize = $_FILES['pjCvNew']['size'];    //La taille du fichier en octets.
+        $cvUrlTmp = $_FILES['pjCvNew']['tmp_name']; //L'adresse vers le fichier uploadé dans le répertoire temporaire.
+        $cvErr = $_FILES['pjCvNew']['error'];   //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
+
+        //$extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'pdf' , 'doc' , 'docx' , 'odt' , 'mp4');
+        $extensions_valides = array('pdf', 'doc', 'docx', 'odt');
+        //1. strrchr renvoie l'extension avec le point (« . »).
+        //2. substr(chaine,1) ignore le premier caractère de chaine.
+        //3. strtolower met l'extension en minuscules.
+        $extension = strtolower(substr(strrchr($cvName, '.'), 1));
+
+        //VERIF EXTENSION
+        if (in_array($extension, $extensions_valides)) {
+
+            //suppression ancien cv avant insertion
+            unlink($user['cv']);
+
+            //VERIF SI FICHIER EXISTE SI OUI IL FAUT LE RENOMMER
+            if (file_exists("users_resume/" . $cvName)) {
+                $nomCv = "users_resume/" . $cvName . rand(0, 100000) . "." . $extension;
+                while (file_exists($nomCv)) {
+                    $nomCv = "users_resume/" . $cvName . rand(0, 100000) . "." . $extension;
+                }
+            } else {
+
+                $nomCv = "users_resume/" . $cvName;
+
+            }
+
+            $transfertCouv = move_uploaded_file($cvUrlTmp, $nomCv);
+
+
+        } else {
+            $pjCv = false;
+        }
     }
     else{
 
@@ -114,81 +164,13 @@ if (isset($_POST['userInfos'])){
             $transfertCouv = move_uploaded_file($ppUrlTmp, $nomPp);
 
 
-
         }
         else{
             $pjProfilePc = false;
         }
 
     }
-    else{
-
-        $nomPp = $user['profilePic'];
-
-
-    }
-    if (!empty($_FILES['pjCvNew']['name']) && isset($_FILES['pjCvNew']['name'])) {
-        //$nomFichier = addcslashes ( $_POST['cvPj'] , "'" );
-
-        $unwanted_array = array(    'Š'=>'S', 'š'=>'s', 'Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A', 'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E',
-            'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I', 'Ï'=>'I', 'Ñ'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U',
-            'Ú'=>'U', 'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss', 'à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a', 'å'=>'a', 'æ'=>'a', 'ç'=>'c',
-            'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i', 'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o',
-            'ö'=>'o', 'ø'=>'o', 'ù'=>'u', 'ú'=>'u', 'û'=>'u', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y' );
-
-        //IMAGE FICHIER
-        //$cvName = strtr( addcslashes (  $_FILES['cvPj']['name'] , "'" ) , $unwanted_array );
-        $cvName = strtr( addcslashes (  $_POST['cvNew'] , "'" ) , $unwanted_array );
-        //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
-        $cvType = $_FILES['pjCvNew']['type'];    //Le type du fichier. Par exemple, cela peut être « image/png ».
-        $cvSize = $_FILES['pjCvNew']['size'];    //La taille du fichier en octets.
-        $cvUrlTmp = $_FILES['pjCvNew']['tmp_name']; //L'adresse vers le fichier uploadé dans le répertoire temporaire.
-        $cvErr = $_FILES['pjCvNew']['error'];   //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
-
-        //$extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' , 'pdf' , 'doc' , 'docx' , 'odt' , 'mp4');
-        $extensions_valides = array('pdf', 'doc' , 'docx' , 'odt');
-        //1. strrchr renvoie l'extension avec le point (« . »).
-        //2. substr(chaine,1) ignore le premier caractère de chaine.
-        //3. strtolower met l'extension en minuscules.
-        $extension = strtolower(  substr(  strrchr($cvName, '.')  ,1)  );
-
-        //VERIF EXTENSION
-        if ( in_array($extension,$extensions_valides) ){
-
-            //suppression ancien cv avant insertion
-            unlink($user['cv']);
-
-            //VERIF SI FICHIER EXISTE SI OUI IL FAUT LE RENOMMER
-            if (file_exists("users_resume/".$cvName)){
-                $nomCv = "users_resume/".$cvName.rand(0,100000).".".$extension;
-                while (file_exists($nomCv)){
-                    $nomCv = "users_resume/".$cvName.rand(0,100000).".".$extension;
-                }
-            }
-            else{
-
-                $nomCv = "users_resume/".$cvName;
-
-            }
-
-            $transfertCouv = move_uploaded_file($cvUrlTmp, $nomCv);
-
-
-
-        }
-        else{
-            $pjCv = false;
-        }
-
-    }
-    else{
-
-        $nomCv = $user['cv'];
-
-
-    }
-
-    if (!empty($_FILES['profilePicNew']['name']) && isset($_FILES['profilePicNew']['name'])) {
+    elseif (!empty($_FILES['profilePicNew']['name']) && isset($_FILES['profilePicNew']['name'])) {
         //$nomFichier = addcslashes ( $_POST['cvPj'] , "'" );
 
         $unwanted_array = array(    'Š'=>'S', 'š'=>'s', 'Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A', 'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E',
@@ -249,6 +231,7 @@ if (isset($_POST['userInfos'])){
 
     }
 
+
     try{
 
         if (!anotherUserExist($_POST['mail'], $_POST['pseudo'], $_SESSION['id'], $bdd)){
@@ -262,12 +245,13 @@ if (isset($_POST['userInfos'])){
                 //echo "rec2 : ".$recruteur;
 
                 //echo "apres if";
-                editUSer($bdd,$_SESSION['id'],$_POST['prenom'],$_POST['nom'],$_POST['pseudo'],$_POST['naissance'],$_POST['description'], $nomCv, $nomPp,
+                $edit = editUSer($bdd,$_SESSION['id'],$_POST['prenom'],$_POST['nom'],$_POST['pseudo'],$_POST['naissance'],$_POST['description'], $nomCv, $nomPp,
                     $recruteur, $_POST['entreprise'], $_POST['mail'],$_POST['telFix'],$_POST['tel'],$_POST['adresse'],$_POST['code_postal'],$_POST['ville']);
                 //echo "enregistrement données";
             }
         }
         else{
+            echo "erreur mail";
             $userAlreadyExist = true;
         }
 
